@@ -1,10 +1,10 @@
-id,name,name_ar,lat,lon,coord_quality,region,site_type,analog_for,key_facts,access_note,source
-umm_jirsan,Umm Jirsan lava tube,كهف أم جرسان,25.5888,39.7570,published (PLOS One 2024),Harrat Khaybar ~125 km N of Madinah,lava tube,Moon/Mars lava-tube shelters,"Longest reported lava tube in Arabia: 1481 m; passages 8-12 m high, up to 45 m wide; three segments split by two roof collapses",Main collapse entrance walled with a staircase since 2017,https://pmc.ncbi.nlm.nih.gov/articles/PMC11023468
-umm_jirsan_east,Umm Jirsan east collapse (Area D),,25.58823,39.7648,published (PLOS One 2024),Harrat Khaybar,lava tube collapse,Known skylight for pit-detection test,Second collapse entrance on the eastern passage,Inside same lava field as Umm Jirsan,https://pmc.ncbi.nlm.nih.gov/articles/PMC11023468
-rockart_tube,Collapsed lava tube with rock art,,25.5879,39.7702,published (PLOS One 2024),Harrat Khaybar 1.3 km E of Umm Jirsan,lava tube collapse,Known skylight for pit-detection test,"Large collapse entrance; sediment reaches ceiling after ~75 m; 16 rock-art panels",Next to Umm Jirsan,https://pmc.ncbi.nlm.nih.gov/articles/PMC11023468
-khaybar_field,Harrat Khaybar (summit area),حرة خيبر,25.71944,39.94278,field highest point,NW Saudi Arabia N of Madinah,basalt lava field,Mars volcanic plains / rover traverse,"Basaltic field built over ~5 million years; summit 2093 m; cones incl. Jabal Abyad and Jabal Bayda",Large field; roads reach oasis edges,https://en.wikipedia.org/wiki/Harrat_Khaybar
-al_wahbah,Al Wahbah crater,فوهة الوعبة,22.90632,41.13849,published point,Harrat Kishb ~250 km from Taif,maar crater (volcanic),Crater operations / descent tests,"~2 km wide, ~250 m deep; white salt-crust floor; steep walls",About 2 h drive from Taif airport via highway and paved roads,https://en.wikipedia.org/wiki/Al_Wahbah_crater
-harrat_rahat,Harrat Rahat,حرة رهاط,23.08333,39.78333,field highest point,Hejaz; N end reaches Madinah,basalt lava field,Young lava flows / rover terrain,"Largest lava field in Saudi Arabia (~20,000 km2); 900+ vents in the north; last eruption 1256 CE",North end touches Madinah city,https://www.usgs.gov/maps/geologic-map-northern-harrat-rahat-volcanic-field-kingdom-saudi-arabia
-wabar,Wabar impact craters,فوهات وبار,21.5040,50.4720,published point,Rub' al Khali (Empty Quarter),impact craters in dunes,True impact site / dust and dunes,"Confirmed impact craters; largest ~116 m; impact glass; meteorite fragments",Deep desert - hardest access on the list,https://en.wikipedia.org/wiki/Wabar_craters
-uwayrid,Harrat Uwayrid,حرة عويرض,27.08,37.25,field reference point,NW Saudi Arabia near AlUla,basalt plateau + cinder cones,Mars volcanic plateau,"~7150 km2 basalt plateau with younger cinder cones; up to 1920 m",Near AlUla,https://decade.earthchem.org/d/231020
-hibashi,Ghar Al Hibashi lava tube,غار الهباشي,21.1333,42.1333,approximate (Grottocenter; rounded to arc-minutes),Harrat Nawasif/Al Buqum ~245 km SE of Makkah,lava tube,Cave minerals / Mars cave interiors,"Surveyed lava tube (length reported as 689.5 m and 581 m in different sources); richest cave-mineral site in Saudi Arabia",Remote lava field,https://ojs.zrc-sazu.si/carsologica/article/view/247
+Site_ID,Site_Name,Latitude,Longitude,Site_Type,Category,Tile
+S01,Umm Jirsan,25.5888,39.757,Lava Tube,Core,N25E039
+S02,Harrat Khaybar,25.7194,39.9428,Volcanic Field,Core,N25E039
+S03,Al Wahbah,22.9063,41.1385,Volcanic Crater,Core,N22E041
+S04,Harrat Rahat,23.0833,39.7833,Volcanic Field,Core,N23E039
+S05,Harrat Uwayrid,27.08,37.25,Basalt Plateau,Core,N27E037
+S06,Wabar Craters,21.5042,50.4717,Impact Craters,Core,N21E050
+S07,Ghar Al Hibashi,21.1333,42.1333,Lava Tube,Core,N21E042
+S08,Harrat Lunayyir,25.17,37.75,Volcanic Field,Additional,N25E037
+S09,Harrat Kishb,22.8,41.38,Volcanic Field,Additional,N22E041
