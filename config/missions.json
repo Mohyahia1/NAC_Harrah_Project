@@ -1,0 +1,7 @@
+{
+  "_note": "Mission weights for slope, roughness and relief. Team decision; change here only and re-run the pipeline.",
+  "rover":       {"label": "Rover driving",      "slope": 0.4, "roughness": 0.4, "relief": 0.2},
+  "crater_ops":  {"label": "Crater operations",  "slope": 0.3, "roughness": 0.2, "relief": 0.5},
+  "landing_base":{"label": "Landing and base",   "slope": 0.5, "roughness": 0.3, "relief": 0.2},
+  "lava_tube":   {"label": "Lava-tube shelter",  "slope": 0.2, "roughness": 0.3, "relief": 0.5}
+}

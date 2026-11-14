@@ -1,0 +1,16 @@
+# Large raw data stays on Google Drive, never in git
+data/raw/*
+!data/raw/README.md
+*.zip
+*.npy
+*.parquet
+# Python
+__pycache__/
+*.pyc
+.venv/
+.ipynb_checkpoints/
+# OS / editors
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
