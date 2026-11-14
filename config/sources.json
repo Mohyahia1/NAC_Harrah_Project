@@ -1,0 +1,37 @@
+{
+  "_note": "Where the pipeline finds each DEM. Large files live in data/raw/ (not in git).",
+  "box_km": 100,
+  "relief_window_px": 5,
+  "min_coverage": 0.9,
+  "earth_tiles_dir": "data/raw/aster",
+  "moon_dem": "data/raw/moon/elevation.npy",
+  "moon_ppd": 16,
+  "mars_dem": "data/raw/mars/elevation.npy",
+  "mars_ppd": 16,
+  "datasets": [
+    {
+      "world": "Earth",
+      "name": "ASTER Global DEM v3 (30 m)",
+      "producer": "NASA / METI",
+      "url": "https://lpdaac.usgs.gov/products/astgtmv003/"
+    },
+    {
+      "world": "Moon",
+      "name": "LRO LOLA gridded DEM, 16 pixels/degree",
+      "producer": "NASA",
+      "url": "https://pds-geosciences.wustl.edu/missions/lro/lola.htm"
+    },
+    {
+      "world": "Mars",
+      "name": "MGS MOLA MEGDR, 16 pixels/degree",
+      "producer": "NASA",
+      "url": "https://pds-geosciences.wustl.edu/missions/mgs/megdr.html"
+    },
+    {
+      "world": "Earth",
+      "name": "NASA POWER climatology",
+      "producer": "NASA LaRC",
+      "url": "https://power.larc.nasa.gov/"
+    }
+  ]
+}
