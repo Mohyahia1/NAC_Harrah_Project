@@ -4,4 +4,4 @@ moon_marius_pit,Moon,Marius Hills pit,14.09,303.22,lava_tube;rover,SLDEM2015 (~1
 moon_tranquillitatis_pit,Moon,Mare Tranquillitatis pit,8.33,33.22,lava_tube;landing_base,SLDEM2015 (~178 m),provisional,
 mars_jezero,Mars,Jezero crater (Perseverance),18.44,77.45,rover;crater_ops;landing_base,MOLA MEGDR 128 ppd (~463 m),provisional,
 mars_gale,Mars,Gale crater (Curiosity),-5.40,137.80,rover;crater_ops,MOLA MEGDR 128 ppd (~463 m),provisional,
-mars_arsia_pits,Mars,Arsia Mons pit chain (Tharsis),,,lava_tube,MOLA MEGDR 128 ppd (~460 m),needs coordinates,Rayan to confirm the pit location and source
+mars_arsia_pit,Mars,Arsia Mons candidate cave skylight (Tharsis),-5.532,241.396,lava_tube,MOLA MEGDR 128 ppd (~463 m),provisional,"HiRISE PSP_003647_1745 centre; NASA/JPL PIA09704 ""Candidate Cavern Entrance Northeast of Arsia Mons"""

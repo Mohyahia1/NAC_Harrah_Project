@@ -218,6 +218,12 @@ def load_inputs():
         alias = {"harrat_khaybar": "khaybar_field", "harrat_uwayrid": "uwayrid", "ghar_al_hibashi": "hibashi"}
         for r in read_csv(cpath):
             climate[alias.get(r["site_id"], r["site_id"])] = r
+    images = {}
+    ipath = DATA / "target_images.csv"
+    if ipath.exists():
+        images = {r["target_id"]: {k: r[k] for k in ("image_title", "image_id", "page_url", "credit")} for r in read_csv(ipath)}
+    for t in targets:
+        t["_image"] = images.get(t["target_id"])
     return sites, targets, missions, climate
 
 
@@ -352,6 +358,7 @@ def run(force_sample: bool) -> dict:
                      "lon_east": float(t["lon_east"]), "missions": t["missions"].split(";"),
                      "dataset": t["dem_dataset"], "status": t["status"],
                      "scale": target_scale.get(t["target_id"]),
+                     "image": t.get("_image"),
                      "traits": target_traits.get(t["target_id"])} for t in targets],
         "scores": scores,
     }
