@@ -80,6 +80,32 @@ html[dir="rtl"] .reference-caution{border-left:0;border-right:3px solid #b88951}
 .modal-inner.wide{width:min(980px,100%)}.cmp-sub{font-size:12px;color:#8a8074;margin:2px 0 14px;line-height:1.6}.cmp-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}.cmp-fig{margin:0}.cmp-kicker{font-size:10px;letter-spacing:1.6px;text-transform:uppercase;color:#8a8074;font-weight:700}.cmp-name{font-size:15px;font-weight:700;margin:3px 0 8px}.cmp-imgwrap{position:relative;aspect-ratio:1/1;background:#efe9df;border-radius:8px;overflow:hidden;border:1px solid #e7e2d8}.cmp-imgwrap img{width:100%;height:100%;display:block;object-fit:cover}.cmp-scale{position:absolute;left:10px;bottom:10px;background:#fffdf9e6;border-radius:4px;padding:4px 6px 3px;font-size:10px;color:#2a2622;direction:ltr}.cmp-scale i{display:block;height:4px;background:#2a2622;margin-top:3px}.cmp-cap{font-size:11px;color:#8a8074;margin-top:7px;line-height:1.5}.cmp-traits{margin-top:18px;border-top:1px solid #ece7dd;padding-top:12px}.cmp-row{display:grid;grid-template-columns:92px 1fr 70px;gap:10px;align-items:center;margin:12px 0;font-size:11px}.cmp-track{position:relative;height:30px}.cmp-range{position:absolute;height:9px;border-radius:5px}.cmp-range.site{top:3px;background:#8e3b23}.cmp-range.tgt{top:17px;background:#46413b}.cmp-med{position:absolute;width:2px;height:13px;background:#fff;top:-2px}.cmp-vals{font-size:10px;color:#8a8074;grid-column:2;margin-top:-8px;direction:ltr}.cmp-sim{text-align:right;font-weight:700;font-size:13px}.cmp-sim small{display:block;font-weight:400;font-size:9px;color:#8a8074}.cmp-legend{display:flex;gap:14px;font-size:10px;color:#8a8074;margin-top:6px}.cmp-legend span::before{content:'';display:inline-block;width:10px;height:6px;border-radius:3px;margin-right:5px;vertical-align:middle}.cmp-legend .s::before{background:#8e3b23}.cmp-legend .t::before{background:#46413b}.cmp-note{font-size:10px;color:#8a8074;margin-top:12px;line-height:1.6}
 html[dir="rtl"] .cmp-sim{text-align:left}html[dir="rtl"] .cmp-legend span::before{margin-right:0;margin-left:5px}
 @media(max-width:700px){.cmp-grid{grid-template-columns:1fr}.cmp-row{grid-template-columns:72px 1fr 52px}}
+
+/* Layout: place map controls on the MAP, beside (not below) the left planner.
+   The site detail card stays aligned with the planner on the upper right. */
+@media (min-width:851px){
+  .planner{max-height:calc(100% - 30px)}
+  .detail{top:15px;max-height:calc(100% - 30px)}
+}
+.right-controls{
+  left:348px;right:auto;top:auto;bottom:20px;
+  z-index:850;display:flex;flex-direction:row;align-items:center;gap:8px;
+  width:max-content;max-width:calc(100% - 32px);
+}
+.right-controls .map-control{min-height:39px;justify-content:center}
+.right-controls .compass{flex:none}
+.right-controls .layer-menu{
+  position:absolute;bottom:calc(100% + 8px);left:46px;right:auto;
+  min-width:146px;z-index:851;
+}
+@media (min-width:1100px){.right-controls{left:366px}}
+/* Keep the selected-site chip from covering the map controls on medium screens. */
+@media (min-width:851px) and (max-width:1100px){.selection-chip{bottom:78px}}
+@media (max-width:850px){
+  .right-controls{left:8px;right:auto;top:auto;bottom:9px;gap:5px;max-width:calc(100% - 16px)}
+  .right-controls .layer-menu{left:44px}
+  .selection-chip{bottom:64px}
+}
 </style>
 </head>
 <body>
