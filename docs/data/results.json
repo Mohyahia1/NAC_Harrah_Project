@@ -1,11 +1,17 @@
 {
  "meta": {
   "project": "Harrah",
-  "generated_utc": "2026-11-15T01:24:56Z",
+  "generated_utc": "2026-11-15T11:44:54Z",
   "status": "preliminary",
   "status_note": "Real scores from NASA elevation data. Each target is compared at its own scale (see targets[].scale); Saudi terrain is resampled to the same pixel size and box.",
   "relief_window_px": 5,
   "min_coverage": 0.35,
+  "relief": {
+   "vertical_exaggeration": 2.0,
+   "sun_azimuth_deg": 315.0,
+   "sun_altitude_deg": 45.0,
+   "note": "Rendered from the same elevation grids used for scoring, identical settings on both sides."
+  },
   "missions": {
    "rover": {
     "label": "Rover driving",
@@ -253,6 +259,14 @@
       "p90": 61.71
      }
     }
+   },
+   "relief": {
+    "moon_shackleton": "data/relief/umm_jirsan__moon_shackleton.png",
+    "moon_marius_pit": "data/relief/umm_jirsan__moon_marius_pit.png",
+    "moon_tranquillitatis_pit": "data/relief/umm_jirsan__moon_tranquillitatis_pit.png",
+    "mars_jezero": "data/relief/umm_jirsan__mars_jezero.png",
+    "mars_gale": "data/relief/umm_jirsan__mars_gale.png",
+    "mars_arsia_pit": "data/relief/umm_jirsan__mars_arsia_pit.png"
    }
   },
   {
@@ -425,6 +439,14 @@
       "p90": 244.814
      }
     }
+   },
+   "relief": {
+    "moon_shackleton": "data/relief/khaybar_field__moon_shackleton.png",
+    "moon_marius_pit": "data/relief/khaybar_field__moon_marius_pit.png",
+    "moon_tranquillitatis_pit": "data/relief/khaybar_field__moon_tranquillitatis_pit.png",
+    "mars_jezero": "data/relief/khaybar_field__mars_jezero.png",
+    "mars_gale": "data/relief/khaybar_field__mars_gale.png",
+    "mars_arsia_pit": "data/relief/khaybar_field__mars_arsia_pit.png"
    }
   },
   {
@@ -597,6 +619,14 @@
       "p90": 67.244
      }
     }
+   },
+   "relief": {
+    "moon_shackleton": "data/relief/al_wahbah__moon_shackleton.png",
+    "moon_marius_pit": "data/relief/al_wahbah__moon_marius_pit.png",
+    "moon_tranquillitatis_pit": "data/relief/al_wahbah__moon_tranquillitatis_pit.png",
+    "mars_jezero": "data/relief/al_wahbah__mars_jezero.png",
+    "mars_gale": "data/relief/al_wahbah__mars_gale.png",
+    "mars_arsia_pit": "data/relief/al_wahbah__mars_arsia_pit.png"
    }
   },
   {
@@ -769,6 +799,14 @@
       "p90": 420.093
      }
     }
+   },
+   "relief": {
+    "moon_shackleton": "data/relief/harrat_rahat__moon_shackleton.png",
+    "moon_marius_pit": "data/relief/harrat_rahat__moon_marius_pit.png",
+    "moon_tranquillitatis_pit": "data/relief/harrat_rahat__moon_tranquillitatis_pit.png",
+    "mars_jezero": "data/relief/harrat_rahat__mars_jezero.png",
+    "mars_gale": "data/relief/harrat_rahat__mars_gale.png",
+    "mars_arsia_pit": "data/relief/harrat_rahat__mars_arsia_pit.png"
    }
   },
   {
@@ -941,6 +979,14 @@
       "p90": 214.237
      }
     }
+   },
+   "relief": {
+    "moon_shackleton": "data/relief/uwayrid__moon_shackleton.png",
+    "moon_marius_pit": "data/relief/uwayrid__moon_marius_pit.png",
+    "moon_tranquillitatis_pit": "data/relief/uwayrid__moon_tranquillitatis_pit.png",
+    "mars_jezero": "data/relief/uwayrid__mars_jezero.png",
+    "mars_gale": "data/relief/uwayrid__mars_gale.png",
+    "mars_arsia_pit": "data/relief/uwayrid__mars_arsia_pit.png"
    }
   },
   {
@@ -1113,6 +1159,14 @@
       "p90": 15.198
      }
     }
+   },
+   "relief": {
+    "moon_shackleton": "data/relief/wabar__moon_shackleton.png",
+    "moon_marius_pit": "data/relief/wabar__moon_marius_pit.png",
+    "moon_tranquillitatis_pit": "data/relief/wabar__moon_tranquillitatis_pit.png",
+    "mars_jezero": "data/relief/wabar__mars_jezero.png",
+    "mars_gale": "data/relief/wabar__mars_gale.png",
+    "mars_arsia_pit": "data/relief/wabar__mars_arsia_pit.png"
    }
   },
   {
@@ -1285,6 +1339,14 @@
       "p90": 108.041
      }
     }
+   },
+   "relief": {
+    "moon_shackleton": "data/relief/hibashi__moon_shackleton.png",
+    "moon_marius_pit": "data/relief/hibashi__moon_marius_pit.png",
+    "moon_tranquillitatis_pit": "data/relief/hibashi__moon_tranquillitatis_pit.png",
+    "mars_jezero": "data/relief/hibashi__mars_jezero.png",
+    "mars_gale": "data/relief/hibashi__mars_gale.png",
+    "mars_arsia_pit": "data/relief/hibashi__mars_arsia_pit.png"
    }
   },
   {
@@ -1457,6 +1519,14 @@
       "p90": 363.745
      }
     }
+   },
+   "relief": {
+    "moon_shackleton": "data/relief/harrat_lunayyir__moon_shackleton.png",
+    "moon_marius_pit": "data/relief/harrat_lunayyir__moon_marius_pit.png",
+    "moon_tranquillitatis_pit": "data/relief/harrat_lunayyir__moon_tranquillitatis_pit.png",
+    "mars_jezero": "data/relief/harrat_lunayyir__mars_jezero.png",
+    "mars_gale": "data/relief/harrat_lunayyir__mars_gale.png",
+    "mars_arsia_pit": "data/relief/harrat_lunayyir__mars_arsia_pit.png"
    }
   },
   {
@@ -1629,6 +1699,14 @@
       "p90": 99.268
      }
     }
+   },
+   "relief": {
+    "moon_shackleton": "data/relief/harrat_kishb__moon_shackleton.png",
+    "moon_marius_pit": "data/relief/harrat_kishb__moon_marius_pit.png",
+    "moon_tranquillitatis_pit": "data/relief/harrat_kishb__moon_tranquillitatis_pit.png",
+    "mars_jezero": "data/relief/harrat_kishb__mars_jezero.png",
+    "mars_gale": "data/relief/harrat_kishb__mars_gale.png",
+    "mars_arsia_pit": "data/relief/harrat_kishb__mars_arsia_pit.png"
    }
   }
  ],
@@ -1659,6 +1737,7 @@
     "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA13720",
     "credit": "NASA/GSFC/Arizona State University"
    },
+   "relief": "data/relief/t_moon_shackleton.png",
    "traits": {
     "valid_share": 0.9637120761451516,
     "slope": {
@@ -1709,6 +1788,7 @@
     "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA12954",
     "credit": "NASA/GSFC/Arizona State University"
    },
+   "relief": "data/relief/t_moon_marius_pit.png",
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -1759,6 +1839,7 @@
     "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA13518",
     "credit": "NASA/GSFC/Arizona State University"
    },
+   "relief": "data/relief/t_moon_tranquillitatis_pit.png",
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -1810,6 +1891,7 @@
     "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA23239",
     "credit": "NASA/JPL-Caltech/MSSS/JHU-APL"
    },
+   "relief": "data/relief/t_mars_jezero.png",
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -1860,6 +1942,7 @@
     "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA15292",
     "credit": "NASA/JPL-Caltech/ESA/DLR/FU Berlin/MSSS"
    },
+   "relief": "data/relief/t_mars_gale.png",
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -1909,6 +1992,7 @@
     "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA09704",
     "credit": "NASA/JPL-Caltech/UArizona"
    },
+   "relief": "data/relief/t_mars_arsia_pit.png",
    "traits": {
     "valid_share": 1.0,
     "slope": {

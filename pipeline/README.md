@@ -50,3 +50,7 @@ Current limits:
 - A 20 km box describes the terrain around a site. Features much smaller than the box, such as the 2 km Al Wahbah crater or the ~116 m Wabar craters, contribute but do not dominate the score.
 - No Saudi site resembles the steep interior of Shackleton crater (median slope ~29°); the best partial match is Harrat Rahat.
 - Slope, roughness and relief move together, so the ranking for a target changes little between missions; the mission weights mostly change the score level.
+
+## Relief images (Compare terrain)
+
+For every target and every site × target pair, the pipeline saves a shaded-relief PNG in `docs/data/relief/` (`t_<target>.png`, `<site>__<target>.png`), rendered from the **same elevation grids used for scoring**: same 20 km box, same pixel size, vertical exaggeration ×2 and north-west light on both sides. Paths are in `results.json` (`targets[].relief`, `sites[].relief[target]`). The web tool's **Compare terrain** panel shows each pair side by side with the trait ranges (p10–p90, median) and per-trait similarity.

@@ -167,6 +167,33 @@ def tiles_for(tile_dir: Path, lat: float, lon: float, box_km: float | None = Non
     return found
 
 
+# ----------------------------------------------------------------------------- relief images
+RELIEF_DIR = ROOT / "docs" / "data" / "relief"
+RELIEF_EXAG = 2.0           # same vertical exaggeration on both sides of every comparison
+RELIEF_SUN = (315.0, 45.0)  # azimuth, altitude in degrees (standard north-west light)
+
+
+def save_relief(z: np.ndarray, pixel_m: float, path: Path, size: int = 320) -> None:
+    """Shaded relief of the exact grid that was scored, rendered in the harrah palette."""
+    from PIL import Image
+    valid = np.isfinite(z)
+    zz = np.where(valid, z, np.nanmean(z) if valid.any() else 0.0) * RELIEF_EXAG
+    gy, gx = np.gradient(zz, pixel_m)          # row 0 is north
+    dzdx, dzdy = gx, -gy                       # east, north
+    slope = np.arctan(np.hypot(dzdx, dzdy))
+    aspect = np.arctan2(dzdy, -dzdx)
+    az = math.radians((360.0 - RELIEF_SUN[0] + 90.0) % 360.0)
+    zen = math.radians(90.0 - RELIEF_SUN[1])
+    hs = np.cos(zen) * np.cos(slope) + np.sin(zen) * np.sin(slope) * np.cos(az - aspect)
+    hs = np.clip(hs, 0, 1)
+    dark, light = np.array([46, 41, 36]), np.array([246, 238, 224])   # basalt -> sand
+    rgb = (dark + hs[..., None] * (light - dark)).astype(np.uint8)
+    alpha = (valid * 255).astype(np.uint8)
+    img = Image.fromarray(np.dstack([rgb, alpha]), "RGBA").resize((size, size), Image.BICUBIC)
+    path.parent.mkdir(parents=True, exist_ok=True)
+    img.save(path, optimize=True)
+
+
 # ----------------------------------------------------------------------------- traits
 def traits(z: np.ndarray, pixel_m: float) -> dict:
     """Percentiles of slope, roughness and relief inside the box, plus valid-pixel share."""
@@ -295,10 +322,12 @@ def run(force_sample: bool) -> dict:
                 target_scale[tid] = {"scale": "regional", "pixel_m": round(pixel_m), "box_km": box_km,
                                      "dataset": f"{'LRO LOLA' if world == 'Moon' else 'MGS MOLA'} global DEM, {ppd} ppd"}
             target_traits[tid] = traits(zt, pixel_m)
+            save_relief(zt, pixel_m, RELIEF_DIR / f"t_{tid}.png")
             for s in sites:  # Saudi terrain measured at exactly the same pixel size and box
                 slat, slon = float(s["lat"]), float(s["lon"])
                 z = sample_earth(tiles_for(tile_dir, slat, slon, box_km), slat, slon, x, y)
                 site_traits[f"{s['id']}|{tid}"] = traits(z, pixel_m)
+                save_relief(z, pixel_m, RELIEF_DIR / f"{s['id']}__{tid}.png")
 
     scores = []
     for t in targets:
@@ -337,6 +366,7 @@ def run(force_sample: bool) -> dict:
         rec["data_coverage"] = round(min(shares), 3) if shares else None
         rec["confidence"] = confidence_label(rec["data_coverage"]) if real else "Sample"
         rec["traits"] = {t["target_id"]: site_traits.get(f"{s['id']}|{t['target_id']}") for t in targets} if real else None
+        rec["relief"] = {t["target_id"]: f"data/relief/{s['id']}__{t['target_id']}.png" for t in targets} if real else None
         site_out.append(rec)
 
     return {
@@ -349,6 +379,9 @@ def run(force_sample: bool) -> dict:
                             if real else "SAMPLE values for building the interface. Not real scores."),
             "relief_window_px": RELIEF_WIN,
             "min_coverage": MIN_COVERAGE,
+            "relief": {"vertical_exaggeration": RELIEF_EXAG, "sun_azimuth_deg": RELIEF_SUN[0],
+                       "sun_altitude_deg": RELIEF_SUN[1],
+                       "note": "Rendered from the same elevation grids used for scoring, identical settings on both sides."},
             "missions": missions,
             "traits": {"slope": "degrees", "roughness": "TRI (Riley), metres", "relief": "max-min in window, metres"},
             "datasets": SOURCES["datasets"],
@@ -359,6 +392,7 @@ def run(force_sample: bool) -> dict:
                      "dataset": t["dem_dataset"], "status": t["status"],
                      "scale": target_scale.get(t["target_id"]),
                      "image": t.get("_image"),
+                     "relief": f"data/relief/t_{t['target_id']}.png" if real else None,
                      "traits": target_traits.get(t["target_id"])} for t in targets],
         "scores": scores,
     }
