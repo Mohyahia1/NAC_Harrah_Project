@@ -1,179 +1,293 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Harrah | Saudi Terrain Explorer</title>
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
-  <style>
-    *{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Arial,sans-serif;color:#223850;background:#f5f5f5}button,input,select{font:inherit}button{cursor:pointer}
-    header{height:64px;background:#fff;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:0 22px;border-bottom:1px solid #e5e8eb;position:relative;z-index:1000}
-    .brand{font-size:20px;font-weight:700;white-space:nowrap}.brand em{color:#b66d58;font-style:normal}
-    #search{padding:11px 14px;border:1px solid #dbe1e7;border-radius:8px;width:min(300px,35vw);min-width:100px}
-    .header-buttons{display:flex;gap:8px}.header-buttons button{padding:10px;border:1px solid #dce1e5;background:#fff;border-radius:7px;color:#243b53}
-    .main{height:calc(100vh - 64px);min-height:450px;position:relative}#map{position:absolute;inset:0;z-index:1}
-    .panel{position:absolute;z-index:500;background:#fff;border-radius:14px;box-shadow:0 5px 30px #0003;color:#243b53;overflow:auto;max-height:calc(100% - 36px);top:18px}
-    .sidebar{left:18px;width:342px;padding:22px}.details{right:18px;width:340px;padding:20px}h1{font-size:24px;margin:5px 0 7px}h2{font-size:19px;margin:10px 0}h3{font-size:14px;margin:18px 0 8px}
-    .muted{color:#87919b;font-size:12px;line-height:1.5}.label{display:block;color:#7b8996;font-size:11px;font-weight:bold;letter-spacing:.7px;margin:19px 0 10px}
-    .choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}.choice{border:1px solid #dfe3e7;background:#f8f9fa;color:#324a60;border-radius:8px;padding:12px 6px;font-size:12px}.choice.active{background:#203d5c;color:#fff;border-color:#203d5c}
-    #target{width:100%;background:#fff;color:#243b53;border:1px solid #dde2e7;border-radius:8px;padding:11px}.between{display:flex;justify-content:space-between;align-items:center;gap:8px}
-    #siteList{display:flex;flex-direction:column;gap:5px;margin-top:9px}.site-row{display:flex;align-items:center;gap:9px;text-align:left;border:0;background:transparent;width:100%;border-radius:8px;padding:9px;color:#233c54}.site-row:hover,.site-row.selected{background:#faebe7}.number{display:grid;place-items:center;flex:none;width:27px;height:27px;border-radius:50%;color:#fff;background:#ba715e;font-size:12px}.site-name{flex:1;font-size:12px}.score{font-size:13px;color:#a85d4e;font-weight:bold}
-    .notice{margin-top:15px;background:#fff2dc;color:#795820;padding:10px;border-radius:8px;font-size:11px;line-height:1.5}.close{width:30px;height:30px;border-radius:50%;border:0;background:#edf0f3;color:#233c54;font-size:21px}.details p{font-size:12px;line-height:1.6}.stat{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #eef0f2;padding:10px 0;font-size:12px}.stat strong{text-align:right}.trait{font-size:12px;margin-top:12px}.track{height:8px;background:#e9eef1;border-radius:50px;overflow:hidden;margin-top:5px}.fill{height:100%;background:#bd705e}.primary{width:100%;background:#203d5c;color:white;border:none;border-radius:8px;padding:12px;margin-top:14px}
-    .map-pin{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:3px solid white;color:white;background:#b86d59;font-weight:bold;box-shadow:0 3px 10px #0005}.leaflet-div-icon{background:transparent;border:0}
-    .modal{position:fixed;inset:0;z-index:2000;background:#0008;display:grid;place-items:center;padding:20px}.modal-body{background:#fff;width:min(570px,100%);max-height:85vh;overflow:auto;border-radius:14px;padding:25px}.modal-body li{line-height:1.5;margin:9px 0}.modal-body a{color:#1d5f8b;overflow-wrap:anywhere}[hidden]{display:none!important}
-    @media(max-width:800px){header{padding:0 8px;gap:5px}.brand{font-size:15px}#search{width:110px}.header-buttons button{font-size:10px;padding:7px}.sidebar{left:9px;top:9px;width:min(305px,calc(100% - 18px));max-height:51%;padding:14px}.details{left:9px;right:9px;top:auto;bottom:9px;width:auto;max-height:40%}}
-  </style>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Harrah | Saudi Terrain Explorer</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2NCA2NCI+PGNpcmNsZSBjeD0iMzIiIGN5PSIzMiIgcj0iMzEiIGZpbGw9IiMyNDNlMzUiLz48cGF0aCBkPSJNMzIgMTBjMi41IDEzLjMgOC43IDE5LjUgMjIgMjItMTMuMyAyLjUtMTkuNSA4LjctMjIgMjItMi41LTEzLjMtOC43LTE5LjUtMjItMjIgMTMuMy0yLjUgMTkuNS04LjcgMjItMjJaIiBmaWxsPSJub25lIiBzdHJva2U9IiNmZmZmZmYiIHN0cm9rZS13aWR0aD0iMi42IiBzdHJva2UtbGluZWpvaW49InJvdW5kIi8+PHBhdGggZD0iTTMyIDIyYzEuMyA1LjcgNC4zIDguNyAxMCAxMC01LjcgMS4zLTguNyA0LjMtMTAgMTAtMS4zLTUuNy00LjMtOC43LTEwLTEwIDUuNy0xLjMgOC43LTQuMyAxMC0xMFoiIGZpbGw9IiNmZmYiLz48L3N2Zz4=">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#243932;--muted:#78867e;--paper:#fffdf9;--cream:#f3efe8;--line:#e7e8df;--accent:#ae6b54;--forest:#315d4d;--gold:#b78b44}*{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream)}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid #80a9a1;outline-offset:2px}[hidden]{display:none!important}
+.topbar{height:66px;background:#fffdf9;display:flex;align-items:center;justify-content:space-between;padding:0 24px;gap:18px;position:relative;z-index:1100;border-bottom:1px solid #e8e7df}.identity{display:flex;align-items:center;gap:10px;min-width:200px}.logo{width:39px;height:39px;background:#243e35;border-radius:50%;color:white;display:grid;place-items:center;font-size:22px}.brand{font-size:18px;letter-spacing:-.5px;font-weight:750}.brand em{font-style:normal;color:var(--accent)}.eyebrow{font-size:9px;letter-spacing:1.7px;font-weight:700;color:#8b9189;text-transform:uppercase}.search-wrap{width:min(290px,28vw);position:relative}.search-wrap svg{position:absolute;top:13px;left:13px;opacity:.5}.search{width:100%;height:38px;background:#fbfaf7;border:1px solid #e9e8e0;border-radius:7px;padding:0 12px 0 37px;color:#273d32;font-size:12px}.toplinks{display:flex;gap:18px;white-space:nowrap}.text-button{background:none;border:0;color:#59665f;font-size:12px;display:flex;align-items:center;gap:6px}.text-button:hover{text-decoration:underline}
+.workspace{position:relative;height:calc(100vh - 66px);min-height:600px}#map{position:absolute;inset:0;z-index:1}.leaflet-control-attribution{font-size:9px!important}.leaflet-div-icon{background:transparent;border:0}.panel{position:absolute;z-index:600;background:var(--paper);border-radius:10px;box-shadow:0 7px 28px #1b261a38;border:1px solid #e5e3da}.planner{top:15px;left:16px;width:320px;max-height:calc(100% - 30px);overflow:auto;padding:19px 18px}.planner::-webkit-scrollbar,.detail::-webkit-scrollbar{width:5px}.planner::-webkit-scrollbar-thumb,.detail::-webkit-scrollbar-thumb{background:#d4d5c9;border-radius:5px}.panelhead{display:flex;justify-content:space-between;align-items:center}.mini-label{font-size:10px;letter-spacing:1.8px;font-weight:700;color:#899188;text-transform:uppercase}.planner h1{font-size:23px;letter-spacing:-.7px;line-height:1.1;margin:9px 0 20px}.section{margin-top:17px}.section-title{display:flex;align-items:center;gap:8px;font-size:12px;font-weight:700;margin-bottom:10px}.section-num{font-size:10px;color:#af927d}.mission-grid{display:grid;grid-template-columns:1fr 1fr;gap:6px}.mission-button{display:flex;align-items:center;gap:7px;min-height:41px;padding:7px 9px;text-align:left;background:#fdfcf9;border:1px solid #e6e7de;border-radius:6px;font-size:11px;color:#495850}.mission-button .glyph{display:inline-flex;flex:none;color:#718076}.mission-button.active{border-color:#b98270;background:#f9ebe7;color:#8f4f3d}.mission-button.active .glyph{color:#a45e47}.world-switch{display:grid;grid-template-columns:1fr 1fr;background:#eff1ed;border-radius:7px;padding:3px;gap:3px}.world-switch button{border:0;border-radius:5px;background:transparent;padding:9px;font-size:12px;color:#6e7e70}.world-switch button.active{color:#96543f;background:#fffdf9;box-shadow:0 1px 5px #0001}.target-list{display:flex;flex-direction:column;gap:6px;margin-top:9px}.target-button{border:1px solid #e7e8e0;border-radius:7px;display:flex;align-items:center;gap:10px;text-align:left;background:#fff;padding:9px;width:100%;color:#314438}.target-button.active{border-color:#b77e64;background:#f8f1eb}.target-thumb{width:37px;height:37px;border-radius:6px;background:linear-gradient(125deg,#89949c,#28394b);display:grid;place-items:center;color:white;font-size:18px;flex:none}.target-button small{display:block;color:#91968b;margin-top:3px;font-size:10px}.target-button .target-copy{flex:1;font-size:12px}.section-heading{display:flex;justify-content:space-between;align-items:center}.site-list{display:flex;flex-direction:column;gap:3px}.site-button{border:1px solid transparent;background:transparent;width:100%;text-align:left;display:flex;align-items:center;gap:9px;padding:9px 7px;border-radius:7px;color:#2c4236}.site-button:hover,.site-button.active{background:#f0f3eb;border-color:#e4e8da}.rank{width:25px;height:25px;display:grid;place-items:center;flex:none;background:#b18b4f;color:#fff;border-radius:5px;font-size:10px;font-weight:700}.rank.high{background:#3e765d}.rank.mid{background:#b37b44}.rank.low{background:#c5a04d}.site-copy{flex:1;min-width:0}.site-title{font-size:11px;font-weight:700;display:block;line-height:1.35}.site-sub{font-size:9px;color:#8b958a;display:block;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;margin-top:3px}.site-score{font-size:15px;font-weight:750}.site-score.high{color:#3e765d}.site-score.mid{color:#b37b44}.site-score.low{color:#a98733}.site-score small{font-size:8px;font-weight:500;display:block;text-align:right;color:#a5a498}.notice{border-top:1px solid #e7e9df;margin:16px 0 0;padding-top:12px;color:#898e80;font-size:10px;line-height:1.55}
+.detail{right:16px;top:105px;width:334px;max-height:calc(100% - 120px);overflow:auto}.detail-header{display:flex;align-items:center;justify-content:space-between;padding:13px 15px 9px}.detail-body{padding:0 15px 16px}.detail-photo{height:110px;background:#bcb1a1;border-radius:7px;overflow:hidden;position:relative;margin-bottom:12px}.photo-map{position:absolute;inset:0;z-index:1}.photo-caption{position:absolute;bottom:0;left:0;right:0;padding:8px 10px;color:#fff;background:linear-gradient(transparent,#1a211ac9);z-index:700;font-size:10px}.detail h2{font-size:19px;margin:0 0 5px;line-height:1.2}.small-muted{font-size:10px;color:#8b968d;line-height:1.55}.detail-metrics{display:flex;gap:12px;align-items:center;margin:12px 0;background:#f5f4ef;border:1px solid #e8e7df;border-radius:7px;padding:12px}.big-score{font-size:30px;font-weight:700;line-height:1}.big-score.high{color:#3e765d}.big-score.mid{color:#b37b44}.big-score.low{color:#a98733}.subinfo{font-size:10px;color:#8a9187}.separator{height:1px;background:#e5e9e0;margin:14px 0}.metric-line{display:grid;grid-template-columns:70px 1fr 36px;align-items:center;gap:8px;margin:9px 0;font-size:10px}.bar{height:6px;background:#e8ece6;border-radius:8px;overflow:hidden}.bar div{height:100%;border-radius:8px;background:#ba7660}.fineprint{font-size:9px;color:#9b998f;line-height:1.5}.detail h3{font-size:11px;margin:15px 0 7px}.rationale{background:#faf7f1;border-left:2px solid #b9775b;padding:9px 10px;font-size:10px;line-height:1.6;color:#697469}.checkitem{display:flex;gap:8px;margin:10px 0;font-size:11px;line-height:1.5}.checkitem .mark{color:#356c54}.detail-actions{display:flex;gap:7px;margin-top:14px}.outline{background:#fff;border:1px solid #e1e4da;color:#344b3f;border-radius:6px;padding:10px 5px;flex:1;font-size:10px}.primary{width:100%;background:#294e40;color:#fff;border:0;border-radius:6px;padding:11px;margin-top:9px;font-size:11px}.close{background:#f4f2ed;color:#606a5c;border:1px solid #e8e6dd;border-radius:6px;width:26px;height:26px;font-size:19px;cursor:pointer}.right-controls{position:absolute;right:18px;top:17px;z-index:500;display:flex;flex-direction:column;gap:7px;align-items:flex-end}.map-control{border:1px solid #e8e5db;border-radius:7px;background:#fffcf6;box-shadow:0 3px 12px #0002;color:#405347;display:flex;align-items:center;gap:7px;padding:10px 12px;font-size:11px}.map-control.active{color:#96583e}.layer-menu{border-radius:7px;background:#fffdf9;border:1px solid #e8e5db;box-shadow:0 3px 12px #0002;padding:6px;display:flex;flex-direction:column;gap:4px}.layer-menu button{border:0;text-align:left;border-radius:4px;padding:8px 16px;background:transparent;font-size:11px;color:#617064}.layer-menu button.active{background:#f5e9e3;color:#945941}.compass{width:38px;height:38px;display:grid;place-items:center;border-radius:50%;font-size:19px;padding:0}.selection-chip{z-index:450;position:absolute;bottom:20px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:10px;min-width:220px;max-width:calc(100% - 30px);background:#fffdf9;border:1px solid #e5e5da;box-shadow:0 4px 18px #0003;padding:10px 13px;border-radius:7px;font-size:12px}.chip-badge{font-weight:800;color:#347054}.chip-caption{font-size:9px;color:#8e998e}.pin-shell{position:relative;display:flex;flex-direction:column;align-items:center}.pin{width:31px;height:31px;background:#b38952;color:white;border:2px solid #fff8ef;transform:rotate(-45deg);border-radius:50% 50% 50% 0;box-shadow:0 2px 9px #0006;display:grid;place-items:center}.pin>span{transform:rotate(45deg);font-size:11px;font-weight:700}.pin.high{background:#46765c}.pin.mid{background:#b77f48}.pin.low{background:#bfa14e}.pin.selected{width:38px;height:38px;box-shadow:0 0 0 4px #fff9,0 4px 12px #0006}.leaflet-tooltip.site-tooltip{border:1px solid #e6e4d8;background:#fffcf7;padding:6px 10px;font-size:11px;color:#284233;box-shadow:0 2px 8px #0003;font-weight:700}.modal{position:fixed;z-index:2000;inset:0;background:#15221c88;display:grid;place-items:center;padding:15px}.modal-inner{width:min(570px,100%);background:#fffdf9;border-radius:10px;max-height:88vh;overflow:auto;padding:24px}.modal-inner p,.modal-inner li{line-height:1.7;font-size:13px}.modal-inner a{color:#275d4d;overflow-wrap:anywhere}.empty{padding:15px;color:#859088;font-size:12px}
+@media(max-width:850px){.topbar{padding:0 10px;gap:7px}.identity{min-width:auto}.identity .eyebrow{display:none}.brand{font-size:15px}.search-wrap{width:130px}.toplinks{gap:6px}.toplinks button{font-size:10px}.planner{top:8px;left:7px;width:min(300px,calc(100% - 14px));max-height:51%;padding:13px}.detail{top:auto;bottom:8px;right:8px;width:min(330px,calc(100% - 16px));max-height:44%}.right-controls{top:8px;right:9px}.selection-chip{bottom:10px;min-width:0;left:10px;transform:none;max-width:160px}.workspace{min-height:660px}}
+/* Rank badges use an editorial palette. Match scores still use real numeric thresholds. */
+.rank.rank-first{background:#376f5b}
+.rank.rank-second{background:#59806a}
+.rank.rank-third{background:#b4784a}
+.rank.rank-fourth{background:#c3974e}
+.rank.rank-other{background:#a7a38e}
+.site-button.active .rank{box-shadow:0 0 0 2px #dce8dc}
+/* Polish: keep the card readable on narrower screens and color each metric by its score. */
+.detail,.detail-body,.planner{min-width:0;overflow-x:hidden}
+.detail{overscroll-behavior:contain}
+.detail *{min-width:0;overflow-wrap:break-word}
+.detail .detail-actions button{white-space:normal}
+.detail .metric-line{grid-template-columns:70px minmax(0,1fr) 44px}
+.detail .bar{min-width:0}
+.detail .bar .high{background:#39846a}
+.detail .bar .mid{background:#d58a49}
+.detail .bar .low{background:#e1b954}
+.detail .big-score.low{color:#b08b32}
+.climate-list{padding:7px 10px;background:#f8f7f2;border-radius:7px}
+.climate-item{display:flex;justify-content:space-between;gap:12px;padding:6px 0;border-bottom:1px solid #e8e8e1;font-size:10px;line-height:1.5}
+.climate-item:last-child{border-bottom:0}
+.climate-item span{color:#7f8a81}
+.climate-item strong{color:#35483d;text-align:right;font-weight:600}
+.leaflet-control-attribution{font-size:9px!important;background:rgba(255,255,255,.75)!important;max-width:min(100vw,460px);white-space:normal;line-height:1.3}
+/* Arabic mode uses Cairo and RTL text without mirroring the geographic map. */
+html[dir="rtl"] body,html[dir="rtl"] button,html[dir="rtl"] input{font-family:'Cairo',Arial,sans-serif}
+html[dir="rtl"] .planner,html[dir="rtl"] .detail,html[dir="rtl"] .modal-inner{text-align:right;direction:rtl}
+html[dir="rtl"] .mission-button,html[dir="rtl"] .target-button,html[dir="rtl"] .site-button{text-align:right;direction:rtl}
+html[dir="rtl"] .site-score small{text-align:left}
+html[dir="rtl"] .metric-line{grid-template-columns:68px minmax(0,1fr) 44px}
+html[dir="rtl"] .rationale{border-left:0;border-right:2px solid #b9775b}
+html[dir="rtl"] .search{text-align:right;padding:0 37px 0 12px}
+html[dir="rtl"] .search-wrap svg{left:auto;right:13px}
+html[dir="rtl"] .leaflet-control-container,html[dir="rtl"] .leaflet-popup,html[dir="rtl"] .leaflet-tooltip{font-family:Arial,sans-serif;direction:ltr}
+html[dir="rtl"] .climate-item strong{text-align:left}
+.lang-switch{border:1px solid #e1e4da;background:#f9f6ee;color:#294e40;font-weight:700;padding:8px 10px;border-radius:7px;cursor:pointer;font-size:12px;white-space:nowrap}
+.lang-switch:hover{background:#eaece5}
+.toplinks{align-items:center}
+@media(max-width:850px){.toplinks{gap:3px}.lang-switch{padding:6px;font-size:10px}}
+/* Figma-style thumbnails from NASA image IDs supplied by the backend. */
+.target-thumb{overflow:hidden;position:relative;background:#eef0eb;border:1px solid #dce1d8;color:#67766c}
+.target-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.target-fallback{font-size:22px}
+.target-fallback[hidden]{display:none}
+.mission-button .glyph svg{width:19px;height:19px;stroke-width:1.7}
+@media(min-width:1100px){.planner{width:338px}}
+
+/* Reference desk, structured to follow the team's Figma prototype. */
+.reference-desk{font-size:12px;color:#364a3f}
+.reference-intro,.reference-description{font-size:11px!important;line-height:1.7;color:#708076;margin:8px 0 12px}
+.reference-section{margin:19px 0 0}
+.reference-heading{font-size:13px;margin:0 0 7px;color:#2c4236;border-top:1px solid #e6e8df;padding-top:15px}
+.reference-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px 1px;border-bottom:1px solid #ebece6;font-size:11px}
+.reference-name{flex:1;min-width:0;overflow-wrap:anywhere}
+.reference-name strong{font-weight:600}
+.reference-name small{display:block;color:#8a958a;font-size:10px;margin-top:4px;line-height:1.45}
+.reference-link{white-space:nowrap;text-decoration:none;font-size:10px;font-weight:700}
+.reference-link:hover{text-decoration:underline}
+.reference-unavailable{font-size:10px;color:#9a9f95;white-space:nowrap}
+.reference-caution{font-size:11px!important;padding:11px;background:#f8f2e5;border-left:3px solid #b88951;border-radius:4px;line-height:1.65}
+.reference-footnote{color:#8c968b;font-size:10px!important}
+html[dir="rtl"] .reference-caution{border-left:0;border-right:3px solid #b88951}
+</style>
 </head>
 <body>
-  <header>
-    <div class="brand">Harrah <em>| حرّة</em></div>
-    <input id="search" type="search" placeholder="Search sites" aria-label="Search sites" />
-    <div class="header-buttons"><button id="howBtn">How it works</button><button id="sourcesBtn">Data &amp; Sources</button></div>
-  </header>
-  <main class="main">
-    <div id="map" aria-label="Map of Saudi Arabia"></div>
-    <aside class="panel sidebar">
-      <span class="muted">Saudi Landscapes</span><h1>Choose your terrain</h1>
-      <p class="muted">Discover Saudi terrain analogs for Moon and Mars missions</p>
-      <span class="label">MISSION</span><div id="missions" class="choices"></div>
-      <span class="label">TARGET WORLD</span>
-      <div class="choices"><button class="choice active" data-world="Moon">Moon</button><button class="choice" data-world="Mars">Mars</button></div>
-      <span class="label">TARGET LOCATION</span><select id="target" aria-label="Target location"></select>
-      <div class="between" style="margin-top:22px"><h2>Matching Sites</h2><span class="muted" id="count"></span></div>
-      <div id="siteList"></div>
-      <p id="status" class="notice">Loading NASA results...</p>
-    </aside>
-    <aside id="details" class="panel details" hidden>
-      <div class="between"><span class="label">SITE INFORMATION</span><button class="close" id="closeCard" aria-label="Close">×</button></div>
-      <div id="cardBody"></div>
-    </aside>
-  </main>
-  <div id="modal" class="modal" hidden><section class="modal-body">
-    <div class="between"><h2 id="modalTitle"></h2><button id="closeModal" class="close" aria-label="Close">×</button></div>
-    <div id="modalContent"></div>
-  </section></div>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
-  <script>
-    // AI-assisted frontend. Data is read from the backend output; never modified.
-    const $ = id => document.getElementById(id);
-    const node = (tag, className = '', text = '') => {const n=document.createElement(tag);n.className=className;n.textContent=text;return n;};
-    const fmt = n => typeof n === 'number' && Number.isFinite(n) ? n.toFixed(1)+'%' : 'Not available';
-    const map = L.map('map',{zoomControl:false}).setView([24,44.5],5);
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{
-      maxZoom:18,attribution:'Imagery: Esri, Maxar, Earthstar Geographics, GIS User Community'
-    }).addTo(map);
-    L.control.zoom({position:'bottomright'}).addTo(map);
-    const markers=L.layerGroup().addTo(map);
-    let data=null,world='Moon',mission='rover',target='',selectedId=null,rows=[];
+<header class="topbar">
+ <div class="identity"><div><div class="brand">Harrah <em>حرّة</em></div><div class="eyebrow" data-i18n="atlas">Field atlas · Saudi Arabia</div></div></div>
+ <div class="search-wrap"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></svg><input id="search" class="search" placeholder="Search sites" aria-label="Search sites"></div>
+ <div class="toplinks"><button id="languageBtn" class="lang-switch" type="button" title="Switch language" aria-label="Switch language">العربية</button><button class="text-button" id="howBtn">ⓘ &nbsp; <span data-i18n="how">How it works</span></button><button class="text-button" id="sourcesBtn">▤ &nbsp; <span data-i18n="sources">Data & sources</span></button></div>
+</header>
+<main class="workspace">
+ <div id="map" aria-label="Map of Saudi Arabia terrain sites"></div>
+ <aside class="panel planner" aria-label="Terrain planner">
+  <div class="panelhead"><span class="mini-label" data-i18n="planner">Field planner · 01</span><span class="mini-label">HAR RAH</span></div>
+  <h1 data-i18n="choose">Choose your terrain</h1>
+  <section class="section"><div class="section-title"><span class="section-num">01</span> <span data-i18n="mission">Mission</span></div><div class="mission-grid" id="missions"></div></section>
+  <section class="section"><div class="section-heading"><div class="section-title"><span class="section-num">02</span> <span data-i18n="target">Target</span></div><span class="mini-label" data-i18n="nasa">NASA DATA</span></div><div class="world-switch"><button class="active" data-world="Moon"><span aria-hidden="true">☾</span> <span data-i18n="moon">Moon</span></button><button data-world="Mars"><span aria-hidden="true">☼</span> <span data-i18n="mars">Mars</span></button></div><div class="target-list" id="targets"></div></section>
+  <section class="section"><div class="section-heading"><div class="section-title"><span class="section-num">03</span> <span data-i18n="matching">Matching sites</span></div><span class="mini-label" id="count"></span></div><div id="siteList" class="site-list"></div></section>
+  <div class="notice" id="status">Loading NASA terrain results...</div>
+ </aside>
+ <div class="right-controls" id="mapControls"><button class="map-control compass" id="compass" title="Reset north and map extent" aria-label="Reset map view">⌖</button><button class="map-control" id="mapLayers">▱ &nbsp; <span data-i18n="layers">Map layers</span> &nbsp;⌄</button><div class="layer-menu" id="layerMenu" hidden><button class="active" data-layer="satellite">◉ <span data-i18n="satellite">Satellite</span></button><button data-layer="gray">◉ <span data-i18n="grayscale">Grayscale</span></button></div></div>
+ <aside class="panel detail" id="details" hidden><div class="detail-header"><span class="mini-label" data-i18n="selected">Selected field site</span><button class="close" id="closeCard" aria-label="Close details">×</button></div><div class="detail-body" id="cardBody"></div></aside>
+ <div class="selection-chip" id="selectionChip" hidden></div>
+</main>
+<div class="modal" id="modal" hidden><div class="modal-inner"><div class="panelhead"><h2 id="modalTitle"></h2><button class="close" id="closeModal">×</button></div><div id="modalContent"></div></div></div>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+// AI-assisted frontend. The NASA pipeline's docs/data/results.json is read-only.
+let uiLang='en';
+const translations={
+ atlas:['Field atlas · Saudi Arabia','أطلس المواقع · السعودية'],planner:['Field planner · 01','مخطط المواقع · ٠١'],choose:['Choose your terrain','اختر التضاريس المناسبة'],mission:['Mission','المهمة'],target:['Target','الهدف'],matching:['Matching sites','المواقع المتشابهة'],nasa:['NASA DATA','بيانات ناسا'],moon:['Moon','القمر'],mars:['Mars','المريخ'],selected:['Selected field site','الموقع المختار'],layers:['Map layers','طبقات الخريطة'],satellite:['Satellite','الأقمار الصناعية'],grayscale:['Grayscale','تدرجات الرمادي'],how:['How it works','كيف يعمل الموقع'],sources:['Data & sources','البيانات والمصادر'],search:['Search sites','ابحث عن موقع'],sites:['sites','مواقع'],match:['MATCH','تشابه'],score:['Match score / 100','درجة التشابه من ١٠٠'],confidence:['Confidence','مستوى الثقة'],coverage:['Coverage','تغطية البيانات'],coords:['Coordinates','الإحداثيات'],similarity:['Terrain similarity','تشابه التضاريس'],slope:['Slope','الانحدار'],roughness:['Roughness','الخشونة'],relief:['Relief','التضرس'],why:['Why this score','لماذا هذه الدرجة؟'],evidence:['Evidence & verification','الأدلة والتحقق'],satObs:['Satellite-based observations','ملاحظات الاستشعار عن بُعد'],field:['Needs field check','يحتاج تحققًا ميدانيًا'],access:['Access note','ملاحظات الوصول'],nearby:['Nearby area','أقرب منطقة'],climate:['Climate context','السياق المناخي'],copy:['Copy coordinates','نسخ الإحداثيات'],copied:['Copied ✓','تم النسخ ✓'],directions:['Directions ↗','الاتجاهات ↗'],google:['View location on Google Maps ↗','عرض الموقع على خرائط Google ↗'],prelim:['PRELIMINARY · Derived from remote-sensing datasets. No field suitability or safety certification is implied.','نتائج أولية · مستمدة من بيانات الاستشعار عن بُعد، ولا تُعد شهادة بسلامة الموقع أو صلاحيته الميدانية.'],traitNote:['Trait similarity is a model-based comparison, not an on-site measurement.','التشابه محسوب بالنمذجة وليس بقياسات ميدانية في الموقع.'],noSites:['No matching sites found.','لا توجد مواقع مطابقة للبحث.'],loading:['Loading NASA terrain results...','جارٍ تحميل نتائج تضاريس ناسا...'],notassessed:['Not assessed','غير مقيم'],sourceNote:['Source description (English)','وصف المصدر (بالإنجليزية)'],fieldNote:['Ground conditions, access and site-specific safety require on-site validation.','ظروف الأرض والوصول والسلامة الخاصة بالموقع تتطلب تحققًا ميدانيًا.'],generated:['Values are computed from NASA-derived elevation inputs.','القيم محسوبة باستخدام بيانات الارتفاعات المستمدة من ناسا.'],hottest:['Hottest-month maximum','أعلى حرارة في الشهر الأشد حرًا'],coldest:['Coldest-month minimum','أقل حرارة في الشهر الأبرد'],rain:['Rainfall','هطول الأمطار'],dataError:['Unable to load data/results.json. Start a local server in docs (python -m http.server 8000).','تعذر تحميل ملف النتائج. شغّل خادمًا محليًا من مجلد docs.'],approx:['approx.','نحو'],latitude:['latitude','خط العرض'],provisional:['provisional','أولي'],close:['Close details','إغلاق التفاصيل']
+};
+const tr=(key)=>translations[key]?.[uiLang==='ar'?1:0]||key;
+const missionAr={rover:'قيادة المركبة الجوالة',crater_ops:'استكشاف الفوهات',landing_base:'الهبوط وإنشاء القاعدة',lava_tube:'استكشاف أنابيب الحمم'};
+const targetAr={moon_shackleton:'منطقة فوهة شاكلتون (القطب الجنوبي للقمر)',moon_marius_pit:'حفرة تلال ماريوس',moon_tranquillitatis_pit:'حفرة بحر الهدوء',mars_jezero:'فوهة جيزيرو',mars_gale:'فوهة غيل',mars_arsia_pit:'فتحة كهف محتملة في أرسيا مونس'};
+const siteName=site=>uiLang==='ar'?(site.name_ar||site.name):site.name;
+const targetName=t=>uiLang==='ar'?(targetAr[t.id]||t.name):t.name;
+const missionEn={rover:'Rover driving',crater_ops:'Crater exploration',landing_base:'Landing & base',lava_tube:'Lava tube exploration'};
+const missionName=(id,m)=>uiLang==='ar'?(missionAr[id]||m.label):(missionEn[id]||m.label);
+function applyLanguage(){
+ document.documentElement.lang=uiLang;document.documentElement.dir=uiLang==='ar'?'rtl':'ltr';
+ document.querySelectorAll('[data-i18n]').forEach(n=>n.textContent=tr(n.dataset.i18n));
+ $('languageBtn').textContent=uiLang==='ar'?'English':'العربية';
+ $('search').placeholder=tr('search');$('search').setAttribute('aria-label',tr('search'));
+ $('closeCard').setAttribute('aria-label',tr('close'));
+ if(data){renderMissions();renderTargets();renderList();renderPins();if(selectedId){const row=rows.find(x=>x.site.id===selectedId);if(row)showDetail(row)}updateStatus()}
+}
+function updateStatus(){if(!data)return;$('status').textContent=uiLang==='ar'?'نتائج '+(data.meta.status||'preliminary')+' · حسابات من خط المعالجة، ولم يتم التحقق منها ميدانيًا. اللون يدل على التشابه المحسوب فقط.':(data.meta.status||'PRELIMINARY').toUpperCase()+' — Live pipeline output. Scores are not field-verified. Color indicates relative model match only.'}
+const $=id=>document.getElementById(id);
+const el=(tag,cls='',txt)=>{const e=document.createElement(tag);e.className=cls;if(txt!==undefined)e.textContent=String(txt);return e};
+const pct=n=>typeof n==='number'&&Number.isFinite(n)?n.toFixed(1)+'%':'N/A';
+const tone=n=>typeof n==='number'?(n>=85?'high':n>=65?'mid':'low'):'low';
+const rankTone=rank=>rank===1?'rank-first':rank===2?'rank-second':rank===3?'rank-third':rank===4?'rank-fourth':'rank-other';
+const iconPaths={
+ rover:'<rect x="7" y="7" width="11" height="7" rx="1.5"/><path d="M8 7 10 4h5l2 3M5 14h15M5 14l-1 3h17l-1-3M11 17v2"/><circle cx="7" cy="20" r="2"/><circle cx="18" cy="20" r="2"/><path d="m18 7 3-3"/>',
+ crater_ops:'<circle cx="12" cy="12" r="9"/><path d="M4.5 10c3 1 4.2 5 7.5 5s5-4 7.5-5"/><path d="M12 3v3M12 18v3"/>',
+ landing_base:'<path d="M3 19 12 5l9 14H3Z"/><path d="m7.5 19 4.5-7 4.5 7M2 21h20"/>',
+ lava_tube:'<path d="M3 20V11a9 9 0 0 1 18 0v9"/><path d="M7 20v-9a5 5 0 0 1 10 0v9M3 20h18"/>'
+};
+function missionIcon(id){return '<svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'+(iconPaths[id]||'<circle cx="12" cy="12" r="8"/>')+'</svg>'}
+const map=L.map('map',{zoomControl:false}).setView([24.5,43.1],5);
+const imagery=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,attribution:'Imagery © Esri, Maxar, Earthstar Geographics and the GIS User Community'}).addTo(map);
+// Transparent labels add city/region names above satellite imagery.
+const labels=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Reference/World_Boundaries_and_Places/MapServer/tile/{z}/{y}/{x}',{maxZoom:18,attribution:'Labels © Esri',pane:'overlayPane',opacity:.95}).addTo(map);
+L.control.zoom({position:'bottomright'}).addTo(map);
+const markers=L.layerGroup().addTo(map);
+let preview=null,data=null,world='Moon',mission='rover',target='',rows=[],selectedId=null;
+function rowsForSelection(){return data.scores.filter(s=>s.mission===mission&&s.target_id===target).map(result=>({result,site:data.sites.find(x=>x.id===result.site_id)})).filter(x=>x.site).sort((a,b)=>(b.result.match??-1)-(a.result.match??-1));}
+function renderMissions(){const box=$('missions');box.replaceChildren();Object.entries(data.meta.missions).forEach(([id,m])=>{const b=el('button','mission-button'+(mission===id?' active':''));const i=el('span','glyph');i.innerHTML=missionIcon(id);b.append(i,el('span','',missionName(id,m)));b.onclick=()=>{mission=id;renderMissions();refresh()};box.append(b)});}
+// Target pictures are resolved solely from the photojournal IDs supplied in results.json.
+// No independently chosen imagery. On error, keep an accessible neutral placeholder.
+function imageFromBackend(t){
+ const id=t.image?.image_id;
+ if(!/^PIA\d{5}$/i.test(id||''))return null;
+ const slug=id.toLowerCase();
+ return 'https://assets.science.nasa.gov/dynamicimage/assets/science/psd/photojournal/pia/'+slug.slice(0,5)+'/'+slug+'/'+id.toUpperCase()+'.jpg?fit=clip&w=160&h=160';
+}
+function renderTargets(){
+ const box=$('targets');box.replaceChildren();
+ const choices=data.targets.filter(t=>t.world===world);
+ if(!choices.some(t=>t.id===target))target=choices[0]?.id||'';
+ choices.forEach(t=>{
+  const b=el('button','target-button'+(target===t.id?' active':''));
+  const thumb=el('span','target-thumb');
+  const fallback=el('span','target-fallback',world==='Moon'?'☾':'✦');
+  thumb.append(fallback);
+  const src=imageFromBackend(t);
+  if(src){
+   const img=el('img','target-image');img.src=src;img.alt='';img.loading='lazy';
+   img.referrerPolicy='no-referrer';img.onload=()=>{fallback.hidden=true};
+   img.onerror=()=>{img.remove();fallback.hidden=false};thumb.append(img);
+   thumb.title=(t.image.image_title||t.name)+' — '+(t.image.credit||'NASA');
+  }
+  b.append(thumb);
+  const copy=el('span','target-copy');
+  copy.append(el('strong','',targetName(t)),el('small','',(t.lat==null?'':Number(t.lat).toFixed(1)+'° '+tr('latitude'))+' · '+(t.status==='provisional'?tr('provisional'):(t.status||'NASA reference'))));
+  b.append(copy);b.onclick=()=>{target=t.id;renderTargets();refresh()};box.append(b);
+ });
+}
+function renderList(){const box=$('siteList');box.replaceChildren();const q=$('search').value.toLowerCase().trim();const items=rows.filter(x=>(x.site.name+' '+(x.site.name_ar||'')).toLowerCase().includes(q));$('count').textContent=items.length+' '+tr('sites');items.forEach(({site,result},i)=>{const b=el('button','site-button'+(site.id===selectedId?' active':'')),rank=el('span','rank '+rankTone(result.rank??i+1),result.rank??i+1),copy=el('span','site-copy'),score=el('span','site-score '+tone(result.match),pct(result.match));copy.append(el('span','site-title',siteName(site)),el('span','site-sub',[site.region,site.type].filter(Boolean).join(' · ')));score.append(el('small','',tr('match')));b.append(rank,copy,score);b.onclick=()=>selectSite(site.id);box.append(b)});if(!items.length)box.append(el('p','empty',tr('noSites')));}
+function renderPins(){markers.clearLayers();rows.forEach(({site,result},i)=>{const r=result.rank??i+1;const selected=site.id===selectedId;const pin=L.divIcon({className:'',html:'<div class="pin-shell"><div class="pin '+tone(result.match)+(selected?' selected':'')+'"><span>'+r+'</span></div></div>',iconSize:[selected?46:39,selected?46:39],iconAnchor:[18,35]});const m=L.marker([site.lat,site.lon],{icon:pin}).addTo(markers);m.bindTooltip(siteName(site),{direction:'top',offset:[0,-27],className:'site-tooltip',opacity:1});if(selected)m.openTooltip();m.on('click',()=>selectSite(site.id));});}
+function detailLine(parent,label,value){const p=el('div','checkitem');p.append(el('span','mark','✓'),el('div','',label+' — '+value));parent.append(p)}
+function addBar(box,key,val){const p=typeof val==='number'?Math.max(0,Math.min(100,val*100)):null;const row=el('div','metric-line'),track=el('div','bar'),fill=el('div');fill.style.width=(p??0)+'%';fill.className=tone(p);track.append(fill);row.append(el('span','',key),track,el('strong','',pct(p)));box.append(row)}
+function showDetail(row){const {site,result}=row,box=$('cardBody');if(preview){preview.remove();preview=null}box.replaceChildren();
+ const image=el('div','detail-photo'),mini=el('div','photo-map');mini.id='previewMap';image.append(mini,el('div','photo-caption',(uiLang==='ar'?'صورة فضائية · ':'Satellite imagery · ')+siteName(site)));box.append(image);
+ box.append(el('h2','',siteName(site)),el('div','small-muted',[site.region,site.type].filter(Boolean).join(' · ')),el('div','small-muted',tr('coords')+' · '+Number(site.lat).toFixed(4)+', '+Number(site.lon).toFixed(4)));
+ const metrics=el('div','detail-metrics');const value=el('div','big-score '+tone(result.match),typeof result.match==='number'?result.match.toFixed(1):'—');metrics.append(value);const info=el('div');info.append(el('strong','', tr('score')),el('div','subinfo',tr('confidence')+': '+(result.confidence||tr('notassessed'))),el('div','subinfo',tr('coverage')+': '+pct(typeof result.coverage==='number'?result.coverage*100:null)));metrics.append(info);box.append(metrics);
+ box.append(el('h3','',tr('similarity')));['slope','roughness','relief'].forEach(k=>addBar(box,tr(k),result.similarity?.[k]));box.append(el('div','fineprint',tr('traitNote')));
+ box.append(el('h3','',tr('why')));const missionLabel=missionName(mission,data.meta.missions[mission]||{label:mission});box.append(el('div','rationale',uiLang==='ar'?'تجمع الدرجة بين تشابه الانحدار والخشونة والتضرس وفق أوزان مهمة «'+missionLabel+'». '+(result.note?'ملاحظة المصدر (بالإنجليزية): '+result.note:tr('generated')):'Match combines slope, roughness and relief similarities for '+missionLabel.toLowerCase()+'. '+(result.note||tr('generated'))));
+ box.append(el('h3','',tr('evidence')));detailLine(box,tr('satObs'),(uiLang==='ar'?tr('sourceNote')+': ':'')+(site.facts||'Terrain observations available from source data'));detailLine(box,tr('field'),tr('fieldNote'));
+ if(site.access_note){box.append(el('h3','',tr('access')),el('p','small-muted',site.access_note))}
+ if(site.nearest_city||site.access_km!=null){box.append(el('h3','',tr('nearby')),el('p','small-muted',[site.nearest_city,site.access_km!=null?tr('approx')+' '+site.access_km+' km':null].filter(Boolean).join(' · ')))}
+ if(site.climate){const climateBox=el('div','climate-list');if(typeof site.climate==='string'){climateBox.append(el('p','small-muted',site.climate))}else if(typeof site.climate==='object'){const labels={'hottest_month_max_c':tr('hottest'),'coldest_month_min_c':tr('coldest'),'rain_mm_day':tr('rain'),'rain_mm_daily':'Daily precipitation','rain_mm':tr('rain'),'annual_rainfall_mm':'Annual rainfall','temperature_c':'Temperature','temp_c':'Temperature','source':'Source'};Object.entries(site.climate).forEach(([key,val])=>{if(val===null||val===undefined||typeof val==='object')return;const label=labels[key]||key.replace(/_/g,' ').replace(/\b\w/g,c=>c.toUpperCase());const unit=key.endsWith('_c')?'°C':key.includes('mm')?' mm':'';const line=el('div','climate-item');line.append(el('span','',label),el('strong','',String(val)+unit));climateBox.append(line)})}if(climateBox.childNodes.length){box.append(el('h3','',tr('climate')),climateBox)}}
+ box.append(el('p','notice',tr('prelim')));
+ const actions=el('div','detail-actions'),copy=el('button','outline','▣  '+tr('copy')),directions=el('button','outline','➤  '+tr('directions'));copy.onclick=async()=>{const txt=site.lat+', '+site.lon;try{await navigator.clipboard.writeText(txt);copy.textContent=tr('copied')}catch(_){window.prompt('Copy coordinates:',txt)}};directions.onclick=()=>window.open('https://www.google.com/maps/dir/?api=1&destination='+encodeURIComponent(site.lat+','+site.lon),'_blank','noopener,noreferrer');actions.append(copy,directions);box.append(actions);
+ const google=el('button','primary',tr('google'));google.onclick=()=>window.open('https://www.google.com/maps?q='+encodeURIComponent(site.lat+','+site.lon),'_blank','noopener,noreferrer');box.append(google);
+ $('details').hidden=false;
+ preview=L.map('previewMap',{zoomControl:false,attributionControl:false,dragging:false,scrollWheelZoom:false,doubleClickZoom:false,boxZoom:false,keyboard:false,zoomSnap:0}).setView([site.lat,site.lon],10);L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:18}).addTo(preview);L.circleMarker([site.lat,site.lon],{radius:5,color:'#fff',weight:2,fillColor:'#bf765b',fillOpacity:1}).addTo(preview);setTimeout(()=>preview&&preview.invalidateSize(),100);
+ const chip=$('selectionChip');chip.replaceChildren(el('span','',siteName(site)),el('span','chip-badge',pct(result.match)));chip.hidden=false;
+}
+function selectSite(id){const row=rows.find(x=>x.site.id===id);if(!row)return;selectedId=id;map.flyTo([row.site.lat,row.site.lon],7,{duration:.7});renderList();renderPins();showDetail(row)}
+function refresh(){selectedId=null;$('details').hidden=true;$('selectionChip').hidden=true;if(preview){preview.remove();preview=null}rows=rowsForSelection();renderList();renderPins()}
+function showModal(title,parts){$('modalTitle').textContent=title;$('modalContent').replaceChildren(...parts);$('modal').hidden=false}
+$('search').oninput=renderList;
+document.querySelectorAll('[data-world]').forEach(b=>b.onclick=()=>{world=b.dataset.world;document.querySelectorAll('[data-world]').forEach(x=>x.classList.toggle('active',x===b));renderTargets();refresh()});
+$('closeCard').onclick=()=>{selectedId=null;$('details').hidden=true;$('selectionChip').hidden=true;if(preview){preview.remove();preview=null}renderList();renderPins()};
+$('mapLayers').onclick=()=>{$('layerMenu').hidden=!$('layerMenu').hidden};
+document.querySelectorAll('[data-layer]').forEach(b=>b.onclick=()=>{const gray=b.dataset.layer==='gray';imagery.getContainer().style.filter=gray?'grayscale(1) contrast(1.06)':'none';document.querySelectorAll('[data-layer]').forEach(x=>x.classList.toggle('active',x===b));$('layerMenu').hidden=true});
+$('compass').onclick=()=>map.setView([24.5,43.1],5,{animate:true});
+$('closeModal').onclick=()=>{$('modal').hidden=true};$('modal').onclick=e=>{if(e.target===$('modal'))$('modal').hidden=true};
+$('howBtn').onclick=()=>{const ol=el('ol');(uiLang==='ar'?['توفّر بيانات ناسا للارتفاعات قياسات تضاريس للأرض والقمر والمريخ.','يحسب نظام المعالجة الانحدار والخشونة والتضرس.','تُستخدم أوزان خاصة بالمهمة لحساب درجة التشابه وترتيب المواقع السعودية.','اختر موقعًا من القائمة أو الخريطة لعرض الأدلة وحدود التحقق الميداني.','النتائج أولية ولا تعني أن الموقع آمن للاستخدام الميداني.']:['NASA terrain elevation datasets provide comparable measurements for Earth, Moon and Mars.','The backend measures terrain slope, roughness and relief.','Mission-specific weights produce a match score, which is used to rank Saudi sites.','Select a marker or ranked site to see evidence and field-check limitations.','Scores are preliminary and must not be treated as a field-safety assessment.']).forEach(x=>ol.append(el('li','',x)));showModal(tr('how'),[el('p','',uiLang==='ar'?'حرّة — مواقع سعودية شبيهة بتضاريس القمر والمريخ لأغراض تخطيط المهمات.':'Harrah — Saudi terrain analogs for Moon and Mars missions.'),ol]);};
+// Reference desk: links come only from the backend JSON and project repository.
+function sourceLink(value){
+  if(typeof value==='string')return /^https:\/\//i.test(value)?value:null;
+  if(value && typeof value==='object'){
+    for(const k of ['url','page_url','source_url','link','uri','href']){
+      if(typeof value[k]==='string' && /^https:\/\//i.test(value[k]))return value[k];
+    }
+  }
+  return null;
+}
+function refSection(parent,title,description){
+  const section=el('section','reference-section');
+  section.append(el('h3','reference-heading',title));
+  if(description)section.append(el('p','reference-description',description));
+  parent.append(section);
+  return section;
+}
+function refRow(parent,name,url,meta){
+  const row=el('div','reference-row'), copy=el('div','reference-name');
+  copy.append(el('strong','',name));
+  if(meta)copy.append(el('small','',meta));
+  row.append(copy);
+  if(url){
+    const a=el('a','reference-link',uiLang==='ar'?'فتح المصدر ↗':'Open source ↗');
+    a.href=url;a.target='_blank';a.rel='noopener noreferrer';row.append(a);
+  }else{
+    row.append(el('span','reference-unavailable',uiLang==='ar'?'رابط غير متاح':'No link supplied'));
+  }
+  parent.append(row);
+}
+$('sourcesBtn').onclick=()=>{
+  if(!data)return;
+  const arabic=uiLang==='ar';
+  const root=el('div','reference-desk');
+  root.append(el('p','reference-intro',arabic?
+    'تُعرض المراجع المسجّلة في بيانات الفريق. الإحداثيات تحتفظ بدرجة جودتها الأصلية؛ والموقع التقريبي ليس مدخلًا ميدانيًا موثّقًا.':
+    'Site observations come from the references recorded by the team. Coordinates retain their stated quality; an approximate point should not be treated as a surveyed entrance.'));
 
-    function matchingRows(){
-      return data.scores.filter(s=>s.mission===mission && s.target_id===target)
-        .map(result=>({result,site:data.sites.find(s=>s.id===result.site_id)}))
-        .filter(x=>x.site)
-        .sort((a,b)=>(b.result.match??-1)-(a.result.match??-1));
-    }
-    function renderMissions(){
-      $('missions').replaceChildren();
-      Object.entries(data.meta.missions).forEach(([id,m])=>{
-        const b=node('button','choice'+(mission===id?' active':''),m.label);
-        b.onclick=()=>{mission=id;renderMissions();refresh();};$('missions').append(b);
-      });
-    }
-    function renderTargets(){
-      const available=data.targets.filter(t=>t.world===world),select=$('target');
-      select.replaceChildren();
-      for(const t of available){const opt=node('option','',t.name);opt.value=t.id;select.append(opt);}
-      if(!available.some(t=>t.id===target))target=available[0]?.id||'';
-      select.value=target;
-    }
-    function renderList(){
-      const list=$('siteList');list.replaceChildren();
-      const query=$('search').value.trim().toLowerCase();
-      const matches=rows.filter(x=>(x.site.name+' '+(x.site.name_ar||'')).toLowerCase().includes(query));
-      $('count').textContent=matches.length+' sites';
-      matches.forEach(({site,result},i)=>{
-        const b=node('button','site-row'+(site.id===selectedId?' selected':''));
-        b.append(node('span','number',String(result.rank??i+1)),node('span','site-name',site.name),node('strong','score',fmt(result.match)));
-        b.onclick=()=>chooseSite(site.id);list.append(b);
-      });
-      if(!matches.length)list.append(node('p','muted','No matching sites found.'));
-    }
-    function renderMarkers(){
-      markers.clearLayers();
-      rows.forEach(({site,result},i)=>{
-        const rank=result.rank??i+1;
-        const icon=L.divIcon({html:'<div class="map-pin">'+rank+'</div>',className:'',iconSize:[34,34],iconAnchor:[17,17]});
-        L.marker([site.lat,site.lon],{icon}).on('click',()=>chooseSite(site.id)).addTo(markers);
-      });
-    }
-    function stat(parent,label,value){const d=node('div','stat');d.append(node('span','',label),node('strong','',String(value)));parent.append(d);}
-    function renderCard(row){
-      const {site,result}=row,container=$('cardBody');container.replaceChildren();
-      container.append(node('h2','',site.name),node('p','muted',site.region||site.type||''),node('h2','score',fmt(result.match)));
-      stat(container,'Confidence',result.confidence||'Unknown');
-      stat(container,'Data coverage',fmt(typeof result.coverage==='number'?result.coverage*100:null));
-      stat(container,'Coordinates',site.lat.toFixed(4)+'° N, '+site.lon.toFixed(4)+'° E');
-      container.append(node('h3','','Terrain similarity'));
-      ['slope','roughness','relief'].forEach(key=>{
-        const value=result.similarity?.[key];
-        const p=typeof value==='number'?Math.max(0,Math.min(100,value*100)):0;
-        const d=node('div','trait',key[0].toUpperCase()+key.slice(1)+': '+(typeof value==='number'?p.toFixed(1)+'%':'Not available'));
-        const track=node('div','track'),fill=node('div','fill');fill.style.width=p+'%';track.append(fill);d.append(track);container.append(d);
-      });
-      container.append(node('h3','','About this site'),node('p','',site.facts||site.analog_for||''));
-      if(site.access_note)container.append(node('p','muted',site.access_note));
-      container.append(node('p','notice','PRELIMINARY — Satellite-based analysis does not confirm field suitability. Field checks are still required.'));
-      const directions=node('button','primary','View on Google Maps');
-      directions.onclick=()=>window.open('https://www.google.com/maps?q='+encodeURIComponent(site.lat+','+site.lon),'_blank','noopener,noreferrer');
-      container.append(directions);$('details').hidden=false;
-    }
-    function chooseSite(id){
-      selectedId=id;const row=rows.find(x=>x.site.id===id);if(!row)return;
-      map.flyTo([row.site.lat,row.site.lon],8);renderList();renderCard(row);
-    }
-    function refresh(){selectedId=null;$('details').hidden=true;rows=matchingRows();renderList();renderMarkers();}
-    function modal(title,children){$('modalTitle').textContent=title;$('modalContent').replaceChildren(...children);$('modal').hidden=false;}
-    $('search').oninput=renderList;
-    $('target').onchange=e=>{target=e.target.value;refresh();};
-    document.querySelectorAll('[data-world]').forEach(b=>b.onclick=()=>{
-      world=b.dataset.world;document.querySelectorAll('[data-world]').forEach(x=>x.classList.toggle('active',x===b));renderTargets();refresh();
-    });
-    $('closeCard').onclick=()=>{selectedId=null;$('details').hidden=true;renderList();};
-    $('closeModal').onclick=()=>{$('modal').hidden=true;};
-    $('modal').onclick=e=>{if(e.target===$('modal'))$('modal').hidden=true;};
-    $('howBtn').onclick=()=>{
-      const ol=node('ol');[
-        'NASA elevation data describes Earth, Moon and Mars terrain.',
-        'The backend compares slope, roughness and relief at matched spatial scales.',
-        'Mission weights combine those terrain similarities into a match score.',
-        'Saudi sites are ranked and shown on the satellite map.',
-        'These preliminary results require on-the-ground verification.'
-      ].forEach(s=>ol.append(node('li','',s)));
-      modal('How it works',[node('p','','Harrah explores Saudi terrain as analogs for Moon and Mars missions.'),ol]);
-    };
-    $('sourcesBtn').onclick=()=>{
-      if(!data)return;
-      const ul=node('ul');
-      (data.meta.datasets||[]).forEach(s=>{
-        const li=node('li'),a=node('a','',s.name);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';
-        li.append(a,node('span','muted',' — '+s.producer));ul.append(li);
-      });
-      modal('Data & Sources',[node('p','','Datasets used by the Harrah pipeline:'),ul,node('p','notice','Status: '+data.meta.status+'. Preliminary analysis; field verification is required.')]);
-    };
-    async function start(){
-      try{
-        const response=await fetch('./data/results.json',{cache:'no-store'});
-        if(!response.ok)throw new Error('HTTP '+response.status);
-        data=await response.json();
-        mission=Object.hasOwn(data.meta.missions,'rover')?'rover':Object.keys(data.meta.missions)[0];
-        $('status').textContent=(data.meta.status||'preliminary').toUpperCase()+' — NASA-based terrain similarity. Not field-verified.';
-        renderMissions();renderTargets();refresh();
-      }catch(error){
-        $('status').textContent='Could not load results.json. Open the page through a local server (not file://).';
-        console.error('Harrah loading error:',error);
-      }
-    }
-    start();
-  </script>
+  const sites=refSection(root,arabic?'مراجع المواقع السعودية':'Site observations',arabic?'رابط كل موقع، إذا ورد في نتائج الفريق.':'Source links are shown only when supplied in the project data.');
+  (data.sites||[]).forEach(site=>{
+    const src=site.source;
+    const url=sourceLink(src) || (Array.isArray(src)?src.map(sourceLink).find(Boolean):null);
+    const quality=site.coord_quality ? (arabic?'جودة الإحداثيات: ':'Coordinate quality: ')+String(site.coord_quality):'';
+    refRow(sites,siteName(site),url,quality);
+  });
+
+  const layers=refSection(root,arabic?'طبقات الخريطة':'Map layers');
+  layers.append(el('p','reference-description',arabic?
+    'تستخدم الواجهة صور Esri World Imagery مع طبقة تسميات Esri World Boundaries and Places. عند تفعيل تدرجات الرمادي يتغير عرض الصور فقط. تُعرض حقوق المزودين على الخريطة.':
+    'The interface uses Esri World Imagery with the Esri World Boundaries and Places label overlay. Grayscale changes only the appearance of the imagery. Provider attribution is displayed on the map.'));
+
+  const datasets=refSection(root,arabic?'بيانات التضاريس والمصادر العلمية':'Terrain data & scientific sources',arabic?'المجموعات المصرّح بها في ملف نتائج المعالجة:':'Datasets declared in the backend results:');
+  (data.meta.datasets||[]).forEach(source=>{
+    refRow(datasets,String(source.name||'Dataset'),sourceLink(source),[source.world,source.producer].filter(Boolean).join(' · '));
+  });
+
+  const climate=refSection(root,arabic?'البيانات المناخية':'Climate context');
+  climate.append(el('p','reference-description',arabic?
+    'تُعرض المعلومات المناخية عندما تتوفر في ملف النتائج. قد توجد قيم ناقصة، ولا تُستبدل بالصفر.':
+    'Climate values are displayed when present in the backend results. Missing values remain unavailable and are never replaced with zeros.'));
+  const power=(data.meta.datasets||[]).find(x=>/POWER/i.test(String(x.name||'')));
+  if(power)refRow(climate,power.name,sourceLink(power),power.producer||'');
+
+  const imagery=refSection(root,arabic?'مراجع صور أهداف القمر والمريخ':'Moon & Mars target imagery',arabic?
+    'روابط صفحات الصور الواردة في نتائج الفريق؛ الصور سياق بصري وليست دليل تحقق ميداني.':
+    'Image catalog links supplied in the backend. Images provide context, not terrain or field validation.');
+  (data.targets||[]).forEach(target=>{
+    const img=target.image||{};
+    refRow(imagery,targetName(target),sourceLink(img),[img.image_title,img.credit].filter(Boolean).join(' · '));
+  });
+
+  const repo=refSection(root,arabic?'المشروع والمنهجية':'Project & methodology');
+  refRow(repo,'Harrah — GitHub repository','https://github.com/Mohyahia1/NAC_Harrah_Project',arabic?'الكود وخط المعالجة':'Source code and pipeline');
+  root.append(el('p','reference-caution',arabic?
+    'النتائج أولية (PRELIMINARY). درجة التشابه ليست تأكيدًا لصلاحية الموقع أو سلامته؛ ويجب التحقق ميدانيًا. حالة البيانات: '+(data.meta.status||'preliminary'):
+    'PRELIMINARY — A similarity score is not a safety or field-suitability certification. On-site verification remains necessary. Data status: '+(data.meta.status||'preliminary')));
+  root.append(el('p','reference-footnote',arabic?'تطوير واجهة المستخدم بمساعدة الذكاء الاصطناعي.':'AI-assisted frontend implementation.'));
+  showModal(tr('sources'),[root]);
+};
+async function start(){try{const res=await fetch('./data/results.json',{cache:'no-store'});if(!res.ok)throw Error('HTTP '+res.status);data=await res.json();if(!data.meta||!Array.isArray(data.sites)||!Array.isArray(data.scores)||!Array.isArray(data.targets))throw Error('Unexpected JSON structure');mission=data.meta.missions.rover?'rover':Object.keys(data.meta.missions)[0];updateStatus();renderMissions();renderTargets();refresh();}catch(error){$('status').textContent=tr('dataError');console.error(error)}}
+$('languageBtn').onclick=()=>{uiLang=uiLang==='en'?'ar':'en';applyLanguage()};
+applyLanguage();
+start();
+</script>
 </body>
 </html>
