@@ -4,3 +4,4 @@ target_crops.json (moon_tranquillitatis_pit),SLDEM2015 512 ppd tile sldem2015_51
 target_crops.json (moon_shackleton),LRO LOLA polar DEM ldem_75s_120m_float.img,https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/float_img/,2026-11-15
 target_crops.json (mars_jezero),MGS MOLA MEGDR megt44n000hb.img (128 ppd),https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/,2026-11-15
 target_crops.json (mars_gale),MGS MOLA MEGDR megt00n090hb.img (128 ppd),https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/,2026-11-15
+target_crops.json (mars_arsia_pit),MGS MOLA MEGDR megt00n180hb.img (128 ppd),https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/,2026-11-15

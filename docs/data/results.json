@@ -1,7 +1,7 @@
 {
  "meta": {
   "project": "Harrah",
-  "generated_utc": "2026-11-15T00:39:07Z",
+  "generated_utc": "2026-11-15T01:24:56Z",
   "status": "preliminary",
   "status_note": "Real scores from NASA elevation data. Each target is compared at its own scale (see targets[].scale); Saudi terrain is resampled to the same pixel size and box.",
   "relief_window_px": 5,
@@ -228,6 +228,30 @@
       "p75": 50.32,
       "p90": 61.71
      }
+    },
+    "mars_arsia_pit": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.477,
+      "p25": 0.695,
+      "p50": 0.98,
+      "p75": 1.328,
+      "p90": 1.792
+     },
+     "roughness": {
+      "p10": 14.534,
+      "p25": 18.736,
+      "p50": 23.581,
+      "p75": 30.535,
+      "p90": 40.709
+     },
+     "relief": {
+      "p10": 28.22,
+      "p25": 33.828,
+      "p50": 40.967,
+      "p75": 50.32,
+      "p90": 61.71
+     }
     }
    }
   },
@@ -354,6 +378,30 @@
      }
     },
     "mars_gale": {
+     "valid_share": 0.8,
+     "slope": {
+      "p10": 1.015,
+      "p25": 1.701,
+      "p50": 2.619,
+      "p75": 3.809,
+      "p90": 6.655
+     },
+     "roughness": {
+      "p10": 28.949,
+      "p25": 40.612,
+      "p50": 58.568,
+      "p75": 87.068,
+      "p90": 160.499
+     },
+     "relief": {
+      "p10": 61.595,
+      "p25": 83.219,
+      "p50": 113.495,
+      "p75": 157.305,
+      "p90": 244.814
+     }
+    },
+    "mars_arsia_pit": {
      "valid_share": 0.8,
      "slope": {
       "p10": 1.015,
@@ -524,6 +572,30 @@
       "p75": 44.697,
       "p90": 67.244
      }
+    },
+    "mars_arsia_pit": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.228,
+      "p25": 0.382,
+      "p50": 0.643,
+      "p75": 1.028,
+      "p90": 1.748
+     },
+     "roughness": {
+      "p10": 10.278,
+      "p25": 13.168,
+      "p50": 19.481,
+      "p75": 29.48,
+      "p90": 50.53
+     },
+     "relief": {
+      "p10": 16.682,
+      "p25": 20.988,
+      "p50": 27.222,
+      "p75": 44.697,
+      "p90": 67.244
+     }
     }
    }
   },
@@ -650,6 +722,30 @@
      }
     },
     "mars_gale": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.829,
+      "p25": 1.494,
+      "p50": 3.755,
+      "p75": 7.956,
+      "p90": 13.152
+     },
+     "roughness": {
+      "p10": 26.958,
+      "p25": 51.97,
+      "p50": 120.773,
+      "p75": 221.217,
+      "p90": 340.81
+     },
+     "relief": {
+      "p10": 57.277,
+      "p25": 96.681,
+      "p50": 171.786,
+      "p75": 307.948,
+      "p90": 420.093
+     }
+    },
+    "mars_arsia_pit": {
      "valid_share": 1.0,
      "slope": {
       "p10": 0.829,
@@ -820,6 +916,30 @@
       "p75": 168.86,
       "p90": 214.237
      }
+    },
+    "mars_arsia_pit": {
+     "valid_share": 0.975,
+     "slope": {
+      "p10": 0.632,
+      "p25": 1.191,
+      "p50": 2.515,
+      "p75": 5.037,
+      "p90": 8.19
+     },
+     "roughness": {
+      "p10": 23.996,
+      "p25": 39.101,
+      "p50": 81.603,
+      "p75": 142.062,
+      "p90": 200.394
+     },
+     "relief": {
+      "p10": 50.057,
+      "p25": 73.388,
+      "p50": 118.016,
+      "p75": 168.86,
+      "p90": 214.237
+     }
     }
    }
   },
@@ -946,6 +1066,30 @@
      }
     },
     "mars_gale": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.111,
+      "p25": 0.183,
+      "p50": 0.285,
+      "p75": 0.403,
+      "p90": 0.531
+     },
+     "roughness": {
+      "p10": 5.738,
+      "p25": 7.015,
+      "p50": 8.831,
+      "p75": 11.373,
+      "p90": 14.238
+     },
+     "relief": {
+      "p10": 8.382,
+      "p25": 9.514,
+      "p50": 11.206,
+      "p75": 13.288,
+      "p90": 15.198
+     }
+    },
+    "mars_arsia_pit": {
      "valid_share": 1.0,
      "slope": {
       "p10": 0.111,
@@ -1116,6 +1260,30 @@
       "p75": 79.413,
       "p90": 108.041
      }
+    },
+    "mars_arsia_pit": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.485,
+      "p25": 0.745,
+      "p50": 1.13,
+      "p75": 1.721,
+      "p90": 2.606
+     },
+     "roughness": {
+      "p10": 14.536,
+      "p25": 19.245,
+      "p50": 26.106,
+      "p75": 40.235,
+      "p90": 62.984
+     },
+     "relief": {
+      "p10": 30.118,
+      "p25": 39.019,
+      "p50": 55.826,
+      "p75": 79.413,
+      "p90": 108.041
+     }
     }
    }
   },
@@ -1242,6 +1410,30 @@
      }
     },
     "mars_gale": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.875,
+      "p25": 1.394,
+      "p50": 2.437,
+      "p75": 4.992,
+      "p90": 10.657
+     },
+     "roughness": {
+      "p10": 27.088,
+      "p25": 37.015,
+      "p50": 63.902,
+      "p75": 144.479,
+      "p90": 276.993
+     },
+     "relief": {
+      "p10": 58.315,
+      "p25": 84.324,
+      "p50": 141.772,
+      "p75": 246.312,
+      "p90": 363.745
+     }
+    },
+    "mars_arsia_pit": {
      "valid_share": 1.0,
      "slope": {
       "p10": 0.875,
@@ -1412,6 +1604,30 @@
       "p75": 51.641,
       "p90": 99.268
      }
+    },
+    "mars_arsia_pit": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.311,
+      "p25": 0.498,
+      "p50": 0.774,
+      "p75": 1.137,
+      "p90": 1.979
+     },
+     "roughness": {
+      "p10": 11.322,
+      "p25": 14.524,
+      "p50": 18.977,
+      "p75": 26.973,
+      "p90": 58.436
+     },
+     "relief": {
+      "p10": 20.716,
+      "p25": 25.213,
+      "p50": 34.455,
+      "p75": 51.641,
+      "p90": 99.268
+     }
     }
    }
   }
@@ -1436,6 +1652,12 @@
     "box_km": 20,
     "dataset": "LRO LOLA polar DEM, 120 m, polar stereographic",
     "url": "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/float_img/ldem_75s_120m_float.img"
+   },
+   "image": {
+    "image_title": "South Pole Illumination Map",
+    "image_id": "PIA13720",
+    "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA13720",
+    "credit": "NASA/GSFC/Arizona State University"
    },
    "traits": {
     "valid_share": 0.9637120761451516,
@@ -1481,6 +1703,12 @@
     "dataset": "SLDEM2015 (LOLA + SELENE TC), 512 ppd, sampled every 3rd pixel (~178 m)",
     "url": "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/sldem2015/tiles/float_img/sldem2015_512_00n_30n_270_315_float.img"
    },
+   "image": {
+    "image_title": "Marius Hills Pit – Lava Tube Skylight?",
+    "image_id": "PIA12954",
+    "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA12954",
+    "credit": "NASA/GSFC/Arizona State University"
+   },
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -1524,6 +1752,12 @@
     "box_km": 20,
     "dataset": "SLDEM2015 (LOLA + SELENE TC), 512 ppd, sampled every 3rd pixel (~178 m)",
     "url": "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/sldem2015/tiles/float_img/sldem2015_512_00n_30n_000_045_float.img"
+   },
+   "image": {
+    "image_title": "New Views of Lunar Pits",
+    "image_id": "PIA13518",
+    "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA13518",
+    "credit": "NASA/GSFC/Arizona State University"
    },
    "traits": {
     "valid_share": 1.0,
@@ -1570,6 +1804,12 @@
     "dataset": "MGS MOLA MEGDR, 128 ppd (~463 m)",
     "url": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/megt44n000hb.img"
    },
+   "image": {
+    "image_title": "Jezero Crater: Mars 2020's Landing Site",
+    "image_id": "PIA23239",
+    "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA23239",
+    "credit": "NASA/JPL-Caltech/MSSS/JHU-APL"
+   },
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -1614,6 +1854,12 @@
     "dataset": "MGS MOLA MEGDR, 128 ppd (~463 m)",
     "url": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/megt00n090hb.img"
    },
+   "image": {
+    "image_title": "'Mount Sharp' Inside Gale Crater: Mars",
+    "image_id": "PIA15292",
+    "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA15292",
+    "credit": "NASA/JPL-Caltech/ESA/DLR/FU Berlin/MSSS"
+   },
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -1636,6 +1882,55 @@
      "p50": 517.832,
      "p75": 901.734,
      "p90": 1219.896
+    }
+   }
+  },
+  {
+   "id": "mars_arsia_pit",
+   "world": "Mars",
+   "name": "Arsia Mons candidate cave skylight (Tharsis)",
+   "lat": -5.532,
+   "lon_east": 241.396,
+   "missions": [
+    "lava_tube"
+   ],
+   "dataset": "MOLA MEGDR 128 ppd (~463 m)",
+   "status": "provisional",
+   "scale": {
+    "scale": "site",
+    "pixel_m": 463,
+    "box_km": 20,
+    "dataset": "MGS MOLA MEGDR, 128 ppd (~463 m)",
+    "url": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/megt00n180hb.img"
+   },
+   "image": {
+    "image_title": "Candidate Cavern Entrance Northeast of Arsia Mons",
+    "image_id": "PIA09704",
+    "page_url": "https://photojournal.jpl.nasa.gov/catalog/PIA09704",
+    "credit": "NASA/JPL-Caltech/UArizona"
+   },
+   "traits": {
+    "valid_share": 1.0,
+    "slope": {
+     "p10": 0.986,
+     "p25": 1.17,
+     "p50": 1.386,
+     "p75": 1.641,
+     "p90": 1.903
+    },
+    "roughness": {
+     "p10": 20.552,
+     "p25": 23.617,
+     "p50": 28.086,
+     "p75": 32.682,
+     "p90": 38.17
+    },
+    "relief": {
+     "p10": 41.694,
+     "p25": 47.1,
+     "p50": 54.646,
+     "p75": 63.525,
+     "p90": 71.899
     }
    }
   }
@@ -4340,6 +4635,546 @@
    "confidence": "High",
    "note": null,
    "rank": 6
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "mars_arsia_pit",
+   "mission": "rover",
+   "match": 53.5,
+   "similarity": {
+    "slope": 0.4838,
+    "roughness": 0.6186,
+    "relief": 0.4687
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "mars_arsia_pit",
+   "mission": "crater_ops",
+   "match": 50.3,
+   "similarity": {
+    "slope": 0.4838,
+    "roughness": 0.6186,
+    "relief": 0.4687
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "mars_arsia_pit",
+   "mission": "landing_base",
+   "match": 52.1,
+   "similarity": {
+    "slope": 0.4838,
+    "roughness": 0.6186,
+    "relief": 0.4687
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "mars_arsia_pit",
+   "mission": "lava_tube",
+   "match": 51.7,
+   "similarity": {
+    "slope": 0.4838,
+    "roughness": 0.6186,
+    "relief": 0.4687
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "mars_arsia_pit",
+   "mission": "rover",
+   "match": 0.8,
+   "similarity": {
+    "slope": 0.0142,
+    "roughness": 0.0027,
+    "relief": 0.0061
+   },
+   "coverage": 0.8,
+   "confidence": "Medium",
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "mars_arsia_pit",
+   "mission": "crater_ops",
+   "match": 0.8,
+   "similarity": {
+    "slope": 0.0142,
+    "roughness": 0.0027,
+    "relief": 0.0061
+   },
+   "coverage": 0.8,
+   "confidence": "Medium",
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "mars_arsia_pit",
+   "mission": "landing_base",
+   "match": 0.9,
+   "similarity": {
+    "slope": 0.0142,
+    "roughness": 0.0027,
+    "relief": 0.0061
+   },
+   "coverage": 0.8,
+   "confidence": "Medium",
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "mars_arsia_pit",
+   "mission": "lava_tube",
+   "match": 0.7,
+   "similarity": {
+    "slope": 0.0142,
+    "roughness": 0.0027,
+    "relief": 0.0061
+   },
+   "coverage": 0.8,
+   "confidence": "Medium",
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "mars_arsia_pit",
+   "mission": "rover",
+   "match": 31.4,
+   "similarity": {
+    "slope": 0.3098,
+    "roughness": 0.317,
+    "relief": 0.3139
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "mars_arsia_pit",
+   "mission": "crater_ops",
+   "match": 31.3,
+   "similarity": {
+    "slope": 0.3098,
+    "roughness": 0.317,
+    "relief": 0.3139
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "mars_arsia_pit",
+   "mission": "landing_base",
+   "match": 31.3,
+   "similarity": {
+    "slope": 0.3098,
+    "roughness": 0.317,
+    "relief": 0.3139
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "mars_arsia_pit",
+   "mission": "lava_tube",
+   "match": 31.4,
+   "similarity": {
+    "slope": 0.3098,
+    "roughness": 0.317,
+    "relief": 0.3139
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_arsia_pit",
+   "mission": "rover",
+   "match": 0.0,
+   "similarity": {
+    "slope": 0.0001,
+    "roughness": 0.0,
+    "relief": 0.0001
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_arsia_pit",
+   "mission": "crater_ops",
+   "match": 0.0,
+   "similarity": {
+    "slope": 0.0001,
+    "roughness": 0.0,
+    "relief": 0.0001
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_arsia_pit",
+   "mission": "landing_base",
+   "match": 0.0,
+   "similarity": {
+    "slope": 0.0001,
+    "roughness": 0.0,
+    "relief": 0.0001
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_arsia_pit",
+   "mission": "lava_tube",
+   "match": 0.0,
+   "similarity": {
+    "slope": 0.0001,
+    "roughness": 0.0,
+    "relief": 0.0001
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_arsia_pit",
+   "mission": "rover",
+   "match": 0.4,
+   "similarity": {
+    "slope": 0.0041,
+    "roughness": 0.0003,
+    "relief": 0.013
+   },
+   "coverage": 0.975,
+   "confidence": "High",
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_arsia_pit",
+   "mission": "crater_ops",
+   "match": 0.8,
+   "similarity": {
+    "slope": 0.0041,
+    "roughness": 0.0003,
+    "relief": 0.013
+   },
+   "coverage": 0.975,
+   "confidence": "High",
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_arsia_pit",
+   "mission": "landing_base",
+   "match": 0.5,
+   "similarity": {
+    "slope": 0.0041,
+    "roughness": 0.0003,
+    "relief": 0.013
+   },
+   "coverage": 0.975,
+   "confidence": "High",
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_arsia_pit",
+   "mission": "lava_tube",
+   "match": 0.7,
+   "similarity": {
+    "slope": 0.0041,
+    "roughness": 0.0003,
+    "relief": 0.013
+   },
+   "coverage": 0.975,
+   "confidence": "High",
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_arsia_pit",
+   "mission": "rover",
+   "match": 9.8,
+   "similarity": {
+    "slope": 0.0935,
+    "roughness": 0.1185,
+    "relief": 0.0666
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 5
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_arsia_pit",
+   "mission": "crater_ops",
+   "match": 8.5,
+   "similarity": {
+    "slope": 0.0935,
+    "roughness": 0.1185,
+    "relief": 0.0666
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 5
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_arsia_pit",
+   "mission": "landing_base",
+   "match": 9.6,
+   "similarity": {
+    "slope": 0.0935,
+    "roughness": 0.1185,
+    "relief": 0.0666
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 5
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_arsia_pit",
+   "mission": "lava_tube",
+   "match": 8.8,
+   "similarity": {
+    "slope": 0.0935,
+    "roughness": 0.1185,
+    "relief": 0.0666
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 5
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_arsia_pit",
+   "mission": "rover",
+   "match": 33.6,
+   "similarity": {
+    "slope": 0.3558,
+    "roughness": 0.2993,
+    "relief": 0.3707
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_arsia_pit",
+   "mission": "crater_ops",
+   "match": 35.2,
+   "similarity": {
+    "slope": 0.3558,
+    "roughness": 0.2993,
+    "relief": 0.3707
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_arsia_pit",
+   "mission": "landing_base",
+   "match": 34.2,
+   "similarity": {
+    "slope": 0.3558,
+    "roughness": 0.2993,
+    "relief": 0.3707
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_arsia_pit",
+   "mission": "lava_tube",
+   "match": 34.6,
+   "similarity": {
+    "slope": 0.3558,
+    "roughness": 0.2993,
+    "relief": 0.3707
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "mars_arsia_pit",
+   "mission": "rover",
+   "match": 0.0,
+   "similarity": {
+    "slope": 0.0009,
+    "roughness": 0.0,
+    "relief": 0.0003
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "mars_arsia_pit",
+   "mission": "crater_ops",
+   "match": 0.0,
+   "similarity": {
+    "slope": 0.0009,
+    "roughness": 0.0,
+    "relief": 0.0003
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "mars_arsia_pit",
+   "mission": "landing_base",
+   "match": 0.1,
+   "similarity": {
+    "slope": 0.0009,
+    "roughness": 0.0,
+    "relief": 0.0003
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "mars_arsia_pit",
+   "mission": "lava_tube",
+   "match": 0.0,
+   "similarity": {
+    "slope": 0.0009,
+    "roughness": 0.0,
+    "relief": 0.0003
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "mars_arsia_pit",
+   "mission": "rover",
+   "match": 29.9,
+   "similarity": {
+    "slope": 0.3811,
+    "roughness": 0.2418,
+    "relief": 0.2488
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "mars_arsia_pit",
+   "mission": "crater_ops",
+   "match": 28.7,
+   "similarity": {
+    "slope": 0.3811,
+    "roughness": 0.2418,
+    "relief": 0.2488
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "mars_arsia_pit",
+   "mission": "landing_base",
+   "match": 31.3,
+   "similarity": {
+    "slope": 0.3811,
+    "roughness": 0.2418,
+    "relief": 0.2488
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "mars_arsia_pit",
+   "mission": "lava_tube",
+   "match": 27.3,
+   "similarity": {
+    "slope": 0.3811,
+    "roughness": 0.2418,
+    "relief": 0.2488
+   },
+   "coverage": 1.0,
+   "confidence": "High",
+   "note": null,
+   "rank": 4
   }
  ]
 }
