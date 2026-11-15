@@ -1,5 +1,179 @@
-<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Harrah</title>
-<style>body{margin:0;font-family:system-ui,sans-serif;background:#F2EADC;color:#1E1A17;display:grid;place-items:center;min-height:100vh;padding:16px}main{max-width:560px}h1{margin:0 0 8px}p{line-height:1.5}</style>
-</head><body><main><h1>Harrah (حرَّة)</h1><p>Saudi terrain ranked as Earth analogs for Moon and Mars missions. The tool is being built during NASA Space Apps Challenge 2026 and will appear here.</p></main></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harrah | Saudi Terrain Explorer</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <style>
+    *{box-sizing:border-box}html,body{margin:0;height:100%;font-family:Arial,sans-serif;color:#223850;background:#f5f5f5}button,input,select{font:inherit}button{cursor:pointer}
+    header{height:64px;background:#fff;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:0 22px;border-bottom:1px solid #e5e8eb;position:relative;z-index:1000}
+    .brand{font-size:20px;font-weight:700;white-space:nowrap}.brand em{color:#b66d58;font-style:normal}
+    #search{padding:11px 14px;border:1px solid #dbe1e7;border-radius:8px;width:min(300px,35vw);min-width:100px}
+    .header-buttons{display:flex;gap:8px}.header-buttons button{padding:10px;border:1px solid #dce1e5;background:#fff;border-radius:7px;color:#243b53}
+    .main{height:calc(100vh - 64px);min-height:450px;position:relative}#map{position:absolute;inset:0;z-index:1}
+    .panel{position:absolute;z-index:500;background:#fff;border-radius:14px;box-shadow:0 5px 30px #0003;color:#243b53;overflow:auto;max-height:calc(100% - 36px);top:18px}
+    .sidebar{left:18px;width:342px;padding:22px}.details{right:18px;width:340px;padding:20px}h1{font-size:24px;margin:5px 0 7px}h2{font-size:19px;margin:10px 0}h3{font-size:14px;margin:18px 0 8px}
+    .muted{color:#87919b;font-size:12px;line-height:1.5}.label{display:block;color:#7b8996;font-size:11px;font-weight:bold;letter-spacing:.7px;margin:19px 0 10px}
+    .choices{display:grid;grid-template-columns:1fr 1fr;gap:8px}.choice{border:1px solid #dfe3e7;background:#f8f9fa;color:#324a60;border-radius:8px;padding:12px 6px;font-size:12px}.choice.active{background:#203d5c;color:#fff;border-color:#203d5c}
+    #target{width:100%;background:#fff;color:#243b53;border:1px solid #dde2e7;border-radius:8px;padding:11px}.between{display:flex;justify-content:space-between;align-items:center;gap:8px}
+    #siteList{display:flex;flex-direction:column;gap:5px;margin-top:9px}.site-row{display:flex;align-items:center;gap:9px;text-align:left;border:0;background:transparent;width:100%;border-radius:8px;padding:9px;color:#233c54}.site-row:hover,.site-row.selected{background:#faebe7}.number{display:grid;place-items:center;flex:none;width:27px;height:27px;border-radius:50%;color:#fff;background:#ba715e;font-size:12px}.site-name{flex:1;font-size:12px}.score{font-size:13px;color:#a85d4e;font-weight:bold}
+    .notice{margin-top:15px;background:#fff2dc;color:#795820;padding:10px;border-radius:8px;font-size:11px;line-height:1.5}.close{width:30px;height:30px;border-radius:50%;border:0;background:#edf0f3;color:#233c54;font-size:21px}.details p{font-size:12px;line-height:1.6}.stat{display:flex;justify-content:space-between;gap:8px;border-bottom:1px solid #eef0f2;padding:10px 0;font-size:12px}.stat strong{text-align:right}.trait{font-size:12px;margin-top:12px}.track{height:8px;background:#e9eef1;border-radius:50px;overflow:hidden;margin-top:5px}.fill{height:100%;background:#bd705e}.primary{width:100%;background:#203d5c;color:white;border:none;border-radius:8px;padding:12px;margin-top:14px}
+    .map-pin{display:grid;place-items:center;width:34px;height:34px;border-radius:50%;border:3px solid white;color:white;background:#b86d59;font-weight:bold;box-shadow:0 3px 10px #0005}.leaflet-div-icon{background:transparent;border:0}
+    .modal{position:fixed;inset:0;z-index:2000;background:#0008;display:grid;place-items:center;padding:20px}.modal-body{background:#fff;width:min(570px,100%);max-height:85vh;overflow:auto;border-radius:14px;padding:25px}.modal-body li{line-height:1.5;margin:9px 0}.modal-body a{color:#1d5f8b;overflow-wrap:anywhere}[hidden]{display:none!important}
+    @media(max-width:800px){header{padding:0 8px;gap:5px}.brand{font-size:15px}#search{width:110px}.header-buttons button{font-size:10px;padding:7px}.sidebar{left:9px;top:9px;width:min(305px,calc(100% - 18px));max-height:51%;padding:14px}.details{left:9px;right:9px;top:auto;bottom:9px;width:auto;max-height:40%}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="brand">Harrah <em>| حرّة</em></div>
+    <input id="search" type="search" placeholder="Search sites" aria-label="Search sites" />
+    <div class="header-buttons"><button id="howBtn">How it works</button><button id="sourcesBtn">Data &amp; Sources</button></div>
+  </header>
+  <main class="main">
+    <div id="map" aria-label="Map of Saudi Arabia"></div>
+    <aside class="panel sidebar">
+      <span class="muted">Saudi Landscapes</span><h1>Choose your terrain</h1>
+      <p class="muted">Discover Saudi terrain analogs for Moon and Mars missions</p>
+      <span class="label">MISSION</span><div id="missions" class="choices"></div>
+      <span class="label">TARGET WORLD</span>
+      <div class="choices"><button class="choice active" data-world="Moon">Moon</button><button class="choice" data-world="Mars">Mars</button></div>
+      <span class="label">TARGET LOCATION</span><select id="target" aria-label="Target location"></select>
+      <div class="between" style="margin-top:22px"><h2>Matching Sites</h2><span class="muted" id="count"></span></div>
+      <div id="siteList"></div>
+      <p id="status" class="notice">Loading NASA results...</p>
+    </aside>
+    <aside id="details" class="panel details" hidden>
+      <div class="between"><span class="label">SITE INFORMATION</span><button class="close" id="closeCard" aria-label="Close">×</button></div>
+      <div id="cardBody"></div>
+    </aside>
+  </main>
+  <div id="modal" class="modal" hidden><section class="modal-body">
+    <div class="between"><h2 id="modalTitle"></h2><button id="closeModal" class="close" aria-label="Close">×</button></div>
+    <div id="modalContent"></div>
+  </section></div>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <script>
+    // AI-assisted frontend. Data is read from the backend output; never modified.
+    const $ = id => document.getElementById(id);
+    const node = (tag, className = '', text = '') => {const n=document.createElement(tag);n.className=className;n.textContent=text;return n;};
+    const fmt = n => typeof n === 'number' && Number.isFinite(n) ? n.toFixed(1)+'%' : 'Not available';
+    const map = L.map('map',{zoomControl:false}).setView([24,44.5],5);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{
+      maxZoom:18,attribution:'Imagery: Esri, Maxar, Earthstar Geographics, GIS User Community'
+    }).addTo(map);
+    L.control.zoom({position:'bottomright'}).addTo(map);
+    const markers=L.layerGroup().addTo(map);
+    let data=null,world='Moon',mission='rover',target='',selectedId=null,rows=[];
+
+    function matchingRows(){
+      return data.scores.filter(s=>s.mission===mission && s.target_id===target)
+        .map(result=>({result,site:data.sites.find(s=>s.id===result.site_id)}))
+        .filter(x=>x.site)
+        .sort((a,b)=>(b.result.match??-1)-(a.result.match??-1));
+    }
+    function renderMissions(){
+      $('missions').replaceChildren();
+      Object.entries(data.meta.missions).forEach(([id,m])=>{
+        const b=node('button','choice'+(mission===id?' active':''),m.label);
+        b.onclick=()=>{mission=id;renderMissions();refresh();};$('missions').append(b);
+      });
+    }
+    function renderTargets(){
+      const available=data.targets.filter(t=>t.world===world),select=$('target');
+      select.replaceChildren();
+      for(const t of available){const opt=node('option','',t.name);opt.value=t.id;select.append(opt);}
+      if(!available.some(t=>t.id===target))target=available[0]?.id||'';
+      select.value=target;
+    }
+    function renderList(){
+      const list=$('siteList');list.replaceChildren();
+      const query=$('search').value.trim().toLowerCase();
+      const matches=rows.filter(x=>(x.site.name+' '+(x.site.name_ar||'')).toLowerCase().includes(query));
+      $('count').textContent=matches.length+' sites';
+      matches.forEach(({site,result},i)=>{
+        const b=node('button','site-row'+(site.id===selectedId?' selected':''));
+        b.append(node('span','number',String(result.rank??i+1)),node('span','site-name',site.name),node('strong','score',fmt(result.match)));
+        b.onclick=()=>chooseSite(site.id);list.append(b);
+      });
+      if(!matches.length)list.append(node('p','muted','No matching sites found.'));
+    }
+    function renderMarkers(){
+      markers.clearLayers();
+      rows.forEach(({site,result},i)=>{
+        const rank=result.rank??i+1;
+        const icon=L.divIcon({html:'<div class="map-pin">'+rank+'</div>',className:'',iconSize:[34,34],iconAnchor:[17,17]});
+        L.marker([site.lat,site.lon],{icon}).on('click',()=>chooseSite(site.id)).addTo(markers);
+      });
+    }
+    function stat(parent,label,value){const d=node('div','stat');d.append(node('span','',label),node('strong','',String(value)));parent.append(d);}
+    function renderCard(row){
+      const {site,result}=row,container=$('cardBody');container.replaceChildren();
+      container.append(node('h2','',site.name),node('p','muted',site.region||site.type||''),node('h2','score',fmt(result.match)));
+      stat(container,'Confidence',result.confidence||'Unknown');
+      stat(container,'Data coverage',fmt(typeof result.coverage==='number'?result.coverage*100:null));
+      stat(container,'Coordinates',site.lat.toFixed(4)+'° N, '+site.lon.toFixed(4)+'° E');
+      container.append(node('h3','','Terrain similarity'));
+      ['slope','roughness','relief'].forEach(key=>{
+        const value=result.similarity?.[key];
+        const p=typeof value==='number'?Math.max(0,Math.min(100,value*100)):0;
+        const d=node('div','trait',key[0].toUpperCase()+key.slice(1)+': '+(typeof value==='number'?p.toFixed(1)+'%':'Not available'));
+        const track=node('div','track'),fill=node('div','fill');fill.style.width=p+'%';track.append(fill);d.append(track);container.append(d);
+      });
+      container.append(node('h3','','About this site'),node('p','',site.facts||site.analog_for||''));
+      if(site.access_note)container.append(node('p','muted',site.access_note));
+      container.append(node('p','notice','PRELIMINARY — Satellite-based analysis does not confirm field suitability. Field checks are still required.'));
+      const directions=node('button','primary','View on Google Maps');
+      directions.onclick=()=>window.open('https://www.google.com/maps?q='+encodeURIComponent(site.lat+','+site.lon),'_blank','noopener,noreferrer');
+      container.append(directions);$('details').hidden=false;
+    }
+    function chooseSite(id){
+      selectedId=id;const row=rows.find(x=>x.site.id===id);if(!row)return;
+      map.flyTo([row.site.lat,row.site.lon],8);renderList();renderCard(row);
+    }
+    function refresh(){selectedId=null;$('details').hidden=true;rows=matchingRows();renderList();renderMarkers();}
+    function modal(title,children){$('modalTitle').textContent=title;$('modalContent').replaceChildren(...children);$('modal').hidden=false;}
+    $('search').oninput=renderList;
+    $('target').onchange=e=>{target=e.target.value;refresh();};
+    document.querySelectorAll('[data-world]').forEach(b=>b.onclick=()=>{
+      world=b.dataset.world;document.querySelectorAll('[data-world]').forEach(x=>x.classList.toggle('active',x===b));renderTargets();refresh();
+    });
+    $('closeCard').onclick=()=>{selectedId=null;$('details').hidden=true;renderList();};
+    $('closeModal').onclick=()=>{$('modal').hidden=true;};
+    $('modal').onclick=e=>{if(e.target===$('modal'))$('modal').hidden=true;};
+    $('howBtn').onclick=()=>{
+      const ol=node('ol');[
+        'NASA elevation data describes Earth, Moon and Mars terrain.',
+        'The backend compares slope, roughness and relief at matched spatial scales.',
+        'Mission weights combine those terrain similarities into a match score.',
+        'Saudi sites are ranked and shown on the satellite map.',
+        'These preliminary results require on-the-ground verification.'
+      ].forEach(s=>ol.append(node('li','',s)));
+      modal('How it works',[node('p','','Harrah explores Saudi terrain as analogs for Moon and Mars missions.'),ol]);
+    };
+    $('sourcesBtn').onclick=()=>{
+      if(!data)return;
+      const ul=node('ul');
+      (data.meta.datasets||[]).forEach(s=>{
+        const li=node('li'),a=node('a','',s.name);a.href=s.url;a.target='_blank';a.rel='noopener noreferrer';
+        li.append(a,node('span','muted',' — '+s.producer));ul.append(li);
+      });
+      modal('Data & Sources',[node('p','','Datasets used by the Harrah pipeline:'),ul,node('p','notice','Status: '+data.meta.status+'. Preliminary analysis; field verification is required.')]);
+    };
+    async function start(){
+      try{
+        const response=await fetch('./data/results.json',{cache:'no-store'});
+        if(!response.ok)throw new Error('HTTP '+response.status);
+        data=await response.json();
+        mission=Object.hasOwn(data.meta.missions,'rover')?'rover':Object.keys(data.meta.missions)[0];
+        $('status').textContent=(data.meta.status||'preliminary').toUpperCase()+' — NASA-based terrain similarity. Not field-verified.';
+        renderMissions();renderTargets();refresh();
+      }catch(error){
+        $('status').textContent='Could not load results.json. Open the page through a local server (not file://).';
+        console.error('Harrah loading error:',error);
+      }
+    }
+    start();
+  </script>
+</body>
+</html>
