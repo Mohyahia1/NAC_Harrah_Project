@@ -42,7 +42,7 @@ Each target is compared at the sharpest resolution we have for it, inside a 20 k
 |---|---|---|
 | Shackleton (lunar south pole) | LRO LOLA polar DEM | 120 m |
 | Marius Hills pit, Mare Tranquillitatis pit | SLDEM2015 (LOLA + SELENE TC), every 3rd pixel | ~178 m |
-| Jezero, Gale | MGS MOLA MEGDR 128 ppd | ~463 m |
+| Jezero, Gale, Arsia Mons pit | MGS MOLA MEGDR 128 ppd | ~463 m |
 
 The crops (`data/processed/target_crops.json`, ~230 KB) were cut from the NASA PDS Geosciences Node files with HTTP range requests, so only the area around each target was downloaded; source URLs are inside the file. A target without a crop falls back to the global 16 ppd DEM at regional scale (100 km box).
 
