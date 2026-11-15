@@ -115,6 +115,7 @@ def sample_earth(tiles: list[Path], lat0, lon0, x, y) -> np.ndarray:
             inv = ~src.transform
             cols, rows = inv * (X, Y)
             band = src.read(1, masked=True).astype("float64").filled(np.nan)
+            band[band == 0] = np.nan  # ASTER GDEM v3 sets sea to 0 m: water is not terrain
             vals = ndimage.map_coordinates(band, [rows - 0.5, cols - 0.5], order=1, mode="constant", cval=np.nan)
             inside = (rows >= 0) & (rows < src.height) & (cols >= 0) & (cols < src.width)
             fill = inside & np.isnan(out)
