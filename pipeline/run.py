@@ -46,7 +46,8 @@ SOURCES = json.loads((ROOT / "config" / "sources.json").read_text(encoding="utf-
 
 BOX_KM = SOURCES["box_km"]
 RELIEF_WIN = SOURCES["relief_window_px"]
-MIN_COVERAGE = SOURCES.get("min_coverage", 0.9)  # share of the box that must have elevation data
+MIN_COVERAGE = SOURCES.get("min_coverage", 0.9)
+LOCAL_BOX_KM = SOURCES.get("local_box_km", 20)  # box for targets that have a sharper crop  # share of the box that must have elevation data
 TRAITS = ("slope", "roughness", "relief")
 RADIUS_M = {"Moon": 1_737_400.0, "Mars": 3_396_190.0}
 
@@ -71,9 +72,9 @@ def haversine_km(a: tuple[float, float], b: tuple[float, float]) -> float:
 
 
 # ----------------------------------------------------------------------------- grids
-def local_grid(pixel_m: float) -> tuple[np.ndarray, np.ndarray]:
+def local_grid(pixel_m: float, box_km: float | None = None) -> tuple[np.ndarray, np.ndarray]:
     """x, y offsets in metres of an n x n grid centred on (0, 0)."""
-    n = int(round(BOX_KM * 1000 / pixel_m)) + 1
+    n = int(round((box_km or BOX_KM) * 1000 / pixel_m)) + 1
     half = (n - 1) / 2 * pixel_m
     ax = np.linspace(-half, half, n)
     x, y = np.meshgrid(ax, -ax)  # row 0 = north
@@ -101,6 +102,35 @@ def sample_global_grid(dem: np.ndarray, ppd: float, lat, lon) -> np.ndarray:
     return ndimage.map_coordinates(padded, [rows, cols + 1], order=1, mode="nearest")
 
 
+def load_target_crops() -> dict:
+    """Sharper elevation crops around targets (data/processed/target_crops.json), if present."""
+    path = ROOT / SOURCES.get("target_crops", "data/processed/target_crops.json")
+    if not path.exists():
+        return {}
+    import base64
+    crops = json.loads(path.read_text(encoding="utf-8"))["crops"]
+    for c in crops.values():
+        c["z"] = np.frombuffer(base64.b64decode(c.pop("int16_b64")), dtype="<i2").reshape(c["nr"], c["nc"]).astype("float64")
+        if c["grid"] == "latlon":
+            c["pixel_m"] = math.radians(c["step_deg"]) * RADIUS_M[c["world"]]
+        else:
+            c["pixel_m"] = float(c["scale_m"])
+    return crops
+
+
+def sample_crop(c: dict, lat, lon) -> np.ndarray:
+    """Bilinear sample of a target crop at lat/lon (degrees). NaN outside the crop."""
+    if c["grid"] == "latlon":
+        rows = (c["lat_first"] - lat) / c["step_deg"]
+        cols = ((lon - c["lon_first"] + 180) % 360 - 180) / c["step_deg"]
+    else:  # south polar stereographic (LOLA polar products)
+        rho = 2 * RADIUS_M["Moon"] * np.tan(np.pi / 4 + np.radians(lat) / 2)
+        x, y = rho * np.sin(np.radians(lon)), rho * np.cos(np.radians(lon))
+        rows = c["projection_offset"] - y / c["scale_m"] - c["line_first"]
+        cols = c["projection_offset"] + x / c["scale_m"] - c["sample_first"]
+    return ndimage.map_coordinates(c["z"], [rows, cols], order=1, mode="constant", cval=np.nan)
+
+
 def sample_earth(tiles: list[Path], lat0, lon0, x, y) -> np.ndarray:
     """Sample GeoTIFF tile(s) of any CRS onto the local grid. NaN where no tile covers."""
     import rasterio
@@ -123,9 +153,9 @@ def sample_earth(tiles: list[Path], lat0, lon0, x, y) -> np.ndarray:
     return out
 
 
-def tiles_for(tile_dir: Path, lat: float, lon: float) -> list[Path]:
+def tiles_for(tile_dir: Path, lat: float, lon: float, box_km: float | None = None) -> list[Path]:
     """ASTER 1x1 degree tiles (named like N25E039...) that overlap the box around a point."""
-    half = BOX_KM / 2
+    half = (box_km or BOX_KM) / 2
     dla, dlo = half / 111.0, half / (111.0 * math.cos(math.radians(lat)))
     names = {f"N{a:02d}E{b:03d}" for a in range(math.floor(lat - dla), math.floor(lat + dla) + 1)
              for b in range(math.floor(lon - dlo), math.floor(lon + dlo) + 1)}
@@ -232,25 +262,42 @@ def run(force_sample: bool) -> dict:
     have_earth = any(tile_dir.glob("*.tif"))
     real = have_planets and have_earth and not force_sample
 
-    site_traits: dict[str, dict] = {}
+    site_traits: dict[str, dict] = {}   # key: site_id|target_id
     target_traits: dict[str, dict] = {}
+    target_scale: dict[str, dict] = {}
     if real:
         planet = {"Moon": (np.load(moon_path, mmap_mode="r"), SOURCES["moon_ppd"]),
                   "Mars": (np.load(mars_path, mmap_mode="r"), SOURCES["mars_ppd"])}
-        for world, (dem, ppd) in planet.items():
-            pixel_m = 2 * math.pi * RADIUS_M[world] / (360 * ppd)
-            x, y = local_grid(pixel_m)
-            for t in (t for t in targets if t["world"] == world):
-                lat, lon = aeqd_inverse_sphere(x, y, float(t["lat"]), float(t["lon_east"]), RADIUS_M[world])
-                target_traits[t["target_id"]] = traits(sample_global_grid(np.asarray(dem), ppd, lat, lon), pixel_m)
-            for s in sites:
-                z = sample_earth(tiles_for(tile_dir, float(s["lat"]), float(s["lon"])), float(s["lat"]), float(s["lon"]), x, y)
-                site_traits[f"{s['id']}|{world}"] = traits(z, pixel_m)
+        crops = load_target_crops()
+        for t in targets:
+            world, tid = t["world"], t["target_id"]
+            tlat, tlon = float(t["lat"]), float(t["lon_east"])
+            if tid in crops:  # site scale: sharper crop around the target
+                c = crops[tid]
+                pixel_m, box_km = c["pixel_m"], LOCAL_BOX_KM
+                x, y = local_grid(pixel_m, box_km)
+                lat, lon = aeqd_inverse_sphere(x, y, tlat, tlon, RADIUS_M[world])
+                zt = sample_crop(c, lat, lon)
+                target_scale[tid] = {"scale": "site", "pixel_m": round(pixel_m), "box_km": box_km,
+                                     "dataset": c["dataset"], "url": c["url"]}
+            else:  # regional scale: global DEM
+                dem, ppd = planet[world]
+                pixel_m, box_km = 2 * math.pi * RADIUS_M[world] / (360 * ppd), BOX_KM
+                x, y = local_grid(pixel_m, box_km)
+                lat, lon = aeqd_inverse_sphere(x, y, tlat, tlon, RADIUS_M[world])
+                zt = sample_global_grid(np.asarray(dem), ppd, lat, lon)
+                target_scale[tid] = {"scale": "regional", "pixel_m": round(pixel_m), "box_km": box_km,
+                                     "dataset": f"{'LRO LOLA' if world == 'Moon' else 'MGS MOLA'} global DEM, {ppd} ppd"}
+            target_traits[tid] = traits(zt, pixel_m)
+            for s in sites:  # Saudi terrain measured at exactly the same pixel size and box
+                slat, slon = float(s["lat"]), float(s["lon"])
+                z = sample_earth(tiles_for(tile_dir, slat, slon, box_km), slat, slon, x, y)
+                site_traits[f"{s['id']}|{tid}"] = traits(z, pixel_m)
 
     scores = []
     for t in targets:
         for s in sites:
-            st = site_traits.get(f"{s['id']}|{t['world']}")
+            st = site_traits.get(f"{s['id']}|{t['target_id']}")
             tt = target_traits.get(t["target_id"])
             if real:
                 ok = bool(st and tt and st["valid_share"] >= MIN_COVERAGE and tt["valid_share"] >= MIN_COVERAGE)
@@ -260,8 +307,11 @@ def run(force_sample: bool) -> dict:
                 sim = {k: round(float(rng.uniform(0.2, 0.95)), 4) for k in TRAITS}
             for m_id, w in missions.items():
                 match = round(100 * sum(w[k] * sim[k] for k in TRAITS), 1) if sim else None
+                cov = st["valid_share"] if (real and st) else None
                 scores.append({"site_id": s["id"], "target_id": t["target_id"], "mission": m_id,
                                "match": match, "similarity": sim,
+                               "coverage": round(cov, 3) if cov is not None else None,
+                               "confidence": confidence_label(cov) if real else "Sample",
                                "note": None if sim else "insufficient elevation coverage around this site"})
 
     # rank within each target x mission
@@ -280,7 +330,7 @@ def run(force_sample: bool) -> dict:
         shares = [v["valid_share"] for k, v in site_traits.items() if k.startswith(s["id"] + "|")]
         rec["data_coverage"] = round(min(shares), 3) if shares else None
         rec["confidence"] = confidence_label(rec["data_coverage"]) if real else "Sample"
-        rec["traits"] = {w: site_traits.get(f"{s['id']}|{w}") for w in ("Moon", "Mars")} if real else None
+        rec["traits"] = {t["target_id"]: site_traits.get(f"{s['id']}|{t['target_id']}") for t in targets} if real else None
         site_out.append(rec)
 
     return {
@@ -288,12 +338,11 @@ def run(force_sample: bool) -> dict:
             "project": "Harrah",
             "generated_utc": dt.datetime.now(dt.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
             "status": "preliminary" if real else "sample",
-            "status_note": ("Scores from NASA global DEMs at regional scale; sharper target data pending."
+            "status_note": ("Real scores from NASA elevation data. Each target is compared at its own scale "
+                            "(see targets[].scale); Saudi terrain is resampled to the same pixel size and box."
                             if real else "SAMPLE values for building the interface. Not real scores."),
-            "box_km": BOX_KM,
             "relief_window_px": RELIEF_WIN,
-            "pixel_m": {w: round(2 * math.pi * RADIUS_M[w] / (360 * SOURCES[f"{w.lower()}_ppd"]))
-                        for w in ("Moon", "Mars")},
+            "min_coverage": MIN_COVERAGE,
             "missions": missions,
             "traits": {"slope": "degrees", "roughness": "TRI (Riley), metres", "relief": "max-min in window, metres"},
             "datasets": SOURCES["datasets"],
@@ -302,6 +351,7 @@ def run(force_sample: bool) -> dict:
         "targets": [{"id": t["target_id"], "world": t["world"], "name": t["name"], "lat": float(t["lat"]),
                      "lon_east": float(t["lon_east"]), "missions": t["missions"].split(";"),
                      "dataset": t["dem_dataset"], "status": t["status"],
+                     "scale": target_scale.get(t["target_id"]),
                      "traits": target_traits.get(t["target_id"])} for t in targets],
         "scores": scores,
     }

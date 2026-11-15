@@ -1,15 +1,11 @@
 {
  "meta": {
   "project": "Harrah",
-  "generated_utc": "2026-11-15T00:25:50Z",
+  "generated_utc": "2026-11-15T00:37:07Z",
   "status": "preliminary",
-  "status_note": "Scores from NASA global DEMs at regional scale; sharper target data pending.",
-  "box_km": 100,
+  "status_note": "Real scores from NASA elevation data. Each target is compared at its own scale (see targets[].scale); Saudi terrain is resampled to the same pixel size and box.",
   "relief_window_px": 5,
-  "pixel_m": {
-   "Moon": 1895,
-   "Mars": 3705
-  },
+  "min_coverage": 0.35,
   "missions": {
    "rover": {
     "label": "Rover driving",
@@ -65,6 +61,24 @@
     "name": "NASA POWER climatology",
     "producer": "NASA LaRC",
     "url": "https://power.larc.nasa.gov/"
+   },
+   {
+    "world": "Moon",
+    "name": "SLDEM2015 (LOLA + SELENE Terrain Camera), 512 ppd",
+    "producer": "NASA GSFC / JAXA",
+    "url": "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/sldem2015/"
+   },
+   {
+    "world": "Moon",
+    "name": "LRO LOLA polar DEM, 120 m",
+    "producer": "NASA",
+    "url": "https://pds-geosciences.wustl.edu/lro/lro-l-lola-3-rdr-v1/lrolol_1xxx/data/lola_gdr/polar/"
+   },
+   {
+    "world": "Mars",
+    "name": "MGS MOLA MEGDR, 128 ppd",
+    "producer": "NASA",
+    "url": "https://pds-geosciences.wustl.edu/mgs/mgs-m-mola-5-megdr-l3-v1/mgsl_300x/meg128/"
    }
   ]
  },
@@ -95,7 +109,7 @@
    "data_coverage": 0.745,
    "confidence": "Medium",
    "traits": {
-    "Moon": {
+    "moon_shackleton": {
      "valid_share": 0.7448,
      "slope": {
       "p10": 0.307,
@@ -119,7 +133,79 @@
       "p90": 217.764
      }
     },
-    "Mars": {
+    "moon_marius_pit": {
+     "valid_share": 0.7448,
+     "slope": {
+      "p10": 0.307,
+      "p25": 0.471,
+      "p50": 0.708,
+      "p75": 1.01,
+      "p90": 1.399
+     },
+     "roughness": {
+      "p10": 37.008,
+      "p25": 48.968,
+      "p50": 66.699,
+      "p75": 89.98,
+      "p90": 128.364
+     },
+     "relief": {
+      "p10": 70.445,
+      "p25": 92.048,
+      "p50": 125.116,
+      "p75": 162.962,
+      "p90": 217.764
+     }
+    },
+    "moon_tranquillitatis_pit": {
+     "valid_share": 0.7448,
+     "slope": {
+      "p10": 0.307,
+      "p25": 0.471,
+      "p50": 0.708,
+      "p75": 1.01,
+      "p90": 1.399
+     },
+     "roughness": {
+      "p10": 37.008,
+      "p25": 48.968,
+      "p50": 66.699,
+      "p75": 89.98,
+      "p90": 128.364
+     },
+     "relief": {
+      "p10": 70.445,
+      "p25": 92.048,
+      "p50": 125.116,
+      "p75": 162.962,
+      "p90": 217.764
+     }
+    },
+    "mars_jezero": {
+     "valid_share": 0.7916666666666666,
+     "slope": {
+      "p10": 0.301,
+      "p25": 0.441,
+      "p50": 0.677,
+      "p75": 0.935,
+      "p90": 1.227
+     },
+     "roughness": {
+      "p10": 64.357,
+      "p25": 83.598,
+      "p50": 119.268,
+      "p75": 153.133,
+      "p90": 207.88
+     },
+     "relief": {
+      "p10": 121.574,
+      "p25": 155.335,
+      "p50": 222.856,
+      "p75": 282.777,
+      "p90": 380.499
+     }
+    },
+    "mars_gale": {
      "valid_share": 0.7916666666666666,
      "slope": {
       "p10": 0.301,
@@ -171,7 +257,7 @@
    "data_coverage": 0.459,
    "confidence": "Low",
    "traits": {
-    "Moon": {
+    "moon_shackleton": {
      "valid_share": 0.4592,
      "slope": {
       "p10": 0.494,
@@ -195,7 +281,79 @@
       "p90": 274.435
      }
     },
-    "Mars": {
+    "moon_marius_pit": {
+     "valid_share": 0.4592,
+     "slope": {
+      "p10": 0.494,
+      "p25": 0.661,
+      "p50": 0.883,
+      "p75": 1.2,
+      "p90": 1.696
+     },
+     "roughness": {
+      "p10": 51.504,
+      "p25": 63.246,
+      "p50": 79.791,
+      "p75": 107.017,
+      "p90": 158.926
+     },
+     "relief": {
+      "p10": 102.736,
+      "p25": 122.352,
+      "p50": 147.167,
+      "p75": 185.41,
+      "p90": 274.435
+     }
+    },
+    "moon_tranquillitatis_pit": {
+     "valid_share": 0.4592,
+     "slope": {
+      "p10": 0.494,
+      "p25": 0.661,
+      "p50": 0.883,
+      "p75": 1.2,
+      "p90": 1.696
+     },
+     "roughness": {
+      "p10": 51.504,
+      "p25": 63.246,
+      "p50": 79.791,
+      "p75": 107.017,
+      "p90": 158.926
+     },
+     "relief": {
+      "p10": 102.736,
+      "p25": 122.352,
+      "p50": 147.167,
+      "p75": 185.41,
+      "p90": 274.435
+     }
+    },
+    "mars_jezero": {
+     "valid_share": 0.4861111111111111,
+     "slope": {
+      "p10": 0.545,
+      "p25": 0.682,
+      "p50": 0.851,
+      "p75": 1.097,
+      "p90": 1.65
+     },
+     "roughness": {
+      "p10": 106.844,
+      "p25": 120.049,
+      "p50": 144.719,
+      "p75": 184.34,
+      "p90": 269.876
+     },
+     "relief": {
+      "p10": 203.949,
+      "p25": 224.985,
+      "p50": 265.713,
+      "p75": 329.187,
+      "p90": 441.643
+     }
+    },
+    "mars_gale": {
      "valid_share": 0.4861111111111111,
      "slope": {
       "p10": 0.545,
@@ -247,7 +405,7 @@
    "data_coverage": 0.395,
    "confidence": "Low",
    "traits": {
-    "Moon": {
+    "moon_shackleton": {
      "valid_share": 0.3952,
      "slope": {
       "p10": 0.145,
@@ -271,7 +429,79 @@
       "p90": 164.982
      }
     },
-    "Mars": {
+    "moon_marius_pit": {
+     "valid_share": 0.3952,
+     "slope": {
+      "p10": 0.145,
+      "p25": 0.252,
+      "p50": 0.4,
+      "p75": 0.626,
+      "p90": 0.955
+     },
+     "roughness": {
+      "p10": 22.157,
+      "p25": 29.499,
+      "p50": 41.489,
+      "p75": 62.682,
+      "p90": 92.184
+     },
+     "relief": {
+      "p10": 33.906,
+      "p25": 49.669,
+      "p50": 71.661,
+      "p75": 100.663,
+      "p90": 164.982
+     }
+    },
+    "moon_tranquillitatis_pit": {
+     "valid_share": 0.3952,
+     "slope": {
+      "p10": 0.145,
+      "p25": 0.252,
+      "p50": 0.4,
+      "p75": 0.626,
+      "p90": 0.955
+     },
+     "roughness": {
+      "p10": 22.157,
+      "p25": 29.499,
+      "p50": 41.489,
+      "p75": 62.682,
+      "p90": 92.184
+     },
+     "relief": {
+      "p10": 33.906,
+      "p25": 49.669,
+      "p50": 71.661,
+      "p75": 100.663,
+      "p90": 164.982
+     }
+    },
+    "mars_jezero": {
+     "valid_share": 0.4166666666666667,
+     "slope": {
+      "p10": 0.112,
+      "p25": 0.21,
+      "p50": 0.338,
+      "p75": 0.485,
+      "p90": 0.784
+     },
+     "roughness": {
+      "p10": 35.22,
+      "p25": 46.178,
+      "p50": 63.469,
+      "p75": 93.77,
+      "p90": 149.479
+     },
+     "relief": {
+      "p10": 49.856,
+      "p25": 69.499,
+      "p50": 116.124,
+      "p75": 164.697,
+      "p90": 235.87
+     }
+    },
+    "mars_gale": {
      "valid_share": 0.4166666666666667,
      "slope": {
       "p10": 0.112,
@@ -323,7 +553,7 @@
    "data_coverage": 0.438,
    "confidence": "Low",
    "traits": {
-    "Moon": {
+    "moon_shackleton": {
      "valid_share": 0.444,
      "slope": {
       "p10": 0.433,
@@ -347,7 +577,79 @@
       "p90": 728.245
      }
     },
-    "Mars": {
+    "moon_marius_pit": {
+     "valid_share": 0.444,
+     "slope": {
+      "p10": 0.433,
+      "p25": 0.719,
+      "p50": 1.283,
+      "p75": 2.64,
+      "p90": 5.146
+     },
+     "roughness": {
+      "p10": 57.719,
+      "p25": 89.479,
+      "p50": 160.236,
+      "p75": 310.086,
+      "p90": 560.733
+     },
+     "relief": {
+      "p10": 122.596,
+      "p25": 169.99,
+      "p50": 260.856,
+      "p75": 432.689,
+      "p90": 728.245
+     }
+    },
+    "moon_tranquillitatis_pit": {
+     "valid_share": 0.444,
+     "slope": {
+      "p10": 0.433,
+      "p25": 0.719,
+      "p50": 1.283,
+      "p75": 2.64,
+      "p90": 5.146
+     },
+     "roughness": {
+      "p10": 57.719,
+      "p25": 89.479,
+      "p50": 160.236,
+      "p75": 310.086,
+      "p90": 560.733
+     },
+     "relief": {
+      "p10": 122.596,
+      "p25": 169.99,
+      "p50": 260.856,
+      "p75": 432.689,
+      "p90": 728.245
+     }
+    },
+    "mars_jezero": {
+     "valid_share": 0.4375,
+     "slope": {
+      "p10": 0.382,
+      "p25": 0.611,
+      "p50": 1.015,
+      "p75": 1.74,
+      "p90": 3.407
+     },
+     "roughness": {
+      "p10": 100.937,
+      "p25": 142.916,
+      "p50": 222.647,
+      "p75": 400.006,
+      "p90": 809.444
+     },
+     "relief": {
+      "p10": 201.561,
+      "p25": 247.154,
+      "p50": 405.118,
+      "p75": 748.304,
+      "p90": 962.016
+     }
+    },
+    "mars_gale": {
      "valid_share": 0.4375,
      "slope": {
       "p10": 0.382,
@@ -399,7 +701,7 @@
    "data_coverage": 0.456,
    "confidence": "Low",
    "traits": {
-    "Moon": {
+    "moon_shackleton": {
      "valid_share": 0.456,
      "slope": {
       "p10": 0.431,
@@ -423,7 +725,79 @@
       "p90": 339.559
      }
     },
-    "Mars": {
+    "moon_marius_pit": {
+     "valid_share": 0.456,
+     "slope": {
+      "p10": 0.431,
+      "p25": 0.711,
+      "p50": 1.135,
+      "p75": 1.792,
+      "p90": 2.718
+     },
+     "roughness": {
+      "p10": 61.351,
+      "p25": 86.544,
+      "p50": 124.963,
+      "p75": 192.299,
+      "p90": 276.365
+     },
+     "relief": {
+      "p10": 124.791,
+      "p25": 162.99,
+      "p50": 216.676,
+      "p75": 274.806,
+      "p90": 339.559
+     }
+    },
+    "moon_tranquillitatis_pit": {
+     "valid_share": 0.456,
+     "slope": {
+      "p10": 0.431,
+      "p25": 0.711,
+      "p50": 1.135,
+      "p75": 1.792,
+      "p90": 2.718
+     },
+     "roughness": {
+      "p10": 61.351,
+      "p25": 86.544,
+      "p50": 124.963,
+      "p75": 192.299,
+      "p90": 276.365
+     },
+     "relief": {
+      "p10": 124.791,
+      "p25": 162.99,
+      "p50": 216.676,
+      "p75": 274.806,
+      "p90": 339.559
+     }
+    },
+    "mars_jezero": {
+     "valid_share": 0.4618055555555556,
+     "slope": {
+      "p10": 0.437,
+      "p25": 0.658,
+      "p50": 0.956,
+      "p75": 1.378,
+      "p90": 1.888
+     },
+     "roughness": {
+      "p10": 110.949,
+      "p25": 139.6,
+      "p50": 195.978,
+      "p75": 269.553,
+      "p90": 347.059
+     },
+     "relief": {
+      "p10": 209.387,
+      "p25": 262.46,
+      "p50": 315.582,
+      "p75": 392.834,
+      "p90": 448.386
+     }
+    },
+    "mars_gale": {
      "valid_share": 0.4618055555555556,
      "slope": {
       "p10": 0.437,
@@ -475,7 +849,7 @@
    "data_coverage": 1.0,
    "confidence": "High",
    "traits": {
-    "Moon": {
+    "moon_shackleton": {
      "valid_share": 1.0,
      "slope": {
       "p10": 0.035,
@@ -499,7 +873,79 @@
       "p90": 21.345
      }
     },
-    "Mars": {
+    "moon_marius_pit": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.035,
+      "p25": 0.058,
+      "p50": 0.093,
+      "p75": 0.136,
+      "p90": 0.182
+     },
+     "roughness": {
+      "p10": 7.435,
+      "p25": 9.578,
+      "p50": 12.465,
+      "p75": 16.556,
+      "p90": 21.293
+     },
+     "relief": {
+      "p10": 11.607,
+      "p25": 13.123,
+      "p50": 15.2,
+      "p75": 17.952,
+      "p90": 21.345
+     }
+    },
+    "moon_tranquillitatis_pit": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.035,
+      "p25": 0.058,
+      "p50": 0.093,
+      "p75": 0.136,
+      "p90": 0.182
+     },
+     "roughness": {
+      "p10": 7.435,
+      "p25": 9.578,
+      "p50": 12.465,
+      "p75": 16.556,
+      "p90": 21.293
+     },
+     "relief": {
+      "p10": 11.607,
+      "p25": 13.123,
+      "p50": 15.2,
+      "p75": 17.952,
+      "p90": 21.345
+     }
+    },
+    "mars_jezero": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.025,
+      "p25": 0.039,
+      "p50": 0.057,
+      "p75": 0.08,
+      "p90": 0.108
+     },
+     "roughness": {
+      "p10": 8.448,
+      "p25": 10.729,
+      "p50": 13.735,
+      "p75": 17.344,
+      "p90": 21.64
+     },
+     "relief": {
+      "p10": 14.806,
+      "p25": 16.872,
+      "p50": 19.458,
+      "p75": 22.617,
+      "p90": 26.352
+     }
+    },
+    "mars_gale": {
      "valid_share": 1.0,
      "slope": {
       "p10": 0.025,
@@ -551,7 +997,7 @@
    "data_coverage": 0.422,
    "confidence": "Low",
    "traits": {
-    "Moon": {
+    "moon_shackleton": {
      "valid_share": 0.4224,
      "slope": {
       "p10": 0.259,
@@ -575,7 +1021,79 @@
       "p90": 181.565
      }
     },
-    "Mars": {
+    "moon_marius_pit": {
+     "valid_share": 0.4224,
+     "slope": {
+      "p10": 0.259,
+      "p25": 0.405,
+      "p50": 0.631,
+      "p75": 0.945,
+      "p90": 1.299
+     },
+     "roughness": {
+      "p10": 33.679,
+      "p25": 44.251,
+      "p50": 60.787,
+      "p75": 85.383,
+      "p90": 117.179
+     },
+     "relief": {
+      "p10": 58.203,
+      "p25": 79.844,
+      "p50": 119.885,
+      "p75": 154.843,
+      "p90": 181.565
+     }
+    },
+    "moon_tranquillitatis_pit": {
+     "valid_share": 0.4224,
+     "slope": {
+      "p10": 0.259,
+      "p25": 0.405,
+      "p50": 0.631,
+      "p75": 0.945,
+      "p90": 1.299
+     },
+     "roughness": {
+      "p10": 33.679,
+      "p25": 44.251,
+      "p50": 60.787,
+      "p75": 85.383,
+      "p90": 117.179
+     },
+     "relief": {
+      "p10": 58.203,
+      "p25": 79.844,
+      "p50": 119.885,
+      "p75": 154.843,
+      "p90": 181.565
+     }
+    },
+    "mars_jezero": {
+     "valid_share": 0.4444444444444444,
+     "slope": {
+      "p10": 0.276,
+      "p25": 0.404,
+      "p50": 0.633,
+      "p75": 0.88,
+      "p90": 1.12
+     },
+     "roughness": {
+      "p10": 61.666,
+      "p25": 85.243,
+      "p50": 119.205,
+      "p75": 155.79,
+      "p90": 186.548
+     },
+     "relief": {
+      "p10": 135.638,
+      "p25": 177.484,
+      "p50": 214.42,
+      "p75": 255.468,
+      "p90": 297.427
+     }
+    },
+    "mars_gale": {
      "valid_share": 0.4444444444444444,
      "slope": {
       "p10": 0.276,
@@ -627,7 +1145,7 @@
    "data_coverage": 0.532,
    "confidence": "Low",
    "traits": {
-    "Moon": {
+    "moon_shackleton": {
      "valid_share": 0.532,
      "slope": {
       "p10": 0.512,
@@ -651,7 +1169,79 @@
       "p90": 572.159
      }
     },
-    "Mars": {
+    "moon_marius_pit": {
+     "valid_share": 0.532,
+     "slope": {
+      "p10": 0.512,
+      "p25": 0.861,
+      "p50": 1.378,
+      "p75": 2.582,
+      "p90": 4.112
+     },
+     "roughness": {
+      "p10": 75.295,
+      "p25": 100.738,
+      "p50": 170.639,
+      "p75": 303.09,
+      "p90": 441.597
+     },
+     "relief": {
+      "p10": 142.93,
+      "p25": 182.593,
+      "p50": 290.318,
+      "p75": 443.893,
+      "p90": 572.159
+     }
+    },
+    "moon_tranquillitatis_pit": {
+     "valid_share": 0.532,
+     "slope": {
+      "p10": 0.512,
+      "p25": 0.861,
+      "p50": 1.378,
+      "p75": 2.582,
+      "p90": 4.112
+     },
+     "roughness": {
+      "p10": 75.295,
+      "p25": 100.738,
+      "p50": 170.639,
+      "p75": 303.09,
+      "p90": 441.597
+     },
+     "relief": {
+      "p10": 142.93,
+      "p25": 182.593,
+      "p50": 290.318,
+      "p75": 443.893,
+      "p90": 572.159
+     }
+    },
+    "mars_jezero": {
+     "valid_share": 0.5607638888888888,
+     "slope": {
+      "p10": 0.552,
+      "p25": 0.778,
+      "p50": 1.218,
+      "p75": 1.935,
+      "p90": 2.599
+     },
+     "roughness": {
+      "p10": 123.803,
+      "p25": 172.523,
+      "p50": 272.395,
+      "p75": 391.321,
+      "p90": 491.095
+     },
+     "relief": {
+      "p10": 247.095,
+      "p25": 287.152,
+      "p50": 432.965,
+      "p75": 562.271,
+      "p90": 669.232
+     }
+    },
+    "mars_gale": {
      "valid_share": 0.5607638888888888,
      "slope": {
       "p10": 0.552,
@@ -703,7 +1293,7 @@
    "data_coverage": 0.681,
    "confidence": "Low",
    "traits": {
-    "Moon": {
+    "moon_shackleton": {
      "valid_share": 0.6808,
      "slope": {
       "p10": 0.102,
@@ -727,7 +1317,79 @@
       "p90": 125.541
      }
     },
-    "Mars": {
+    "moon_marius_pit": {
+     "valid_share": 0.6808,
+     "slope": {
+      "p10": 0.102,
+      "p25": 0.177,
+      "p50": 0.311,
+      "p75": 0.503,
+      "p90": 0.775
+     },
+     "roughness": {
+      "p10": 16.402,
+      "p25": 23.335,
+      "p50": 34.421,
+      "p75": 50.876,
+      "p90": 77.403
+     },
+     "relief": {
+      "p10": 25.229,
+      "p25": 33.677,
+      "p50": 53.947,
+      "p75": 78.209,
+      "p90": 125.541
+     }
+    },
+    "moon_tranquillitatis_pit": {
+     "valid_share": 0.6808,
+     "slope": {
+      "p10": 0.102,
+      "p25": 0.177,
+      "p50": 0.311,
+      "p75": 0.503,
+      "p90": 0.775
+     },
+     "roughness": {
+      "p10": 16.402,
+      "p25": 23.335,
+      "p50": 34.421,
+      "p75": 50.876,
+      "p90": 77.403
+     },
+     "relief": {
+      "p10": 25.229,
+      "p25": 33.677,
+      "p50": 53.947,
+      "p75": 78.209,
+      "p90": 125.541
+     }
+    },
+    "mars_jezero": {
+     "valid_share": 0.71875,
+     "slope": {
+      "p10": 0.091,
+      "p25": 0.145,
+      "p50": 0.241,
+      "p75": 0.387,
+      "p90": 0.637
+     },
+     "roughness": {
+      "p10": 25.04,
+      "p25": 35.134,
+      "p50": 52.811,
+      "p75": 72.934,
+      "p90": 114.437
+     },
+     "relief": {
+      "p10": 39.463,
+      "p25": 52.913,
+      "p50": 77.853,
+      "p75": 122.299,
+      "p90": 200.19
+     }
+    },
+    "mars_gale": {
      "valid_share": 0.71875,
      "slope": {
       "p10": 0.091,
@@ -768,6 +1430,12 @@
    ],
    "dataset": "LOLA south pole DEM (20 m)",
    "status": "provisional",
+   "scale": {
+    "scale": "regional",
+    "pixel_m": 1895,
+    "box_km": 100,
+    "dataset": "LRO LOLA global DEM, 16 ppd"
+   },
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -805,6 +1473,12 @@
    ],
    "dataset": "SLDEM2015 (~60 m)",
    "status": "provisional",
+   "scale": {
+    "scale": "regional",
+    "pixel_m": 1895,
+    "box_km": 100,
+    "dataset": "LRO LOLA global DEM, 16 ppd"
+   },
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -842,6 +1516,12 @@
    ],
    "dataset": "SLDEM2015 (~60 m)",
    "status": "provisional",
+   "scale": {
+    "scale": "regional",
+    "pixel_m": 1895,
+    "box_km": 100,
+    "dataset": "LRO LOLA global DEM, 16 ppd"
+   },
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -880,6 +1560,12 @@
    ],
    "dataset": "MOLA MEGDR 128 ppd (~460 m); CTX DTM if available",
    "status": "provisional",
+   "scale": {
+    "scale": "regional",
+    "pixel_m": 3705,
+    "box_km": 100,
+    "dataset": "MGS MOLA global DEM, 16 ppd"
+   },
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -917,6 +1603,12 @@
    ],
    "dataset": "MOLA MEGDR 128 ppd (~460 m); CTX DTM if available",
    "status": "provisional",
+   "scale": {
+    "scale": "regional",
+    "pixel_m": 3705,
+    "box_km": 100,
+    "dataset": "MGS MOLA global DEM, 16 ppd"
+   },
    "traits": {
     "valid_share": 1.0,
     "slope": {
@@ -954,6 +1646,8 @@
     "roughness": 0.3418,
     "relief": 0.3033
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -967,6 +1661,8 @@
     "roughness": 0.3418,
     "relief": 0.3033
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -980,6 +1676,8 @@
     "roughness": 0.3418,
     "relief": 0.3033
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -993,6 +1691,8 @@
     "roughness": 0.3418,
     "relief": 0.3033
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -1006,6 +1706,8 @@
     "roughness": 0.3528,
     "relief": 0.3148
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -1019,6 +1721,8 @@
     "roughness": 0.3528,
     "relief": 0.3148
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -1032,6 +1736,8 @@
     "roughness": 0.3528,
     "relief": 0.3148
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -1045,6 +1751,8 @@
     "roughness": 0.3528,
     "relief": 0.3148
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -1058,6 +1766,8 @@
     "roughness": 0.3279,
     "relief": 0.2891
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -1071,6 +1781,8 @@
     "roughness": 0.3279,
     "relief": 0.2891
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -1084,6 +1796,8 @@
     "roughness": 0.3279,
     "relief": 0.2891
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -1097,6 +1811,8 @@
     "roughness": 0.3279,
     "relief": 0.2891
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -1110,6 +1826,8 @@
     "roughness": 0.4606,
     "relief": 0.3833
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -1123,6 +1841,8 @@
     "roughness": 0.4606,
     "relief": 0.3833
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -1136,6 +1856,8 @@
     "roughness": 0.4606,
     "relief": 0.3833
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -1149,6 +1871,8 @@
     "roughness": 0.4606,
     "relief": 0.3833
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -1162,6 +1886,8 @@
     "roughness": 0.3876,
     "relief": 0.3318
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -1175,6 +1901,8 @@
     "roughness": 0.3876,
     "relief": 0.3318
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -1188,6 +1916,8 @@
     "roughness": 0.3876,
     "relief": 0.3318
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -1201,6 +1931,8 @@
     "roughness": 0.3876,
     "relief": 0.3318
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -1214,6 +1946,8 @@
     "roughness": 0.308,
     "relief": 0.2684
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -1227,6 +1961,8 @@
     "roughness": 0.308,
     "relief": 0.2684
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -1240,6 +1976,8 @@
     "roughness": 0.308,
     "relief": 0.2684
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -1253,6 +1991,8 @@
     "roughness": 0.308,
     "relief": 0.2684
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -1266,6 +2006,8 @@
     "roughness": 0.338,
     "relief": 0.2979
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1279,6 +2021,8 @@
     "roughness": 0.338,
     "relief": 0.2979
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1292,6 +2036,8 @@
     "roughness": 0.338,
     "relief": 0.2979
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1305,6 +2051,8 @@
     "roughness": 0.338,
     "relief": 0.2979
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1318,6 +2066,8 @@
     "roughness": 0.4382,
     "relief": 0.3699
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -1331,6 +2081,8 @@
     "roughness": 0.4382,
     "relief": 0.3699
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -1344,6 +2096,8 @@
     "roughness": 0.4382,
     "relief": 0.3699
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -1357,6 +2111,8 @@
     "roughness": 0.4382,
     "relief": 0.3699
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -1370,6 +2126,8 @@
     "roughness": 0.323,
     "relief": 0.2828
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -1383,6 +2141,8 @@
     "roughness": 0.323,
     "relief": 0.2828
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -1396,6 +2156,8 @@
     "roughness": 0.323,
     "relief": 0.2828
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -1409,6 +2171,8 @@
     "roughness": 0.323,
     "relief": 0.2828
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -1422,6 +2186,8 @@
     "roughness": 0.8126,
     "relief": 0.81
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 2
   },
@@ -1435,6 +2201,8 @@
     "roughness": 0.8126,
     "relief": 0.81
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 2
   },
@@ -1448,6 +2216,8 @@
     "roughness": 0.8126,
     "relief": 0.81
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 2
   },
@@ -1461,6 +2231,8 @@
     "roughness": 0.8126,
     "relief": 0.81
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 2
   },
@@ -1474,6 +2246,8 @@
     "roughness": 0.8496,
     "relief": 0.8855
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -1487,6 +2261,8 @@
     "roughness": 0.8496,
     "relief": 0.8855
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -1500,6 +2276,8 @@
     "roughness": 0.8496,
     "relief": 0.8855
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -1513,6 +2291,8 @@
     "roughness": 0.8496,
     "relief": 0.8855
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -1526,6 +2306,8 @@
     "roughness": 0.5834,
     "relief": 0.5305
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -1539,6 +2321,8 @@
     "roughness": 0.5834,
     "relief": 0.5305
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -1552,6 +2336,8 @@
     "roughness": 0.5834,
     "relief": 0.5305
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -1565,6 +2351,8 @@
     "roughness": 0.5834,
     "relief": 0.5305
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -1578,6 +2366,8 @@
     "roughness": 0.0732,
     "relief": 0.1542
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 9
   },
@@ -1591,6 +2381,8 @@
     "roughness": 0.0732,
     "relief": 0.1542
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 9
   },
@@ -1604,6 +2396,8 @@
     "roughness": 0.0732,
     "relief": 0.1542
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 9
   },
@@ -1617,6 +2411,8 @@
     "roughness": 0.0732,
     "relief": 0.1542
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 9
   },
@@ -1630,6 +2426,8 @@
     "roughness": 0.3626,
     "relief": 0.5555
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 5
   },
@@ -1643,6 +2441,8 @@
     "roughness": 0.3626,
     "relief": 0.5555
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 5
   },
@@ -1656,6 +2456,8 @@
     "roughness": 0.3626,
     "relief": 0.5555
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 5
   },
@@ -1669,6 +2471,8 @@
     "roughness": 0.3626,
     "relief": 0.5555
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 5
   },
@@ -1682,6 +2486,8 @@
     "roughness": 0.3265,
     "relief": 0.2737
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 7
   },
@@ -1695,6 +2501,8 @@
     "roughness": 0.3265,
     "relief": 0.2737
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 7
   },
@@ -1708,6 +2516,8 @@
     "roughness": 0.3265,
     "relief": 0.2737
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 7
   },
@@ -1721,6 +2531,8 @@
     "roughness": 0.3265,
     "relief": 0.2737
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 7
   },
@@ -1734,6 +2546,8 @@
     "roughness": 0.7579,
     "relief": 0.6917
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -1747,6 +2561,8 @@
     "roughness": 0.7579,
     "relief": 0.6917
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -1760,6 +2576,8 @@
     "roughness": 0.7579,
     "relief": 0.6917
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -1773,6 +2591,8 @@
     "roughness": 0.7579,
     "relief": 0.6917
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -1786,6 +2606,8 @@
     "roughness": 0.1162,
     "relief": 0.2115
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -1799,6 +2621,8 @@
     "roughness": 0.1162,
     "relief": 0.2115
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -1812,6 +2636,8 @@
     "roughness": 0.1162,
     "relief": 0.2115
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -1825,6 +2651,8 @@
     "roughness": 0.1162,
     "relief": 0.2115
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -1838,6 +2666,8 @@
     "roughness": 0.5073,
     "relief": 0.4361
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1851,6 +2681,8 @@
     "roughness": 0.5073,
     "relief": 0.4361
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1864,6 +2696,8 @@
     "roughness": 0.5073,
     "relief": 0.4361
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1877,6 +2711,8 @@
     "roughness": 0.5073,
     "relief": 0.4361
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1890,6 +2726,8 @@
     "roughness": 0.0569,
     "relief": 0.0596
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -1903,6 +2741,8 @@
     "roughness": 0.0569,
     "relief": 0.0596
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -1916,6 +2756,8 @@
     "roughness": 0.0569,
     "relief": 0.0596
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -1929,6 +2771,8 @@
     "roughness": 0.0569,
     "relief": 0.0596
    },
+   "coverage": 0.745,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -1942,6 +2786,8 @@
     "roughness": 0.0192,
     "relief": 0.0171
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1955,6 +2801,8 @@
     "roughness": 0.0192,
     "relief": 0.0171
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1968,6 +2816,8 @@
     "roughness": 0.0192,
     "relief": 0.0171
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1981,6 +2831,8 @@
     "roughness": 0.0192,
     "relief": 0.0171
    },
+   "coverage": 0.459,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -1994,6 +2846,8 @@
     "roughness": 0.237,
     "relief": 0.2965
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -2007,6 +2861,8 @@
     "roughness": 0.237,
     "relief": 0.2965
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -2020,6 +2876,8 @@
     "roughness": 0.237,
     "relief": 0.2965
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -2033,6 +2891,8 @@
     "roughness": 0.237,
     "relief": 0.2965
    },
+   "coverage": 0.395,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -2046,6 +2906,8 @@
     "roughness": 0.0,
     "relief": 0.0
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -2059,6 +2921,8 @@
     "roughness": 0.0,
     "relief": 0.0
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -2072,6 +2936,8 @@
     "roughness": 0.0,
     "relief": 0.0
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -2085,6 +2951,8 @@
     "roughness": 0.0,
     "relief": 0.0
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 8
   },
@@ -2098,6 +2966,8 @@
     "roughness": 0.0008,
     "relief": 0.0029
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2111,6 +2981,8 @@
     "roughness": 0.0008,
     "relief": 0.0029
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2124,6 +2996,8 @@
     "roughness": 0.0008,
     "relief": 0.0029
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2137,6 +3011,8 @@
     "roughness": 0.0008,
     "relief": 0.0029
    },
+   "coverage": 0.456,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2150,6 +3026,8 @@
     "roughness": 0.4943,
     "relief": 0.2771
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 2
   },
@@ -2163,6 +3041,8 @@
     "roughness": 0.4943,
     "relief": 0.2771
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 2
   },
@@ -2176,6 +3056,8 @@
     "roughness": 0.4943,
     "relief": 0.2771
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 2
   },
@@ -2189,6 +3071,8 @@
     "roughness": 0.4943,
     "relief": 0.2771
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 2
   },
@@ -2202,6 +3086,8 @@
     "roughness": 0.0834,
     "relief": 0.109
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2215,6 +3101,8 @@
     "roughness": 0.0834,
     "relief": 0.109
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2228,6 +3116,8 @@
     "roughness": 0.0834,
     "relief": 0.109
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2241,6 +3131,8 @@
     "roughness": 0.0834,
     "relief": 0.109
    },
+   "coverage": 0.422,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2254,6 +3146,8 @@
     "roughness": 0.0,
     "relief": 0.0001
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 9
   },
@@ -2267,6 +3161,8 @@
     "roughness": 0.0,
     "relief": 0.0001
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 9
   },
@@ -2280,6 +3176,8 @@
     "roughness": 0.0,
     "relief": 0.0001
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 9
   },
@@ -2293,6 +3191,8 @@
     "roughness": 0.0,
     "relief": 0.0001
    },
+   "coverage": 0.532,
+   "confidence": "Low",
    "note": null,
    "rank": 9
   },
@@ -2306,6 +3206,8 @@
     "roughness": 0.3972,
     "relief": 0.6213
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -2319,6 +3221,8 @@
     "roughness": 0.3972,
     "relief": 0.6213
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -2332,6 +3236,8 @@
     "roughness": 0.3972,
     "relief": 0.6213
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -2345,6 +3251,8 @@
     "roughness": 0.3972,
     "relief": 0.6213
    },
+   "coverage": 0.681,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -2358,6 +3266,8 @@
     "roughness": 0.342,
     "relief": 0.3746
    },
+   "coverage": 0.792,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -2371,6 +3281,8 @@
     "roughness": 0.342,
     "relief": 0.3746
    },
+   "coverage": 0.792,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -2384,6 +3296,8 @@
     "roughness": 0.342,
     "relief": 0.3746
    },
+   "coverage": 0.792,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -2397,6 +3311,8 @@
     "roughness": 0.342,
     "relief": 0.3746
    },
+   "coverage": 0.792,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -2410,6 +3326,8 @@
     "roughness": 0.4162,
     "relief": 0.4616
    },
+   "coverage": 0.486,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2423,6 +3341,8 @@
     "roughness": 0.4162,
     "relief": 0.4616
    },
+   "coverage": 0.486,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2436,6 +3356,8 @@
     "roughness": 0.4162,
     "relief": 0.4616
    },
+   "coverage": 0.486,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2449,6 +3371,8 @@
     "roughness": 0.4162,
     "relief": 0.4616
    },
+   "coverage": 0.486,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2462,6 +3386,8 @@
     "roughness": 0.2617,
     "relief": 0.2608
    },
+   "coverage": 0.417,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2475,6 +3401,8 @@
     "roughness": 0.2617,
     "relief": 0.2608
    },
+   "coverage": 0.417,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2488,6 +3416,8 @@
     "roughness": 0.2617,
     "relief": 0.2608
    },
+   "coverage": 0.417,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2501,6 +3431,8 @@
     "roughness": 0.2617,
     "relief": 0.2608
    },
+   "coverage": 0.417,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2514,6 +3446,8 @@
     "roughness": 0.7128,
     "relief": 0.9561
    },
+   "coverage": 0.438,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -2527,6 +3461,8 @@
     "roughness": 0.7128,
     "relief": 0.9561
    },
+   "coverage": 0.438,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -2540,6 +3476,8 @@
     "roughness": 0.7128,
     "relief": 0.9561
    },
+   "coverage": 0.438,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -2553,6 +3491,8 @@
     "roughness": 0.7128,
     "relief": 0.9561
    },
+   "coverage": 0.438,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -2566,6 +3506,8 @@
     "roughness": 0.525,
     "relief": 0.4949
    },
+   "coverage": 0.462,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -2579,6 +3521,8 @@
     "roughness": 0.525,
     "relief": 0.4949
    },
+   "coverage": 0.462,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -2592,6 +3536,8 @@
     "roughness": 0.525,
     "relief": 0.4949
    },
+   "coverage": 0.462,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -2605,6 +3551,8 @@
     "roughness": 0.525,
     "relief": 0.4949
    },
+   "coverage": 0.462,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -2618,6 +3566,8 @@
     "roughness": 0.1787,
     "relief": 0.1779
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -2631,6 +3581,8 @@
     "roughness": 0.1787,
     "relief": 0.1779
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -2644,6 +3596,8 @@
     "roughness": 0.1787,
     "relief": 0.1779
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -2657,6 +3611,8 @@
     "roughness": 0.1787,
     "relief": 0.1779
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -2670,6 +3626,8 @@
     "roughness": 0.327,
     "relief": 0.3435
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -2683,6 +3641,8 @@
     "roughness": 0.327,
     "relief": 0.3435
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -2696,6 +3656,8 @@
     "roughness": 0.327,
     "relief": 0.3435
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -2709,6 +3671,8 @@
     "roughness": 0.327,
     "relief": 0.3435
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -2722,6 +3686,8 @@
     "roughness": 0.66,
     "relief": 0.6938
    },
+   "coverage": 0.561,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -2735,6 +3701,8 @@
     "roughness": 0.66,
     "relief": 0.6938
    },
+   "coverage": 0.561,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -2748,6 +3716,8 @@
     "roughness": 0.66,
     "relief": 0.6938
    },
+   "coverage": 0.561,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -2761,6 +3731,8 @@
     "roughness": 0.66,
     "relief": 0.6938
    },
+   "coverage": 0.561,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -2774,6 +3746,8 @@
     "roughness": 0.2358,
     "relief": 0.2373
    },
+   "coverage": 0.719,
+   "confidence": "Medium",
    "note": null,
    "rank": 8
   },
@@ -2787,6 +3761,8 @@
     "roughness": 0.2358,
     "relief": 0.2373
    },
+   "coverage": 0.719,
+   "confidence": "Medium",
    "note": null,
    "rank": 8
   },
@@ -2800,6 +3776,8 @@
     "roughness": 0.2358,
     "relief": 0.2373
    },
+   "coverage": 0.719,
+   "confidence": "Medium",
    "note": null,
    "rank": 8
   },
@@ -2813,6 +3791,8 @@
     "roughness": 0.2358,
     "relief": 0.2373
    },
+   "coverage": 0.719,
+   "confidence": "Medium",
    "note": null,
    "rank": 8
   },
@@ -2826,6 +3806,8 @@
     "roughness": 0.4221,
     "relief": 0.3462
    },
+   "coverage": 0.792,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -2839,6 +3821,8 @@
     "roughness": 0.4221,
     "relief": 0.3462
    },
+   "coverage": 0.792,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -2852,6 +3836,8 @@
     "roughness": 0.4221,
     "relief": 0.3462
    },
+   "coverage": 0.792,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -2865,6 +3851,8 @@
     "roughness": 0.4221,
     "relief": 0.3462
    },
+   "coverage": 0.792,
+   "confidence": "Medium",
    "note": null,
    "rank": 5
   },
@@ -2878,6 +3866,8 @@
     "roughness": 0.4433,
     "relief": 0.3635
    },
+   "coverage": 0.486,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2891,6 +3881,8 @@
     "roughness": 0.4433,
     "relief": 0.3635
    },
+   "coverage": 0.486,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2904,6 +3896,8 @@
     "roughness": 0.4433,
     "relief": 0.3635
    },
+   "coverage": 0.486,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2917,6 +3911,8 @@
     "roughness": 0.4433,
     "relief": 0.3635
    },
+   "coverage": 0.486,
+   "confidence": "Low",
    "note": null,
    "rank": 4
   },
@@ -2930,6 +3926,8 @@
     "roughness": 0.3998,
     "relief": 0.3183
    },
+   "coverage": 0.417,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2943,6 +3941,8 @@
     "roughness": 0.3998,
     "relief": 0.3183
    },
+   "coverage": 0.417,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2956,6 +3956,8 @@
     "roughness": 0.3998,
     "relief": 0.3183
    },
+   "coverage": 0.417,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2969,6 +3971,8 @@
     "roughness": 0.3998,
     "relief": 0.3183
    },
+   "coverage": 0.417,
+   "confidence": "Low",
    "note": null,
    "rank": 7
   },
@@ -2982,6 +3986,8 @@
     "roughness": 0.5589,
     "relief": 0.4314
    },
+   "coverage": 0.438,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -2995,6 +4001,8 @@
     "roughness": 0.5589,
     "relief": 0.4314
    },
+   "coverage": 0.438,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -3008,6 +4016,8 @@
     "roughness": 0.5589,
     "relief": 0.4314
    },
+   "coverage": 0.438,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -3021,6 +4031,8 @@
     "roughness": 0.5589,
     "relief": 0.4314
    },
+   "coverage": 0.438,
+   "confidence": "Low",
    "note": null,
    "rank": 1
   },
@@ -3034,6 +4046,8 @@
     "roughness": 0.4662,
     "relief": 0.3694
    },
+   "coverage": 0.462,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -3047,6 +4061,8 @@
     "roughness": 0.4662,
     "relief": 0.3694
    },
+   "coverage": 0.462,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -3060,6 +4076,8 @@
     "roughness": 0.4662,
     "relief": 0.3694
    },
+   "coverage": 0.462,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -3073,6 +4091,8 @@
     "roughness": 0.4662,
     "relief": 0.3694
    },
+   "coverage": 0.462,
+   "confidence": "Low",
    "note": null,
    "rank": 3
   },
@@ -3086,6 +4106,8 @@
     "roughness": 0.37,
     "relief": 0.2912
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -3099,6 +4121,8 @@
     "roughness": 0.37,
     "relief": 0.2912
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -3112,6 +4136,8 @@
     "roughness": 0.37,
     "relief": 0.2912
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -3125,6 +4151,8 @@
     "roughness": 0.37,
     "relief": 0.2912
    },
+   "coverage": 1.0,
+   "confidence": "High",
    "note": null,
    "rank": 9
   },
@@ -3138,6 +4166,8 @@
     "roughness": 0.4182,
     "relief": 0.3393
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -3151,6 +4181,8 @@
     "roughness": 0.4182,
     "relief": 0.3393
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -3164,6 +4196,8 @@
     "roughness": 0.4182,
     "relief": 0.3393
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -3177,6 +4211,8 @@
     "roughness": 0.4182,
     "relief": 0.3393
    },
+   "coverage": 0.444,
+   "confidence": "Low",
    "note": null,
    "rank": 6
   },
@@ -3190,6 +4226,8 @@
     "roughness": 0.5092,
     "relief": 0.4074
    },
+   "coverage": 0.561,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -3203,6 +4241,8 @@
     "roughness": 0.5092,
     "relief": 0.4074
    },
+   "coverage": 0.561,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -3216,6 +4256,8 @@
     "roughness": 0.5092,
     "relief": 0.4074
    },
+   "coverage": 0.561,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -3229,6 +4271,8 @@
     "roughness": 0.5092,
     "relief": 0.4074
    },
+   "coverage": 0.561,
+   "confidence": "Low",
    "note": null,
    "rank": 2
   },
@@ -3242,6 +4286,8 @@
     "roughness": 0.3914,
     "relief": 0.3114
    },
+   "coverage": 0.719,
+   "confidence": "Medium",
    "note": null,
    "rank": 8
   },
@@ -3255,6 +4301,8 @@
     "roughness": 0.3914,
     "relief": 0.3114
    },
+   "coverage": 0.719,
+   "confidence": "Medium",
    "note": null,
    "rank": 8
   },
@@ -3268,6 +4316,8 @@
     "roughness": 0.3914,
     "relief": 0.3114
    },
+   "coverage": 0.719,
+   "confidence": "Medium",
    "note": null,
    "rank": 8
   },
@@ -3281,6 +4331,8 @@
     "roughness": 0.3914,
     "relief": 0.3114
    },
+   "coverage": 0.719,
+   "confidence": "Medium",
    "note": null,
    "rank": 8
   }
