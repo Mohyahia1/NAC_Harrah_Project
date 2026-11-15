@@ -34,11 +34,19 @@ The same code runs on all three worlds:
 
 `data_coverage` / `confidence` currently reflect the share of the box with elevation data (High ≥ 90 %, Medium 70–90 %, Low < 70 %). When ASTER `num` (pass count) files are added, confidence will switch to the pass-count rule in the main README.
 
-## Scale note and current limits
+## Scale
 
-Global Moon and Mars DEMs make this a **regional-scale** comparison (terrain over ~100 km). Sharper target crops (LOLA 20 m south pole, SLDEM2015 ~60 m, CTX DTMs) would allow site-scale comparison; add them in `config/sources.json` when available.
+Each target is compared at the sharpest resolution we have for it, inside a 20 km box (`local_box_km`). The Saudi side is resampled to exactly the same pixel size and box.
 
-What this means for the current results:
-- Scores compare **regional terrain**. Features smaller than about 2 km on the Moon or 4 km on Mars, such as the Al Wahbah crater (2 km wide), the Wabar craters (~116 m) or the Umm Jirsan lava tube, are below one pixel and do not drive the score. Al Wahbah therefore does not rank high for crater operations at this scale.
-- Slope, roughness and relief move together at this scale, so the ranking for a target changes little between missions; the mission weights mostly change the score level.
-- Most sites currently have 40–75 % coverage because their 100 km box runs onto ASTER tiles not yet downloaded (see `data/raw/README.md`).
+| Target | Dataset | Pixel |
+|---|---|---|
+| Shackleton (lunar south pole) | LRO LOLA polar DEM | 120 m |
+| Marius Hills pit, Mare Tranquillitatis pit | SLDEM2015 (LOLA + SELENE TC), every 3rd pixel | ~178 m |
+| Jezero, Gale | MGS MOLA MEGDR 128 ppd | ~463 m |
+
+The crops (`data/processed/target_crops.json`, ~230 KB) were cut from the NASA PDS Geosciences Node files with HTTP range requests, so only the area around each target was downloaded; source URLs are inside the file. A target without a crop falls back to the global 16 ppd DEM at regional scale (100 km box).
+
+Current limits:
+- A 20 km box describes the terrain around a site. Features much smaller than the box, such as the 2 km Al Wahbah crater or the ~116 m Wabar craters, contribute but do not dominate the score.
+- No Saudi site resembles the steep interior of Shackleton crater (median slope ~29°); the best partial match is Harrat Rahat.
+- Slope, roughness and relief move together, so the ranking for a target changes little between missions; the mission weights mostly change the score level.
