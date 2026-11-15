@@ -2,7 +2,7 @@
   "_note": "Where the pipeline finds each DEM. Large files live in data/raw/ (not in git).",
   "box_km": 100,
   "relief_window_px": 5,
-  "min_coverage": 0.9,
+  "min_coverage": 0.35,
   "earth_tiles_dir": "data/raw/aster",
   "moon_dem": "data/raw/moon/elevation.npy",
   "moon_ppd": 16,

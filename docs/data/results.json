@@ -1,9 +1,9 @@
 {
  "meta": {
   "project": "Harrah",
-  "generated_utc": "2026-11-15T00:10:18Z",
-  "status": "sample",
-  "status_note": "SAMPLE values for building the interface. Not real scores.",
+  "generated_utc": "2026-11-15T00:25:50Z",
+  "status": "preliminary",
+  "status_note": "Scores from NASA global DEMs at regional scale; sharper target data pending.",
   "box_km": 100,
   "relief_window_px": 5,
   "pixel_m": {
@@ -92,9 +92,58 @@
     "rain_mm_day": 0.07,
     "sunlight_kwh_m2_day": 6.2
    },
-   "data_coverage": null,
-   "confidence": "Sample",
-   "traits": null
+   "data_coverage": 0.745,
+   "confidence": "Medium",
+   "traits": {
+    "Moon": {
+     "valid_share": 0.7448,
+     "slope": {
+      "p10": 0.307,
+      "p25": 0.471,
+      "p50": 0.708,
+      "p75": 1.01,
+      "p90": 1.399
+     },
+     "roughness": {
+      "p10": 37.008,
+      "p25": 48.968,
+      "p50": 66.699,
+      "p75": 89.98,
+      "p90": 128.364
+     },
+     "relief": {
+      "p10": 70.445,
+      "p25": 92.048,
+      "p50": 125.116,
+      "p75": 162.962,
+      "p90": 217.764
+     }
+    },
+    "Mars": {
+     "valid_share": 0.7916666666666666,
+     "slope": {
+      "p10": 0.301,
+      "p25": 0.441,
+      "p50": 0.677,
+      "p75": 0.935,
+      "p90": 1.227
+     },
+     "roughness": {
+      "p10": 64.357,
+      "p25": 83.598,
+      "p50": 119.268,
+      "p75": 153.133,
+      "p90": 207.88
+     },
+     "relief": {
+      "p10": 121.574,
+      "p25": 155.335,
+      "p50": 222.856,
+      "p75": 282.777,
+      "p90": 380.499
+     }
+    }
+   }
   },
   {
    "id": "khaybar_field",
@@ -119,9 +168,58 @@
     "rain_mm_day": 0.07,
     "sunlight_kwh_m2_day": 6.2
    },
-   "data_coverage": null,
-   "confidence": "Sample",
-   "traits": null
+   "data_coverage": 0.459,
+   "confidence": "Low",
+   "traits": {
+    "Moon": {
+     "valid_share": 0.4592,
+     "slope": {
+      "p10": 0.494,
+      "p25": 0.661,
+      "p50": 0.883,
+      "p75": 1.2,
+      "p90": 1.696
+     },
+     "roughness": {
+      "p10": 51.504,
+      "p25": 63.246,
+      "p50": 79.791,
+      "p75": 107.017,
+      "p90": 158.926
+     },
+     "relief": {
+      "p10": 102.736,
+      "p25": 122.352,
+      "p50": 147.167,
+      "p75": 185.41,
+      "p90": 274.435
+     }
+    },
+    "Mars": {
+     "valid_share": 0.4861111111111111,
+     "slope": {
+      "p10": 0.545,
+      "p25": 0.682,
+      "p50": 0.851,
+      "p75": 1.097,
+      "p90": 1.65
+     },
+     "roughness": {
+      "p10": 106.844,
+      "p25": 120.049,
+      "p50": 144.719,
+      "p75": 184.34,
+      "p90": 269.876
+     },
+     "relief": {
+      "p10": 203.949,
+      "p25": 224.985,
+      "p50": 265.713,
+      "p75": 329.187,
+      "p90": 441.643
+     }
+    }
+   }
   },
   {
    "id": "al_wahbah",
@@ -146,9 +244,58 @@
     "rain_mm_day": 0.08,
     "sunlight_kwh_m2_day": 6.3
    },
-   "data_coverage": null,
-   "confidence": "Sample",
-   "traits": null
+   "data_coverage": 0.395,
+   "confidence": "Low",
+   "traits": {
+    "Moon": {
+     "valid_share": 0.3952,
+     "slope": {
+      "p10": 0.145,
+      "p25": 0.252,
+      "p50": 0.4,
+      "p75": 0.626,
+      "p90": 0.955
+     },
+     "roughness": {
+      "p10": 22.157,
+      "p25": 29.499,
+      "p50": 41.489,
+      "p75": 62.682,
+      "p90": 92.184
+     },
+     "relief": {
+      "p10": 33.906,
+      "p25": 49.669,
+      "p50": 71.661,
+      "p75": 100.663,
+      "p90": 164.982
+     }
+    },
+    "Mars": {
+     "valid_share": 0.4166666666666667,
+     "slope": {
+      "p10": 0.112,
+      "p25": 0.21,
+      "p50": 0.338,
+      "p75": 0.485,
+      "p90": 0.784
+     },
+     "roughness": {
+      "p10": 35.22,
+      "p25": 46.178,
+      "p50": 63.469,
+      "p75": 93.77,
+      "p90": 149.479
+     },
+     "relief": {
+      "p10": 49.856,
+      "p25": 69.499,
+      "p50": 116.124,
+      "p75": 164.697,
+      "p90": 235.87
+     }
+    }
+   }
   },
   {
    "id": "harrat_rahat",
@@ -173,9 +320,58 @@
     "rain_mm_day": 0.07,
     "sunlight_kwh_m2_day": 6.1
    },
-   "data_coverage": null,
-   "confidence": "Sample",
-   "traits": null
+   "data_coverage": 0.438,
+   "confidence": "Low",
+   "traits": {
+    "Moon": {
+     "valid_share": 0.444,
+     "slope": {
+      "p10": 0.433,
+      "p25": 0.719,
+      "p50": 1.283,
+      "p75": 2.64,
+      "p90": 5.146
+     },
+     "roughness": {
+      "p10": 57.719,
+      "p25": 89.479,
+      "p50": 160.236,
+      "p75": 310.086,
+      "p90": 560.733
+     },
+     "relief": {
+      "p10": 122.596,
+      "p25": 169.99,
+      "p50": 260.856,
+      "p75": 432.689,
+      "p90": 728.245
+     }
+    },
+    "Mars": {
+     "valid_share": 0.4375,
+     "slope": {
+      "p10": 0.382,
+      "p25": 0.611,
+      "p50": 1.015,
+      "p75": 1.74,
+      "p90": 3.407
+     },
+     "roughness": {
+      "p10": 100.937,
+      "p25": 142.916,
+      "p50": 222.647,
+      "p75": 400.006,
+      "p90": 809.444
+     },
+     "relief": {
+      "p10": 201.561,
+      "p25": 247.154,
+      "p50": 405.118,
+      "p75": 748.304,
+      "p90": 962.016
+     }
+    }
+   }
   },
   {
    "id": "uwayrid",
@@ -200,9 +396,58 @@
     "rain_mm_day": 0.04,
     "sunlight_kwh_m2_day": 6.2
    },
-   "data_coverage": null,
-   "confidence": "Sample",
-   "traits": null
+   "data_coverage": 0.456,
+   "confidence": "Low",
+   "traits": {
+    "Moon": {
+     "valid_share": 0.456,
+     "slope": {
+      "p10": 0.431,
+      "p25": 0.711,
+      "p50": 1.135,
+      "p75": 1.792,
+      "p90": 2.718
+     },
+     "roughness": {
+      "p10": 61.351,
+      "p25": 86.544,
+      "p50": 124.963,
+      "p75": 192.299,
+      "p90": 276.365
+     },
+     "relief": {
+      "p10": 124.791,
+      "p25": 162.99,
+      "p50": 216.676,
+      "p75": 274.806,
+      "p90": 339.559
+     }
+    },
+    "Mars": {
+     "valid_share": 0.4618055555555556,
+     "slope": {
+      "p10": 0.437,
+      "p25": 0.658,
+      "p50": 0.956,
+      "p75": 1.378,
+      "p90": 1.888
+     },
+     "roughness": {
+      "p10": 110.949,
+      "p25": 139.6,
+      "p50": 195.978,
+      "p75": 269.553,
+      "p90": 347.059
+     },
+     "relief": {
+      "p10": 209.387,
+      "p25": 262.46,
+      "p50": 315.582,
+      "p75": 392.834,
+      "p90": 448.386
+     }
+    }
+   }
   },
   {
    "id": "wabar",
@@ -227,9 +472,58 @@
     "rain_mm_day": 0.08,
     "sunlight_kwh_m2_day": 6.4
    },
-   "data_coverage": null,
-   "confidence": "Sample",
-   "traits": null
+   "data_coverage": 1.0,
+   "confidence": "High",
+   "traits": {
+    "Moon": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.035,
+      "p25": 0.058,
+      "p50": 0.093,
+      "p75": 0.136,
+      "p90": 0.182
+     },
+     "roughness": {
+      "p10": 7.435,
+      "p25": 9.578,
+      "p50": 12.465,
+      "p75": 16.556,
+      "p90": 21.293
+     },
+     "relief": {
+      "p10": 11.607,
+      "p25": 13.123,
+      "p50": 15.2,
+      "p75": 17.952,
+      "p90": 21.345
+     }
+    },
+    "Mars": {
+     "valid_share": 1.0,
+     "slope": {
+      "p10": 0.025,
+      "p25": 0.039,
+      "p50": 0.057,
+      "p75": 0.08,
+      "p90": 0.108
+     },
+     "roughness": {
+      "p10": 8.448,
+      "p25": 10.729,
+      "p50": 13.735,
+      "p75": 17.344,
+      "p90": 21.64
+     },
+     "relief": {
+      "p10": 14.806,
+      "p25": 16.872,
+      "p50": 19.458,
+      "p75": 22.617,
+      "p90": 26.352
+     }
+    }
+   }
   },
   {
    "id": "hibashi",
@@ -254,9 +548,58 @@
     "rain_mm_day": 0.12,
     "sunlight_kwh_m2_day": 6.2
    },
-   "data_coverage": null,
-   "confidence": "Sample",
-   "traits": null
+   "data_coverage": 0.422,
+   "confidence": "Low",
+   "traits": {
+    "Moon": {
+     "valid_share": 0.4224,
+     "slope": {
+      "p10": 0.259,
+      "p25": 0.405,
+      "p50": 0.631,
+      "p75": 0.945,
+      "p90": 1.299
+     },
+     "roughness": {
+      "p10": 33.679,
+      "p25": 44.251,
+      "p50": 60.787,
+      "p75": 85.383,
+      "p90": 117.179
+     },
+     "relief": {
+      "p10": 58.203,
+      "p25": 79.844,
+      "p50": 119.885,
+      "p75": 154.843,
+      "p90": 181.565
+     }
+    },
+    "Mars": {
+     "valid_share": 0.4444444444444444,
+     "slope": {
+      "p10": 0.276,
+      "p25": 0.404,
+      "p50": 0.633,
+      "p75": 0.88,
+      "p90": 1.12
+     },
+     "roughness": {
+      "p10": 61.666,
+      "p25": 85.243,
+      "p50": 119.205,
+      "p75": 155.79,
+      "p90": 186.548
+     },
+     "relief": {
+      "p10": 135.638,
+      "p25": 177.484,
+      "p50": 214.42,
+      "p75": 255.468,
+      "p90": 297.427
+     }
+    }
+   }
   },
   {
    "id": "harrat_lunayyir",
@@ -281,9 +624,58 @@
     "rain_mm_day": 0.06,
     "sunlight_kwh_m2_day": 6.2
    },
-   "data_coverage": null,
-   "confidence": "Sample",
-   "traits": null
+   "data_coverage": 0.532,
+   "confidence": "Low",
+   "traits": {
+    "Moon": {
+     "valid_share": 0.532,
+     "slope": {
+      "p10": 0.512,
+      "p25": 0.861,
+      "p50": 1.378,
+      "p75": 2.582,
+      "p90": 4.112
+     },
+     "roughness": {
+      "p10": 75.295,
+      "p25": 100.738,
+      "p50": 170.639,
+      "p75": 303.09,
+      "p90": 441.597
+     },
+     "relief": {
+      "p10": 142.93,
+      "p25": 182.593,
+      "p50": 290.318,
+      "p75": 443.893,
+      "p90": 572.159
+     }
+    },
+    "Mars": {
+     "valid_share": 0.5607638888888888,
+     "slope": {
+      "p10": 0.552,
+      "p25": 0.778,
+      "p50": 1.218,
+      "p75": 1.935,
+      "p90": 2.599
+     },
+     "roughness": {
+      "p10": 123.803,
+      "p25": 172.523,
+      "p50": 272.395,
+      "p75": 391.321,
+      "p90": 491.095
+     },
+     "relief": {
+      "p10": 247.095,
+      "p25": 287.152,
+      "p50": 432.965,
+      "p75": 562.271,
+      "p90": 669.232
+     }
+    }
+   }
   },
   {
    "id": "harrat_kishb",
@@ -308,9 +700,58 @@
     "rain_mm_day": 0.08,
     "sunlight_kwh_m2_day": 6.3
    },
-   "data_coverage": null,
-   "confidence": "Sample",
-   "traits": null
+   "data_coverage": 0.681,
+   "confidence": "Low",
+   "traits": {
+    "Moon": {
+     "valid_share": 0.6808,
+     "slope": {
+      "p10": 0.102,
+      "p25": 0.177,
+      "p50": 0.311,
+      "p75": 0.503,
+      "p90": 0.775
+     },
+     "roughness": {
+      "p10": 16.402,
+      "p25": 23.335,
+      "p50": 34.421,
+      "p75": 50.876,
+      "p90": 77.403
+     },
+     "relief": {
+      "p10": 25.229,
+      "p25": 33.677,
+      "p50": 53.947,
+      "p75": 78.209,
+      "p90": 125.541
+     }
+    },
+    "Mars": {
+     "valid_share": 0.71875,
+     "slope": {
+      "p10": 0.091,
+      "p25": 0.145,
+      "p50": 0.241,
+      "p75": 0.387,
+      "p90": 0.637
+     },
+     "roughness": {
+      "p10": 25.04,
+      "p25": 35.134,
+      "p50": 52.811,
+      "p75": 72.934,
+      "p90": 114.437
+     },
+     "relief": {
+      "p10": 39.463,
+      "p25": 52.913,
+      "p50": 77.853,
+      "p75": 122.299,
+      "p90": 200.19
+     }
+    }
+   }
   }
  ],
  "targets": [
@@ -327,7 +768,30 @@
    ],
    "dataset": "LOLA south pole DEM (20 m)",
    "status": "provisional",
-   "traits": null
+   "traits": {
+    "valid_share": 1.0,
+    "slope": {
+     "p10": 1.976,
+     "p25": 3.673,
+     "p50": 7.033,
+     "p75": 11.728,
+     "p90": 15.53
+    },
+    "roughness": {
+     "p10": 232.643,
+     "p25": 392.501,
+     "p50": 652.943,
+     "p75": 1003.451,
+     "p90": 1314.084
+    },
+    "relief": {
+     "p10": 502.484,
+     "p25": 781.355,
+     "p50": 1192.595,
+     "p75": 1776.159,
+     "p90": 2278.714
+    }
+   }
   },
   {
    "id": "moon_marius_pit",
@@ -341,7 +805,30 @@
    ],
    "dataset": "SLDEM2015 (~60 m)",
    "status": "provisional",
-   "traits": null
+   "traits": {
+    "valid_share": 1.0,
+    "slope": {
+     "p10": 0.32,
+     "p25": 0.504,
+     "p50": 0.788,
+     "p75": 1.254,
+     "p90": 1.884
+    },
+    "roughness": {
+     "p10": 31.628,
+     "p25": 45.579,
+     "p50": 69.611,
+     "p75": 111.429,
+     "p90": 161.057
+    },
+    "relief": {
+     "p10": 70.144,
+     "p25": 94.309,
+     "p50": 144.918,
+     "p75": 206.299,
+     "p90": 268.44
+    }
+   }
   },
   {
    "id": "moon_tranquillitatis_pit",
@@ -355,7 +842,30 @@
    ],
    "dataset": "SLDEM2015 (~60 m)",
    "status": "provisional",
-   "traits": null
+   "traits": {
+    "valid_share": 1.0,
+    "slope": {
+     "p10": 0.091,
+     "p25": 0.149,
+     "p50": 0.25,
+     "p75": 0.372,
+     "p90": 0.54
+    },
+    "roughness": {
+     "p10": 9.813,
+     "p25": 14.478,
+     "p50": 21.8,
+     "p75": 32.297,
+     "p90": 47.251
+    },
+    "relief": {
+     "p10": 21.212,
+     "p25": 29.684,
+     "p50": 40.88,
+     "p75": 59.349,
+     "p90": 100.274
+    }
+   }
   },
   {
    "id": "mars_jezero",
@@ -370,7 +880,30 @@
    ],
    "dataset": "MOLA MEGDR 128 ppd (~460 m); CTX DTM if available",
    "status": "provisional",
-   "traits": null
+   "traits": {
+    "valid_share": 1.0,
+    "slope": {
+     "p10": 0.398,
+     "p25": 0.654,
+     "p50": 1.187,
+     "p75": 1.882,
+     "p90": 3.151
+    },
+    "roughness": {
+     "p10": 94.484,
+     "p25": 149.232,
+     "p50": 229.898,
+     "p75": 327.764,
+     "p90": 641.789
+    },
+    "relief": {
+     "p10": 212.729,
+     "p25": 308.955,
+     "p50": 430.126,
+     "p75": 606.384,
+     "p90": 958.172
+    }
+   }
   },
   {
    "id": "mars_gale",
@@ -384,7 +917,30 @@
    ],
    "dataset": "MOLA MEGDR 128 ppd (~460 m); CTX DTM if available",
    "status": "provisional",
-   "traits": null
+   "traits": {
+    "valid_share": 1.0,
+    "slope": {
+     "p10": 0.67,
+     "p25": 1.424,
+     "p50": 3.857,
+     "p75": 6.907,
+     "p90": 10.378
+    },
+    "roughness": {
+     "p10": 145.024,
+     "p25": 295.525,
+     "p50": 707.643,
+     "p75": 1175.62,
+     "p90": 1816.397
+    },
+    "relief": {
+     "p10": 398.317,
+     "p25": 852.988,
+     "p50": 1344.854,
+     "p75": 2131.779,
+     "p90": 3050.602
+    }
+   }
   }
  ],
  "scores": [
@@ -392,50 +948,50 @@
    "site_id": "umm_jirsan",
    "target_id": "moon_shackleton",
    "mission": "rover",
-   "match": 41.3,
+   "match": 35.8,
    "similarity": {
-    "slope": 0.3569,
-    "roughness": 0.2974,
-    "relief": 0.7553
+    "slope": 0.4003,
+    "roughness": 0.3418,
+    "relief": 0.3033
    },
    "note": null,
-   "rank": 7
+   "rank": 5
   },
   {
    "site_id": "umm_jirsan",
    "target_id": "moon_shackleton",
    "mission": "crater_ops",
-   "match": 54.4,
+   "match": 34.0,
    "similarity": {
-    "slope": 0.3569,
-    "roughness": 0.2974,
-    "relief": 0.7553
+    "slope": 0.4003,
+    "roughness": 0.3418,
+    "relief": 0.3033
    },
    "note": null,
-   "rank": 4
+   "rank": 5
   },
   {
    "site_id": "umm_jirsan",
    "target_id": "moon_shackleton",
    "mission": "landing_base",
-   "match": 41.9,
+   "match": 36.3,
    "similarity": {
-    "slope": 0.3569,
-    "roughness": 0.2974,
-    "relief": 0.7553
+    "slope": 0.4003,
+    "roughness": 0.3418,
+    "relief": 0.3033
    },
    "note": null,
-   "rank": 7
+   "rank": 5
   },
   {
    "site_id": "umm_jirsan",
    "target_id": "moon_shackleton",
    "mission": "lava_tube",
-   "match": 53.8,
+   "match": 33.4,
    "similarity": {
-    "slope": 0.3569,
-    "roughness": 0.2974,
-    "relief": 0.7553
+    "slope": 0.4003,
+    "roughness": 0.3418,
+    "relief": 0.3033
    },
    "note": null,
    "rank": 5
@@ -444,2289 +1000,2289 @@
    "site_id": "khaybar_field",
    "target_id": "moon_shackleton",
    "mission": "rover",
-   "match": 40.3,
+   "match": 36.9,
    "similarity": {
-    "slope": 0.3273,
-    "roughness": 0.5518,
-    "relief": 0.2589
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "moon_shackleton",
-   "mission": "crater_ops",
-   "match": 33.8,
-   "similarity": {
-    "slope": 0.3273,
-    "roughness": 0.5518,
-    "relief": 0.2589
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "moon_shackleton",
-   "mission": "landing_base",
-   "match": 38.1,
-   "similarity": {
-    "slope": 0.3273,
-    "roughness": 0.5518,
-    "relief": 0.2589
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "moon_shackleton",
-   "mission": "lava_tube",
-   "match": 36.0,
-   "similarity": {
-    "slope": 0.3273,
-    "roughness": 0.5518,
-    "relief": 0.2589
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "moon_shackleton",
-   "mission": "rover",
-   "match": 74.6,
-   "similarity": {
-    "slope": 0.7552,
-    "roughness": 0.6565,
-    "relief": 0.9053
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "moon_shackleton",
-   "mission": "crater_ops",
-   "match": 81.1,
-   "similarity": {
-    "slope": 0.7552,
-    "roughness": 0.6565,
-    "relief": 0.9053
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "moon_shackleton",
-   "mission": "landing_base",
-   "match": 75.6,
-   "similarity": {
-    "slope": 0.7552,
-    "roughness": 0.6565,
-    "relief": 0.9053
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "moon_shackleton",
-   "mission": "lava_tube",
-   "match": 80.1,
-   "similarity": {
-    "slope": 0.7552,
-    "roughness": 0.6565,
-    "relief": 0.9053
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "moon_shackleton",
-   "mission": "rover",
-   "match": 46.1,
-   "similarity": {
-    "slope": 0.353,
-    "roughness": 0.4642,
-    "relief": 0.6696
+    "slope": 0.4114,
+    "roughness": 0.3528,
+    "relief": 0.3148
    },
    "note": null,
    "rank": 4
   },
   {
-   "site_id": "harrat_rahat",
+   "site_id": "khaybar_field",
    "target_id": "moon_shackleton",
    "mission": "crater_ops",
-   "match": 53.4,
-   "similarity": {
-    "slope": 0.353,
-    "roughness": 0.4642,
-    "relief": 0.6696
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "moon_shackleton",
-   "mission": "landing_base",
-   "match": 45.0,
-   "similarity": {
-    "slope": 0.353,
-    "roughness": 0.4642,
-    "relief": 0.6696
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "moon_shackleton",
-   "mission": "lava_tube",
-   "match": 54.5,
-   "similarity": {
-    "slope": 0.353,
-    "roughness": 0.4642,
-    "relief": 0.6696
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "moon_shackleton",
-   "mission": "rover",
-   "match": 56.1,
-   "similarity": {
-    "slope": 0.3174,
-    "roughness": 0.6794,
-    "relief": 0.8102
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "moon_shackleton",
-   "mission": "crater_ops",
-   "match": 63.6,
-   "similarity": {
-    "slope": 0.3174,
-    "roughness": 0.6794,
-    "relief": 0.8102
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "moon_shackleton",
-   "mission": "landing_base",
-   "match": 52.5,
-   "similarity": {
-    "slope": 0.3174,
-    "roughness": 0.6794,
-    "relief": 0.8102
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "moon_shackleton",
-   "mission": "lava_tube",
-   "match": 67.2,
-   "similarity": {
-    "slope": 0.3174,
-    "roughness": 0.6794,
-    "relief": 0.8102
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_shackleton",
-   "mission": "rover",
-   "match": 45.1,
-   "similarity": {
-    "slope": 0.4789,
-    "roughness": 0.4461,
-    "relief": 0.4055
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_shackleton",
-   "mission": "crater_ops",
-   "match": 43.6,
-   "similarity": {
-    "slope": 0.4789,
-    "roughness": 0.4461,
-    "relief": 0.4055
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_shackleton",
-   "mission": "landing_base",
-   "match": 45.4,
-   "similarity": {
-    "slope": 0.4789,
-    "roughness": 0.4461,
-    "relief": 0.4055
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_shackleton",
-   "mission": "lava_tube",
-   "match": 43.2,
-   "similarity": {
-    "slope": 0.4789,
-    "roughness": 0.4461,
-    "relief": 0.4055
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_shackleton",
-   "mission": "rover",
-   "match": 59.5,
-   "similarity": {
-    "slope": 0.4622,
-    "roughness": 0.7464,
-    "relief": 0.5575
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_shackleton",
-   "mission": "crater_ops",
-   "match": 56.7,
-   "similarity": {
-    "slope": 0.4622,
-    "roughness": 0.7464,
-    "relief": 0.5575
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_shackleton",
-   "mission": "landing_base",
-   "match": 56.7,
-   "similarity": {
-    "slope": 0.4622,
-    "roughness": 0.7464,
-    "relief": 0.5575
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_shackleton",
-   "mission": "lava_tube",
-   "match": 59.5,
-   "similarity": {
-    "slope": 0.4622,
-    "roughness": 0.7464,
-    "relief": 0.5575
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_shackleton",
-   "mission": "rover",
-   "match": 38.4,
-   "similarity": {
-    "slope": 0.3912,
-    "roughness": 0.422,
-    "relief": 0.2917
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_shackleton",
-   "mission": "crater_ops",
-   "match": 34.8,
-   "similarity": {
-    "slope": 0.3912,
-    "roughness": 0.422,
-    "relief": 0.2917
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_shackleton",
-   "mission": "landing_base",
-   "match": 38.1,
-   "similarity": {
-    "slope": 0.3912,
-    "roughness": 0.422,
-    "relief": 0.2917
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_shackleton",
-   "mission": "lava_tube",
    "match": 35.1,
    "similarity": {
-    "slope": 0.3912,
-    "roughness": 0.422,
-    "relief": 0.2917
+    "slope": 0.4114,
+    "roughness": 0.3528,
+    "relief": 0.3148
    },
    "note": null,
-   "rank": 9
+   "rank": 4
   },
   {
-   "site_id": "harrat_kishb",
-   "target_id": "moon_shackleton",
-   "mission": "rover",
-   "match": 45.8,
-   "similarity": {
-    "slope": 0.5676,
-    "roughness": 0.3072,
-    "relief": 0.5395
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "harrat_kishb",
-   "target_id": "moon_shackleton",
-   "mission": "crater_ops",
-   "match": 50.1,
-   "similarity": {
-    "slope": 0.5676,
-    "roughness": 0.3072,
-    "relief": 0.5395
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "harrat_kishb",
+   "site_id": "khaybar_field",
    "target_id": "moon_shackleton",
    "mission": "landing_base",
-   "match": 48.4,
+   "match": 37.5,
    "similarity": {
-    "slope": 0.5676,
-    "roughness": 0.3072,
-    "relief": 0.5395
+    "slope": 0.4114,
+    "roughness": 0.3528,
+    "relief": 0.3148
    },
    "note": null,
    "rank": 4
   },
   {
-   "site_id": "harrat_kishb",
+   "site_id": "khaybar_field",
    "target_id": "moon_shackleton",
    "mission": "lava_tube",
-   "match": 47.5,
+   "match": 34.6,
    "similarity": {
-    "slope": 0.5676,
-    "roughness": 0.3072,
-    "relief": 0.5395
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "moon_marius_pit",
-   "mission": "rover",
-   "match": 42.6,
-   "similarity": {
-    "slope": 0.4685,
-    "roughness": 0.2555,
-    "relief": 0.6834
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "moon_marius_pit",
-   "mission": "crater_ops",
-   "match": 53.3,
-   "similarity": {
-    "slope": 0.4685,
-    "roughness": 0.2555,
-    "relief": 0.6834
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "moon_marius_pit",
-   "mission": "landing_base",
-   "match": 44.8,
-   "similarity": {
-    "slope": 0.4685,
-    "roughness": 0.2555,
-    "relief": 0.6834
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "moon_marius_pit",
-   "mission": "lava_tube",
-   "match": 51.2,
-   "similarity": {
-    "slope": 0.4685,
-    "roughness": 0.2555,
-    "relief": 0.6834
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "moon_marius_pit",
-   "mission": "rover",
-   "match": 44.9,
-   "similarity": {
-    "slope": 0.3678,
-    "roughness": 0.4627,
-    "relief": 0.5818
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "moon_marius_pit",
-   "mission": "crater_ops",
-   "match": 49.4,
-   "similarity": {
-    "slope": 0.3678,
-    "roughness": 0.4627,
-    "relief": 0.5818
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "moon_marius_pit",
-   "mission": "landing_base",
-   "match": 43.9,
-   "similarity": {
-    "slope": 0.3678,
-    "roughness": 0.4627,
-    "relief": 0.5818
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "moon_marius_pit",
-   "mission": "lava_tube",
-   "match": 50.3,
-   "similarity": {
-    "slope": 0.3678,
-    "roughness": 0.4627,
-    "relief": 0.5818
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "moon_marius_pit",
-   "mission": "rover",
-   "match": 56.4,
-   "similarity": {
-    "slope": 0.2665,
-    "roughness": 0.9214,
-    "relief": 0.4453
+    "slope": 0.4114,
+    "roughness": 0.3528,
+    "relief": 0.3148
    },
    "note": null,
    "rank": 4
   },
   {
    "site_id": "al_wahbah",
-   "target_id": "moon_marius_pit",
-   "mission": "crater_ops",
-   "match": 48.7,
-   "similarity": {
-    "slope": 0.2665,
-    "roughness": 0.9214,
-    "relief": 0.4453
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "moon_marius_pit",
-   "mission": "landing_base",
-   "match": 49.9,
-   "similarity": {
-    "slope": 0.2665,
-    "roughness": 0.9214,
-    "relief": 0.4453
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "moon_marius_pit",
-   "mission": "lava_tube",
-   "match": 55.2,
-   "similarity": {
-    "slope": 0.2665,
-    "roughness": 0.9214,
-    "relief": 0.4453
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "moon_marius_pit",
+   "target_id": "moon_shackleton",
    "mission": "rover",
-   "match": 58.7,
+   "match": 34.3,
    "similarity": {
-    "slope": 0.7869,
-    "roughness": 0.2979,
-    "relief": 0.765
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "moon_marius_pit",
-   "mission": "crater_ops",
-   "match": 67.8,
-   "similarity": {
-    "slope": 0.7869,
-    "roughness": 0.2979,
-    "relief": 0.765
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "moon_marius_pit",
-   "mission": "landing_base",
-   "match": 63.6,
-   "similarity": {
-    "slope": 0.7869,
-    "roughness": 0.2979,
-    "relief": 0.765
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "moon_marius_pit",
-   "mission": "lava_tube",
-   "match": 62.9,
-   "similarity": {
-    "slope": 0.7869,
-    "roughness": 0.2979,
-    "relief": 0.765
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "moon_marius_pit",
-   "mission": "rover",
-   "match": 55.4,
-   "similarity": {
-    "slope": 0.4769,
-    "roughness": 0.7149,
-    "relief": 0.3855
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "moon_marius_pit",
-   "mission": "crater_ops",
-   "match": 47.9,
-   "similarity": {
-    "slope": 0.4769,
-    "roughness": 0.7149,
-    "relief": 0.3855
+    "slope": 0.3854,
+    "roughness": 0.3279,
+    "relief": 0.2891
    },
    "note": null,
    "rank": 7
   },
   {
-   "site_id": "uwayrid",
-   "target_id": "moon_marius_pit",
-   "mission": "landing_base",
-   "match": 53.0,
-   "similarity": {
-    "slope": 0.4769,
-    "roughness": 0.7149,
-    "relief": 0.3855
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "moon_marius_pit",
-   "mission": "lava_tube",
-   "match": 50.3,
-   "similarity": {
-    "slope": 0.4769,
-    "roughness": 0.7149,
-    "relief": 0.3855
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_marius_pit",
-   "mission": "rover",
-   "match": 56.5,
-   "similarity": {
-    "slope": 0.6713,
-    "roughness": 0.3811,
-    "relief": 0.7202
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_marius_pit",
-   "mission": "crater_ops",
-   "match": 63.8,
-   "similarity": {
-    "slope": 0.6713,
-    "roughness": 0.3811,
-    "relief": 0.7202
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_marius_pit",
-   "mission": "landing_base",
-   "match": 59.4,
-   "similarity": {
-    "slope": 0.6713,
-    "roughness": 0.3811,
-    "relief": 0.7202
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_marius_pit",
-   "mission": "lava_tube",
-   "match": 60.9,
-   "similarity": {
-    "slope": 0.6713,
-    "roughness": 0.3811,
-    "relief": 0.7202
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_marius_pit",
-   "mission": "rover",
-   "match": 48.0,
-   "similarity": {
-    "slope": 0.6039,
-    "roughness": 0.4151,
-    "relief": 0.3601
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_marius_pit",
-   "mission": "crater_ops",
-   "match": 44.4,
-   "similarity": {
-    "slope": 0.6039,
-    "roughness": 0.4151,
-    "relief": 0.3601
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_marius_pit",
-   "mission": "landing_base",
-   "match": 49.9,
-   "similarity": {
-    "slope": 0.6039,
-    "roughness": 0.4151,
-    "relief": 0.3601
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_marius_pit",
-   "mission": "lava_tube",
-   "match": 42.5,
-   "similarity": {
-    "slope": 0.6039,
-    "roughness": 0.4151,
-    "relief": 0.3601
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_marius_pit",
-   "mission": "rover",
-   "match": 58.3,
-   "similarity": {
-    "slope": 0.6752,
-    "roughness": 0.5085,
-    "relief": 0.55
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_marius_pit",
-   "mission": "crater_ops",
-   "match": 57.9,
-   "similarity": {
-    "slope": 0.6752,
-    "roughness": 0.5085,
-    "relief": 0.55
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_marius_pit",
-   "mission": "landing_base",
-   "match": 60.0,
-   "similarity": {
-    "slope": 0.6752,
-    "roughness": 0.5085,
-    "relief": 0.55
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_marius_pit",
-   "mission": "lava_tube",
-   "match": 56.3,
-   "similarity": {
-    "slope": 0.6752,
-    "roughness": 0.5085,
-    "relief": 0.55
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "harrat_kishb",
-   "target_id": "moon_marius_pit",
-   "mission": "rover",
-   "match": 29.2,
-   "similarity": {
-    "slope": 0.276,
-    "roughness": 0.2664,
-    "relief": 0.3737
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "harrat_kishb",
-   "target_id": "moon_marius_pit",
-   "mission": "crater_ops",
-   "match": 32.3,
-   "similarity": {
-    "slope": 0.276,
-    "roughness": 0.2664,
-    "relief": 0.3737
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "harrat_kishb",
-   "target_id": "moon_marius_pit",
-   "mission": "landing_base",
-   "match": 29.3,
-   "similarity": {
-    "slope": 0.276,
-    "roughness": 0.2664,
-    "relief": 0.3737
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "harrat_kishb",
-   "target_id": "moon_marius_pit",
-   "mission": "lava_tube",
-   "match": 32.2,
-   "similarity": {
-    "slope": 0.276,
-    "roughness": 0.2664,
-    "relief": 0.3737
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "rover",
-   "match": 30.0,
-   "similarity": {
-    "slope": 0.2004,
-    "roughness": 0.2108,
-    "relief": 0.6758
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "crater_ops",
-   "match": 44.0,
-   "similarity": {
-    "slope": 0.2004,
-    "roughness": 0.2108,
-    "relief": 0.6758
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "landing_base",
-   "match": 29.9,
-   "similarity": {
-    "slope": 0.2004,
-    "roughness": 0.2108,
-    "relief": 0.6758
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "lava_tube",
-   "match": 44.1,
-   "similarity": {
-    "slope": 0.2004,
-    "roughness": 0.2108,
-    "relief": 0.6758
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "rover",
-   "match": 62.9,
-   "similarity": {
-    "slope": 0.5668,
-    "roughness": 0.8285,
-    "relief": 0.354
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "crater_ops",
-   "match": 51.3,
-   "similarity": {
-    "slope": 0.5668,
-    "roughness": 0.8285,
-    "relief": 0.354
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "landing_base",
-   "match": 60.3,
-   "similarity": {
-    "slope": 0.5668,
-    "roughness": 0.8285,
-    "relief": 0.354
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "lava_tube",
-   "match": 53.9,
-   "similarity": {
-    "slope": 0.5668,
-    "roughness": 0.8285,
-    "relief": 0.354
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
    "site_id": "al_wahbah",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "rover",
-   "match": 70.8,
-   "similarity": {
-    "slope": 0.504,
-    "roughness": 0.8816,
-    "relief": 0.7689
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "crater_ops",
-   "match": 71.2,
-   "similarity": {
-    "slope": 0.504,
-    "roughness": 0.8816,
-    "relief": 0.7689
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "landing_base",
-   "match": 67.0,
-   "similarity": {
-    "slope": 0.504,
-    "roughness": 0.8816,
-    "relief": 0.7689
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "lava_tube",
-   "match": 75.0,
-   "similarity": {
-    "slope": 0.504,
-    "roughness": 0.8816,
-    "relief": 0.7689
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "rover",
-   "match": 57.4,
-   "similarity": {
-    "slope": 0.2681,
-    "roughness": 0.8964,
-    "relief": 0.5414
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "crater_ops",
-   "match": 53.0,
-   "similarity": {
-    "slope": 0.2681,
-    "roughness": 0.8964,
-    "relief": 0.5414
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "landing_base",
-   "match": 51.1,
-   "similarity": {
-    "slope": 0.2681,
-    "roughness": 0.8964,
-    "relief": 0.5414
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "lava_tube",
-   "match": 59.3,
-   "similarity": {
-    "slope": 0.2681,
-    "roughness": 0.8964,
-    "relief": 0.5414
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "rover",
-   "match": 50.1,
-   "similarity": {
-    "slope": 0.4212,
-    "roughness": 0.6047,
-    "relief": 0.4537
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "crater_ops",
-   "match": 47.4,
-   "similarity": {
-    "slope": 0.4212,
-    "roughness": 0.6047,
-    "relief": 0.4537
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "landing_base",
-   "match": 48.3,
-   "similarity": {
-    "slope": 0.4212,
-    "roughness": 0.6047,
-    "relief": 0.4537
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "lava_tube",
-   "match": 49.2,
-   "similarity": {
-    "slope": 0.4212,
-    "roughness": 0.6047,
-    "relief": 0.4537
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "rover",
-   "match": 70.4,
-   "similarity": {
-    "slope": 0.5708,
-    "roughness": 0.9354,
-    "relief": 0.506
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "crater_ops",
-   "match": 61.1,
-   "similarity": {
-    "slope": 0.5708,
-    "roughness": 0.9354,
-    "relief": 0.506
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "landing_base",
-   "match": 66.7,
-   "similarity": {
-    "slope": 0.5708,
-    "roughness": 0.9354,
-    "relief": 0.506
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "wabar",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "lava_tube",
-   "match": 64.8,
-   "similarity": {
-    "slope": 0.5708,
-    "roughness": 0.9354,
-    "relief": 0.506
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "rover",
-   "match": 53.2,
-   "similarity": {
-    "slope": 0.4282,
-    "roughness": 0.6298,
-    "relief": 0.5435
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "crater_ops",
-   "match": 52.6,
-   "similarity": {
-    "slope": 0.4282,
-    "roughness": 0.6298,
-    "relief": 0.5435
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "landing_base",
-   "match": 51.2,
-   "similarity": {
-    "slope": 0.4282,
-    "roughness": 0.6298,
-    "relief": 0.5435
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "lava_tube",
-   "match": 54.6,
-   "similarity": {
-    "slope": 0.4282,
-    "roughness": 0.6298,
-    "relief": 0.5435
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "rover",
-   "match": 44.7,
-   "similarity": {
-    "slope": 0.2098,
-    "roughness": 0.8021,
-    "relief": 0.2094
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "crater_ops",
-   "match": 32.8,
-   "similarity": {
-    "slope": 0.2098,
-    "roughness": 0.8021,
-    "relief": 0.2094
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "landing_base",
-   "match": 38.7,
-   "similarity": {
-    "slope": 0.2098,
-    "roughness": 0.8021,
-    "relief": 0.2094
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "lava_tube",
-   "match": 38.7,
-   "similarity": {
-    "slope": 0.2098,
-    "roughness": 0.8021,
-    "relief": 0.2094
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "harrat_kishb",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "rover",
-   "match": 58.9,
-   "similarity": {
-    "slope": 0.4756,
-    "roughness": 0.5381,
-    "relief": 0.9184
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "harrat_kishb",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "crater_ops",
-   "match": 71.0,
-   "similarity": {
-    "slope": 0.4756,
-    "roughness": 0.5381,
-    "relief": 0.9184
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "harrat_kishb",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "landing_base",
-   "match": 58.3,
-   "similarity": {
-    "slope": 0.4756,
-    "roughness": 0.5381,
-    "relief": 0.9184
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "harrat_kishb",
-   "target_id": "moon_tranquillitatis_pit",
-   "mission": "lava_tube",
-   "match": 71.6,
-   "similarity": {
-    "slope": 0.4756,
-    "roughness": 0.5381,
-    "relief": 0.9184
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "mars_jezero",
-   "mission": "rover",
-   "match": 55.2,
-   "similarity": {
-    "slope": 0.5013,
-    "roughness": 0.7115,
-    "relief": 0.3355
-   },
-   "note": null,
-   "rank": 6
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "mars_jezero",
-   "mission": "crater_ops",
-   "match": 46.0,
-   "similarity": {
-    "slope": 0.5013,
-    "roughness": 0.7115,
-    "relief": 0.3355
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "mars_jezero",
-   "mission": "landing_base",
-   "match": 53.1,
-   "similarity": {
-    "slope": 0.5013,
-    "roughness": 0.7115,
-    "relief": 0.3355
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "umm_jirsan",
-   "target_id": "mars_jezero",
-   "mission": "lava_tube",
-   "match": 48.1,
-   "similarity": {
-    "slope": 0.5013,
-    "roughness": 0.7115,
-    "relief": 0.3355
-   },
-   "note": null,
-   "rank": 7
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "mars_jezero",
-   "mission": "rover",
-   "match": 60.8,
-   "similarity": {
-    "slope": 0.9041,
-    "roughness": 0.3163,
-    "relief": 0.5972
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "mars_jezero",
-   "mission": "crater_ops",
-   "match": 63.3,
-   "similarity": {
-    "slope": 0.9041,
-    "roughness": 0.3163,
-    "relief": 0.5972
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "mars_jezero",
-   "mission": "landing_base",
-   "match": 66.6,
-   "similarity": {
-    "slope": 0.9041,
-    "roughness": 0.3163,
-    "relief": 0.5972
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "mars_jezero",
-   "mission": "lava_tube",
-   "match": 57.4,
-   "similarity": {
-    "slope": 0.9041,
-    "roughness": 0.3163,
-    "relief": 0.5972
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "mars_jezero",
-   "mission": "rover",
-   "match": 44.6,
-   "similarity": {
-    "slope": 0.2179,
-    "roughness": 0.689,
-    "relief": 0.415
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "mars_jezero",
-   "mission": "crater_ops",
-   "match": 41.1,
-   "similarity": {
-    "slope": 0.2179,
-    "roughness": 0.689,
-    "relief": 0.415
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "mars_jezero",
-   "mission": "landing_base",
-   "match": 39.9,
-   "similarity": {
-    "slope": 0.2179,
-    "roughness": 0.689,
-    "relief": 0.415
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "mars_jezero",
-   "mission": "lava_tube",
-   "match": 45.8,
-   "similarity": {
-    "slope": 0.2179,
-    "roughness": 0.689,
-    "relief": 0.415
-   },
-   "note": null,
-   "rank": 8
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "mars_jezero",
-   "mission": "rover",
-   "match": 36.8,
-   "similarity": {
-    "slope": 0.2367,
-    "roughness": 0.5359,
-    "relief": 0.2963
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "harrat_rahat",
-   "target_id": "mars_jezero",
+   "target_id": "moon_shackleton",
    "mission": "crater_ops",
    "match": 32.6,
    "similarity": {
-    "slope": 0.2367,
-    "roughness": 0.5359,
-    "relief": 0.2963
+    "slope": 0.3854,
+    "roughness": 0.3279,
+    "relief": 0.2891
    },
    "note": null,
-   "rank": 9
+   "rank": 7
   },
   {
-   "site_id": "harrat_rahat",
-   "target_id": "mars_jezero",
+   "site_id": "al_wahbah",
+   "target_id": "moon_shackleton",
    "mission": "landing_base",
-   "match": 33.8,
+   "match": 34.9,
    "similarity": {
-    "slope": 0.2367,
-    "roughness": 0.5359,
-    "relief": 0.2963
+    "slope": 0.3854,
+    "roughness": 0.3279,
+    "relief": 0.2891
    },
    "note": null,
-   "rank": 9
+   "rank": 7
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "moon_shackleton",
+   "mission": "lava_tube",
+   "match": 32.0,
+   "similarity": {
+    "slope": 0.3854,
+    "roughness": 0.3279,
+    "relief": 0.2891
+   },
+   "note": null,
+   "rank": 7
   },
   {
    "site_id": "harrat_rahat",
-   "target_id": "mars_jezero",
-   "mission": "lava_tube",
-   "match": 35.6,
-   "similarity": {
-    "slope": 0.2367,
-    "roughness": 0.5359,
-    "relief": 0.2963
-   },
-   "note": null,
-   "rank": 9
-  },
-  {
-   "site_id": "uwayrid",
-   "target_id": "mars_jezero",
+   "target_id": "moon_shackleton",
    "mission": "rover",
-   "match": 58.1,
+   "match": 45.3,
    "similarity": {
-    "slope": 0.4736,
-    "roughness": 0.5375,
-    "relief": 0.8825
+    "slope": 0.4812,
+    "roughness": 0.4606,
+    "relief": 0.3833
    },
    "note": null,
-   "rank": 5
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "moon_shackleton",
+   "mission": "crater_ops",
+   "match": 42.8,
+   "similarity": {
+    "slope": 0.4812,
+    "roughness": 0.4606,
+    "relief": 0.3833
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "moon_shackleton",
+   "mission": "landing_base",
+   "match": 45.5,
+   "similarity": {
+    "slope": 0.4812,
+    "roughness": 0.4606,
+    "relief": 0.3833
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "moon_shackleton",
+   "mission": "lava_tube",
+   "match": 42.6,
+   "similarity": {
+    "slope": 0.4812,
+    "roughness": 0.4606,
+    "relief": 0.3833
+   },
+   "note": null,
+   "rank": 1
   },
   {
    "site_id": "uwayrid",
-   "target_id": "mars_jezero",
-   "mission": "crater_ops",
-   "match": 69.1,
+   "target_id": "moon_shackleton",
+   "mission": "rover",
+   "match": 39.4,
    "similarity": {
-    "slope": 0.4736,
-    "roughness": 0.5375,
-    "relief": 0.8825
+    "slope": 0.4325,
+    "roughness": 0.3876,
+    "relief": 0.3318
    },
    "note": null,
    "rank": 3
   },
   {
    "site_id": "uwayrid",
-   "target_id": "mars_jezero",
-   "mission": "landing_base",
-   "match": 57.5,
+   "target_id": "moon_shackleton",
+   "mission": "crater_ops",
+   "match": 37.3,
    "similarity": {
-    "slope": 0.4736,
-    "roughness": 0.5375,
-    "relief": 0.8825
+    "slope": 0.4325,
+    "roughness": 0.3876,
+    "relief": 0.3318
+   },
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "moon_shackleton",
+   "mission": "landing_base",
+   "match": 39.9,
+   "similarity": {
+    "slope": 0.4325,
+    "roughness": 0.3876,
+    "relief": 0.3318
+   },
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "moon_shackleton",
+   "mission": "lava_tube",
+   "match": 36.9,
+   "similarity": {
+    "slope": 0.4325,
+    "roughness": 0.3876,
+    "relief": 0.3318
+   },
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "moon_shackleton",
+   "mission": "rover",
+   "match": 32.4,
+   "similarity": {
+    "slope": 0.3669,
+    "roughness": 0.308,
+    "relief": 0.2684
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "moon_shackleton",
+   "mission": "crater_ops",
+   "match": 30.6,
+   "similarity": {
+    "slope": 0.3669,
+    "roughness": 0.308,
+    "relief": 0.2684
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "moon_shackleton",
+   "mission": "landing_base",
+   "match": 33.0,
+   "similarity": {
+    "slope": 0.3669,
+    "roughness": 0.308,
+    "relief": 0.2684
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "moon_shackleton",
+   "mission": "lava_tube",
+   "match": 30.0,
+   "similarity": {
+    "slope": 0.3669,
+    "roughness": 0.308,
+    "relief": 0.2684
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "moon_shackleton",
+   "mission": "rover",
+   "match": 35.3,
+   "similarity": {
+    "slope": 0.3966,
+    "roughness": 0.338,
+    "relief": 0.2979
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "moon_shackleton",
+   "mission": "crater_ops",
+   "match": 33.6,
+   "similarity": {
+    "slope": 0.3966,
+    "roughness": 0.338,
+    "relief": 0.2979
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "moon_shackleton",
+   "mission": "landing_base",
+   "match": 35.9,
+   "similarity": {
+    "slope": 0.3966,
+    "roughness": 0.338,
+    "relief": 0.2979
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "moon_shackleton",
+   "mission": "lava_tube",
+   "match": 33.0,
+   "similarity": {
+    "slope": 0.3966,
+    "roughness": 0.338,
+    "relief": 0.2979
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "moon_shackleton",
+   "mission": "rover",
+   "match": 43.5,
+   "similarity": {
+    "slope": 0.4644,
+    "roughness": 0.4382,
+    "relief": 0.3699
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "moon_shackleton",
+   "mission": "crater_ops",
+   "match": 41.2,
+   "similarity": {
+    "slope": 0.4644,
+    "roughness": 0.4382,
+    "relief": 0.3699
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "moon_shackleton",
+   "mission": "landing_base",
+   "match": 43.8,
+   "similarity": {
+    "slope": 0.4644,
+    "roughness": 0.4382,
+    "relief": 0.3699
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "moon_shackleton",
+   "mission": "lava_tube",
+   "match": 40.9,
+   "similarity": {
+    "slope": 0.4644,
+    "roughness": 0.4382,
+    "relief": 0.3699
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "moon_shackleton",
+   "mission": "rover",
+   "match": 33.8,
+   "similarity": {
+    "slope": 0.3805,
+    "roughness": 0.323,
+    "relief": 0.2828
+   },
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "moon_shackleton",
+   "mission": "crater_ops",
+   "match": 32.0,
+   "similarity": {
+    "slope": 0.3805,
+    "roughness": 0.323,
+    "relief": 0.2828
+   },
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "moon_shackleton",
+   "mission": "landing_base",
+   "match": 34.4,
+   "similarity": {
+    "slope": 0.3805,
+    "roughness": 0.323,
+    "relief": 0.2828
+   },
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "moon_shackleton",
+   "mission": "lava_tube",
+   "match": 31.4,
+   "similarity": {
+    "slope": 0.3805,
+    "roughness": 0.323,
+    "relief": 0.2828
+   },
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "moon_marius_pit",
+   "mission": "rover",
+   "match": 79.6,
+   "similarity": {
+    "slope": 0.7735,
+    "roughness": 0.8126,
+    "relief": 0.81
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "moon_marius_pit",
+   "mission": "crater_ops",
+   "match": 80.0,
+   "similarity": {
+    "slope": 0.7735,
+    "roughness": 0.8126,
+    "relief": 0.81
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "moon_marius_pit",
+   "mission": "landing_base",
+   "match": 79.3,
+   "similarity": {
+    "slope": 0.7735,
+    "roughness": 0.8126,
+    "relief": 0.81
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "moon_marius_pit",
+   "mission": "lava_tube",
+   "match": 80.3,
+   "similarity": {
+    "slope": 0.7735,
+    "roughness": 0.8126,
+    "relief": 0.81
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "moon_marius_pit",
+   "mission": "rover",
+   "match": 84.3,
+   "similarity": {
+    "slope": 0.8162,
+    "roughness": 0.8496,
+    "relief": 0.8855
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "moon_marius_pit",
+   "mission": "crater_ops",
+   "match": 85.8,
+   "similarity": {
+    "slope": 0.8162,
+    "roughness": 0.8496,
+    "relief": 0.8855
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "moon_marius_pit",
+   "mission": "landing_base",
+   "match": 84.0,
+   "similarity": {
+    "slope": 0.8162,
+    "roughness": 0.8496,
+    "relief": 0.8855
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "moon_marius_pit",
+   "mission": "lava_tube",
+   "match": 86.1,
+   "similarity": {
+    "slope": 0.8162,
+    "roughness": 0.8496,
+    "relief": 0.8855
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "moon_marius_pit",
+   "mission": "rover",
+   "match": 54.6,
+   "similarity": {
+    "slope": 0.5152,
+    "roughness": 0.5834,
+    "relief": 0.5305
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "moon_marius_pit",
+   "mission": "crater_ops",
+   "match": 53.6,
+   "similarity": {
+    "slope": 0.5152,
+    "roughness": 0.5834,
+    "relief": 0.5305
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "moon_marius_pit",
+   "mission": "landing_base",
+   "match": 53.9,
+   "similarity": {
+    "slope": 0.5152,
+    "roughness": 0.5834,
+    "relief": 0.5305
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "moon_marius_pit",
+   "mission": "lava_tube",
+   "match": 54.3,
+   "similarity": {
+    "slope": 0.5152,
+    "roughness": 0.5834,
+    "relief": 0.5305
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "moon_marius_pit",
+   "mission": "rover",
+   "match": 13.2,
+   "similarity": {
+    "slope": 0.1791,
+    "roughness": 0.0732,
+    "relief": 0.1542
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "moon_marius_pit",
+   "mission": "crater_ops",
+   "match": 14.5,
+   "similarity": {
+    "slope": 0.1791,
+    "roughness": 0.0732,
+    "relief": 0.1542
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "moon_marius_pit",
+   "mission": "landing_base",
+   "match": 14.2,
+   "similarity": {
+    "slope": 0.1791,
+    "roughness": 0.0732,
+    "relief": 0.1542
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "moon_marius_pit",
+   "mission": "lava_tube",
+   "match": 13.5,
+   "similarity": {
+    "slope": 0.1791,
+    "roughness": 0.0732,
+    "relief": 0.1542
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "moon_marius_pit",
+   "mission": "rover",
+   "match": 48.1,
+   "similarity": {
+    "slope": 0.5631,
+    "roughness": 0.3626,
+    "relief": 0.5555
    },
    "note": null,
    "rank": 5
   },
   {
    "site_id": "uwayrid",
-   "target_id": "mars_jezero",
-   "mission": "lava_tube",
-   "match": 69.7,
+   "target_id": "moon_marius_pit",
+   "mission": "crater_ops",
+   "match": 51.9,
    "similarity": {
-    "slope": 0.4736,
-    "roughness": 0.5375,
-    "relief": 0.8825
+    "slope": 0.5631,
+    "roughness": 0.3626,
+    "relief": 0.5555
    },
    "note": null,
-   "rank": 2
+   "rank": 5
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "moon_marius_pit",
+   "mission": "landing_base",
+   "match": 50.1,
+   "similarity": {
+    "slope": 0.5631,
+    "roughness": 0.3626,
+    "relief": 0.5555
+   },
+   "note": null,
+   "rank": 5
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "moon_marius_pit",
+   "mission": "lava_tube",
+   "match": 49.9,
+   "similarity": {
+    "slope": 0.5631,
+    "roughness": 0.3626,
+    "relief": 0.5555
+   },
+   "note": null,
+   "rank": 5
   },
   {
    "site_id": "wabar",
-   "target_id": "mars_jezero",
+   "target_id": "moon_marius_pit",
    "mission": "rover",
-   "match": 52.2,
+   "match": 30.7,
    "similarity": {
-    "slope": 0.5507,
-    "roughness": 0.4385,
-    "relief": 0.6319
+    "slope": 0.3036,
+    "roughness": 0.3265,
+    "relief": 0.2737
    },
    "note": null,
    "rank": 7
   },
   {
    "site_id": "wabar",
-   "target_id": "mars_jezero",
+   "target_id": "moon_marius_pit",
    "mission": "crater_ops",
-   "match": 56.9,
+   "match": 29.3,
    "similarity": {
-    "slope": 0.5507,
-    "roughness": 0.4385,
-    "relief": 0.6319
+    "slope": 0.3036,
+    "roughness": 0.3265,
+    "relief": 0.2737
    },
    "note": null,
-   "rank": 6
+   "rank": 7
   },
   {
    "site_id": "wabar",
-   "target_id": "mars_jezero",
+   "target_id": "moon_marius_pit",
    "mission": "landing_base",
-   "match": 53.3,
+   "match": 30.4,
    "similarity": {
-    "slope": 0.5507,
-    "roughness": 0.4385,
-    "relief": 0.6319
+    "slope": 0.3036,
+    "roughness": 0.3265,
+    "relief": 0.2737
    },
    "note": null,
-   "rank": 6
+   "rank": 7
   },
   {
    "site_id": "wabar",
-   "target_id": "mars_jezero",
+   "target_id": "moon_marius_pit",
    "mission": "lava_tube",
-   "match": 55.8,
+   "match": 29.6,
    "similarity": {
-    "slope": 0.5507,
-    "roughness": 0.4385,
-    "relief": 0.6319
+    "slope": 0.3036,
+    "roughness": 0.3265,
+    "relief": 0.2737
    },
    "note": null,
-   "rank": 6
+   "rank": 7
   },
   {
    "site_id": "hibashi",
-   "target_id": "mars_jezero",
+   "target_id": "moon_marius_pit",
    "mission": "rover",
-   "match": 75.6,
-   "similarity": {
-    "slope": 0.8671,
-    "roughness": 0.7004,
-    "relief": 0.6425
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "mars_jezero",
-   "mission": "crater_ops",
    "match": 72.1,
    "similarity": {
-    "slope": 0.8671,
-    "roughness": 0.7004,
-    "relief": 0.6425
+    "slope": 0.6999,
+    "roughness": 0.7579,
+    "relief": 0.6917
    },
    "note": null,
-   "rank": 1
+   "rank": 3
   },
   {
    "site_id": "hibashi",
-   "target_id": "mars_jezero",
+   "target_id": "moon_marius_pit",
+   "mission": "crater_ops",
+   "match": 70.7,
+   "similarity": {
+    "slope": 0.6999,
+    "roughness": 0.7579,
+    "relief": 0.6917
+   },
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "moon_marius_pit",
    "mission": "landing_base",
-   "match": 77.2,
+   "match": 71.6,
    "similarity": {
-    "slope": 0.8671,
-    "roughness": 0.7004,
-    "relief": 0.6425
+    "slope": 0.6999,
+    "roughness": 0.7579,
+    "relief": 0.6917
    },
    "note": null,
-   "rank": 1
+   "rank": 3
   },
   {
    "site_id": "hibashi",
-   "target_id": "mars_jezero",
+   "target_id": "moon_marius_pit",
    "mission": "lava_tube",
-   "match": 70.5,
+   "match": 71.3,
    "similarity": {
-    "slope": 0.8671,
-    "roughness": 0.7004,
-    "relief": 0.6425
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "mars_jezero",
-   "mission": "rover",
-   "match": 67.3,
-   "similarity": {
-    "slope": 0.9158,
-    "roughness": 0.4168,
-    "relief": 0.7015
+    "slope": 0.6999,
+    "roughness": 0.7579,
+    "relief": 0.6917
    },
    "note": null,
    "rank": 3
   },
   {
    "site_id": "harrat_lunayyir",
-   "target_id": "mars_jezero",
-   "mission": "crater_ops",
-   "match": 70.9,
-   "similarity": {
-    "slope": 0.9158,
-    "roughness": 0.4168,
-    "relief": 0.7015
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "mars_jezero",
-   "mission": "landing_base",
-   "match": 72.3,
-   "similarity": {
-    "slope": 0.9158,
-    "roughness": 0.4168,
-    "relief": 0.7015
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "mars_jezero",
-   "mission": "lava_tube",
-   "match": 65.9,
-   "similarity": {
-    "slope": 0.9158,
-    "roughness": 0.4168,
-    "relief": 0.7015
-   },
-   "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "harrat_kishb",
-   "target_id": "mars_jezero",
+   "target_id": "moon_marius_pit",
    "mission": "rover",
-   "match": 72.2,
+   "match": 19.4,
    "similarity": {
-    "slope": 0.6692,
-    "roughness": 0.9425,
-    "relief": 0.3846
+    "slope": 0.2624,
+    "roughness": 0.1162,
+    "relief": 0.2115
    },
    "note": null,
-   "rank": 2
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "moon_marius_pit",
+   "mission": "crater_ops",
+   "match": 20.8,
+   "similarity": {
+    "slope": 0.2624,
+    "roughness": 0.1162,
+    "relief": 0.2115
+   },
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "moon_marius_pit",
+   "mission": "landing_base",
+   "match": 20.8,
+   "similarity": {
+    "slope": 0.2624,
+    "roughness": 0.1162,
+    "relief": 0.2115
+   },
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "moon_marius_pit",
+   "mission": "lava_tube",
+   "match": 19.3,
+   "similarity": {
+    "slope": 0.2624,
+    "roughness": 0.1162,
+    "relief": 0.2115
+   },
+   "note": null,
+   "rank": 8
   },
   {
    "site_id": "harrat_kishb",
-   "target_id": "mars_jezero",
-   "mission": "crater_ops",
-   "match": 58.2,
+   "target_id": "moon_marius_pit",
+   "mission": "rover",
+   "match": 47.0,
    "similarity": {
-    "slope": 0.6692,
-    "roughness": 0.9425,
-    "relief": 0.3846
+    "slope": 0.4485,
+    "roughness": 0.5073,
+    "relief": 0.4361
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "moon_marius_pit",
+   "mission": "crater_ops",
+   "match": 45.4,
+   "similarity": {
+    "slope": 0.4485,
+    "roughness": 0.5073,
+    "relief": 0.4361
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "moon_marius_pit",
+   "mission": "landing_base",
+   "match": 46.4,
+   "similarity": {
+    "slope": 0.4485,
+    "roughness": 0.5073,
+    "relief": 0.4361
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "moon_marius_pit",
+   "mission": "lava_tube",
+   "match": 46.0,
+   "similarity": {
+    "slope": 0.4485,
+    "roughness": 0.5073,
+    "relief": 0.4361
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "rover",
+   "match": 7.5,
+   "similarity": {
+    "slope": 0.1011,
+    "roughness": 0.0569,
+    "relief": 0.0596
    },
    "note": null,
    "rank": 5
   },
   {
-   "site_id": "harrat_kishb",
-   "target_id": "mars_jezero",
-   "mission": "landing_base",
-   "match": 69.4,
+   "site_id": "umm_jirsan",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "crater_ops",
+   "match": 7.2,
    "similarity": {
-    "slope": 0.6692,
-    "roughness": 0.9425,
-    "relief": 0.3846
+    "slope": 0.1011,
+    "roughness": 0.0569,
+    "relief": 0.0596
    },
    "note": null,
-   "rank": 3
-  },
-  {
-   "site_id": "harrat_kishb",
-   "target_id": "mars_jezero",
-   "mission": "lava_tube",
-   "match": 60.9,
-   "similarity": {
-    "slope": 0.6692,
-    "roughness": 0.9425,
-    "relief": 0.3846
-   },
-   "note": null,
-   "rank": 4
+   "rank": 5
   },
   {
    "site_id": "umm_jirsan",
-   "target_id": "mars_gale",
-   "mission": "rover",
-   "match": 64.0,
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "landing_base",
+   "match": 8.0,
    "similarity": {
-    "slope": 0.8229,
-    "roughness": 0.3237,
-    "relief": 0.9087
+    "slope": 0.1011,
+    "roughness": 0.0569,
+    "relief": 0.0596
+   },
+   "note": null,
+   "rank": 5
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "lava_tube",
+   "match": 6.7,
+   "similarity": {
+    "slope": 0.1011,
+    "roughness": 0.0569,
+    "relief": 0.0596
+   },
+   "note": null,
+   "rank": 5
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "rover",
+   "match": 2.6,
+   "similarity": {
+    "slope": 0.0378,
+    "roughness": 0.0192,
+    "relief": 0.0171
    },
    "note": null,
    "rank": 6
   },
   {
-   "site_id": "umm_jirsan",
-   "target_id": "mars_gale",
+   "site_id": "khaybar_field",
+   "target_id": "moon_tranquillitatis_pit",
    "mission": "crater_ops",
-   "match": 76.6,
+   "match": 2.4,
    "similarity": {
-    "slope": 0.8229,
-    "roughness": 0.3237,
-    "relief": 0.9087
+    "slope": 0.0378,
+    "roughness": 0.0192,
+    "relief": 0.0171
    },
    "note": null,
-   "rank": 1
+   "rank": 6
   },
   {
-   "site_id": "umm_jirsan",
-   "target_id": "mars_gale",
+   "site_id": "khaybar_field",
+   "target_id": "moon_tranquillitatis_pit",
    "mission": "landing_base",
-   "match": 69.0,
+   "match": 2.8,
    "similarity": {
-    "slope": 0.8229,
-    "roughness": 0.3237,
-    "relief": 0.9087
+    "slope": 0.0378,
+    "roughness": 0.0192,
+    "relief": 0.0171
    },
    "note": null,
-   "rank": 4
+   "rank": 6
   },
   {
-   "site_id": "umm_jirsan",
-   "target_id": "mars_gale",
+   "site_id": "khaybar_field",
+   "target_id": "moon_tranquillitatis_pit",
    "mission": "lava_tube",
-   "match": 71.6,
+   "match": 2.2,
    "similarity": {
-    "slope": 0.8229,
-    "roughness": 0.3237,
-    "relief": 0.9087
+    "slope": 0.0378,
+    "roughness": 0.0192,
+    "relief": 0.0171
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "rover",
+   "match": 31.3,
+   "similarity": {
+    "slope": 0.3964,
+    "roughness": 0.237,
+    "relief": 0.2965
    },
    "note": null,
    "rank": 3
   },
   {
-   "site_id": "khaybar_field",
-   "target_id": "mars_gale",
-   "mission": "rover",
-   "match": 75.1,
-   "similarity": {
-    "slope": 0.8028,
-    "roughness": 0.7161,
-    "relief": 0.7186
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "khaybar_field",
-   "target_id": "mars_gale",
+   "site_id": "al_wahbah",
+   "target_id": "moon_tranquillitatis_pit",
    "mission": "crater_ops",
-   "match": 74.3,
+   "match": 31.5,
    "similarity": {
-    "slope": 0.8028,
-    "roughness": 0.7161,
-    "relief": 0.7186
+    "slope": 0.3964,
+    "roughness": 0.237,
+    "relief": 0.2965
    },
    "note": null,
    "rank": 3
   },
   {
-   "site_id": "khaybar_field",
-   "target_id": "mars_gale",
+   "site_id": "al_wahbah",
+   "target_id": "moon_tranquillitatis_pit",
    "mission": "landing_base",
-   "match": 76.0,
+   "match": 32.9,
    "similarity": {
-    "slope": 0.8028,
-    "roughness": 0.7161,
-    "relief": 0.7186
+    "slope": 0.3964,
+    "roughness": 0.237,
+    "relief": 0.2965
    },
    "note": null,
-   "rank": 2
+   "rank": 3
   },
   {
-   "site_id": "khaybar_field",
-   "target_id": "mars_gale",
+   "site_id": "al_wahbah",
+   "target_id": "moon_tranquillitatis_pit",
    "mission": "lava_tube",
-   "match": 73.5,
+   "match": 29.9,
    "similarity": {
-    "slope": 0.8028,
-    "roughness": 0.7161,
-    "relief": 0.7186
+    "slope": 0.3964,
+    "roughness": 0.237,
+    "relief": 0.2965
    },
    "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "mars_gale",
-   "mission": "rover",
-   "match": 75.6,
-   "similarity": {
-    "slope": 0.8532,
-    "roughness": 0.713,
-    "relief": 0.6479
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "mars_gale",
-   "mission": "crater_ops",
-   "match": 72.3,
-   "similarity": {
-    "slope": 0.8532,
-    "roughness": 0.713,
-    "relief": 0.6479
-   },
-   "note": null,
-   "rank": 4
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "mars_gale",
-   "mission": "landing_base",
-   "match": 77.0,
-   "similarity": {
-    "slope": 0.8532,
-    "roughness": 0.713,
-    "relief": 0.6479
-   },
-   "note": null,
-   "rank": 1
-  },
-  {
-   "site_id": "al_wahbah",
-   "target_id": "mars_gale",
-   "mission": "lava_tube",
-   "match": 70.8,
-   "similarity": {
-    "slope": 0.8532,
-    "roughness": 0.713,
-    "relief": 0.6479
-   },
-   "note": null,
-   "rank": 4
+   "rank": 3
   },
   {
    "site_id": "harrat_rahat",
-   "target_id": "mars_gale",
+   "target_id": "moon_tranquillitatis_pit",
    "mission": "rover",
-   "match": 47.2,
+   "match": 0.0,
    "similarity": {
-    "slope": 0.2287,
-    "roughness": 0.6282,
-    "relief": 0.6457
+    "slope": 0.0001,
+    "roughness": 0.0,
+    "relief": 0.0
    },
    "note": null,
    "rank": 8
   },
   {
    "site_id": "harrat_rahat",
-   "target_id": "mars_gale",
+   "target_id": "moon_tranquillitatis_pit",
    "mission": "crater_ops",
-   "match": 51.7,
+   "match": 0.0,
    "similarity": {
-    "slope": 0.2287,
-    "roughness": 0.6282,
-    "relief": 0.6457
+    "slope": 0.0001,
+    "roughness": 0.0,
+    "relief": 0.0
    },
    "note": null,
-   "rank": 7
+   "rank": 8
   },
   {
    "site_id": "harrat_rahat",
-   "target_id": "mars_gale",
+   "target_id": "moon_tranquillitatis_pit",
    "mission": "landing_base",
-   "match": 43.2,
+   "match": 0.0,
    "similarity": {
-    "slope": 0.2287,
-    "roughness": 0.6282,
-    "relief": 0.6457
+    "slope": 0.0001,
+    "roughness": 0.0,
+    "relief": 0.0
    },
    "note": null,
-   "rank": 9
+   "rank": 8
   },
   {
    "site_id": "harrat_rahat",
-   "target_id": "mars_gale",
+   "target_id": "moon_tranquillitatis_pit",
    "mission": "lava_tube",
-   "match": 55.7,
+   "match": 0.0,
    "similarity": {
-    "slope": 0.2287,
-    "roughness": 0.6282,
-    "relief": 0.6457
+    "slope": 0.0001,
+    "roughness": 0.0,
+    "relief": 0.0
+   },
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "rover",
+   "match": 0.3,
+   "similarity": {
+    "slope": 0.0062,
+    "roughness": 0.0008,
+    "relief": 0.0029
    },
    "note": null,
    "rank": 7
   },
   {
    "site_id": "uwayrid",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "crater_ops",
+   "match": 0.3,
+   "similarity": {
+    "slope": 0.0062,
+    "roughness": 0.0008,
+    "relief": 0.0029
+   },
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "landing_base",
+   "match": 0.4,
+   "similarity": {
+    "slope": 0.0062,
+    "roughness": 0.0008,
+    "relief": 0.0029
+   },
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "lava_tube",
+   "match": 0.3,
+   "similarity": {
+    "slope": 0.0062,
+    "roughness": 0.0008,
+    "relief": 0.0029
+   },
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "rover",
+   "match": 42.4,
+   "similarity": {
+    "slope": 0.4259,
+    "roughness": 0.4943,
+    "relief": 0.2771
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "crater_ops",
+   "match": 36.5,
+   "similarity": {
+    "slope": 0.4259,
+    "roughness": 0.4943,
+    "relief": 0.2771
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "landing_base",
+   "match": 41.7,
+   "similarity": {
+    "slope": 0.4259,
+    "roughness": 0.4943,
+    "relief": 0.2771
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "lava_tube",
+   "match": 37.2,
+   "similarity": {
+    "slope": 0.4259,
+    "roughness": 0.4943,
+    "relief": 0.2771
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "rover",
+   "match": 11.2,
+   "similarity": {
+    "slope": 0.1415,
+    "roughness": 0.0834,
+    "relief": 0.109
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "crater_ops",
+   "match": 11.4,
+   "similarity": {
+    "slope": 0.1415,
+    "roughness": 0.0834,
+    "relief": 0.109
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "landing_base",
+   "match": 11.8,
+   "similarity": {
+    "slope": 0.1415,
+    "roughness": 0.0834,
+    "relief": 0.109
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "lava_tube",
+   "match": 10.8,
+   "similarity": {
+    "slope": 0.1415,
+    "roughness": 0.0834,
+    "relief": 0.109
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "rover",
+   "match": 0.0,
+   "similarity": {
+    "slope": 0.0005,
+    "roughness": 0.0,
+    "relief": 0.0001
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "crater_ops",
+   "match": 0.0,
+   "similarity": {
+    "slope": 0.0005,
+    "roughness": 0.0,
+    "relief": 0.0001
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "landing_base",
+   "match": 0.0,
+   "similarity": {
+    "slope": 0.0005,
+    "roughness": 0.0,
+    "relief": 0.0001
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "lava_tube",
+   "match": 0.0,
+   "similarity": {
+    "slope": 0.0005,
+    "roughness": 0.0,
+    "relief": 0.0001
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "rover",
+   "match": 53.6,
+   "similarity": {
+    "slope": 0.632,
+    "roughness": 0.3972,
+    "relief": 0.6213
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "crater_ops",
+   "match": 58.0,
+   "similarity": {
+    "slope": 0.632,
+    "roughness": 0.3972,
+    "relief": 0.6213
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "landing_base",
+   "match": 55.9,
+   "similarity": {
+    "slope": 0.632,
+    "roughness": 0.3972,
+    "relief": 0.6213
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "moon_tranquillitatis_pit",
+   "mission": "lava_tube",
+   "match": 55.6,
+   "similarity": {
+    "slope": 0.632,
+    "roughness": 0.3972,
+    "relief": 0.6213
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "mars_jezero",
+   "mission": "rover",
+   "match": 41.3,
+   "similarity": {
+    "slope": 0.5031,
+    "roughness": 0.342,
+    "relief": 0.3746
+   },
+   "note": null,
+   "rank": 5
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "mars_jezero",
+   "mission": "crater_ops",
+   "match": 40.7,
+   "similarity": {
+    "slope": 0.5031,
+    "roughness": 0.342,
+    "relief": 0.3746
+   },
+   "note": null,
+   "rank": 5
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "mars_jezero",
+   "mission": "landing_base",
+   "match": 42.9,
+   "similarity": {
+    "slope": 0.5031,
+    "roughness": 0.342,
+    "relief": 0.3746
+   },
+   "note": null,
+   "rank": 5
+  },
+  {
+   "site_id": "umm_jirsan",
+   "target_id": "mars_jezero",
+   "mission": "lava_tube",
+   "match": 39.1,
+   "similarity": {
+    "slope": 0.5031,
+    "roughness": 0.342,
+    "relief": 0.3746
+   },
+   "note": null,
+   "rank": 5
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "mars_jezero",
+   "mission": "rover",
+   "match": 49.2,
+   "similarity": {
+    "slope": 0.5836,
+    "roughness": 0.4162,
+    "relief": 0.4616
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "mars_jezero",
+   "mission": "crater_ops",
+   "match": 48.9,
+   "similarity": {
+    "slope": 0.5836,
+    "roughness": 0.4162,
+    "relief": 0.4616
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "mars_jezero",
+   "mission": "landing_base",
+   "match": 50.9,
+   "similarity": {
+    "slope": 0.5836,
+    "roughness": 0.4162,
+    "relief": 0.4616
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "khaybar_field",
+   "target_id": "mars_jezero",
+   "mission": "lava_tube",
+   "match": 47.2,
+   "similarity": {
+    "slope": 0.5836,
+    "roughness": 0.4162,
+    "relief": 0.4616
+   },
+   "note": null,
+   "rank": 4
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "mars_jezero",
+   "mission": "rover",
+   "match": 31.1,
+   "similarity": {
+    "slope": 0.3865,
+    "roughness": 0.2617,
+    "relief": 0.2608
+   },
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "mars_jezero",
+   "mission": "crater_ops",
+   "match": 29.9,
+   "similarity": {
+    "slope": 0.3865,
+    "roughness": 0.2617,
+    "relief": 0.2608
+   },
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "mars_jezero",
+   "mission": "landing_base",
+   "match": 32.4,
+   "similarity": {
+    "slope": 0.3865,
+    "roughness": 0.2617,
+    "relief": 0.2608
+   },
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "mars_jezero",
+   "mission": "lava_tube",
+   "match": 28.6,
+   "similarity": {
+    "slope": 0.3865,
+    "roughness": 0.2617,
+    "relief": 0.2608
+   },
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_jezero",
+   "mission": "rover",
+   "match": 83.1,
+   "similarity": {
+    "slope": 0.8865,
+    "roughness": 0.7128,
+    "relief": 0.9561
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_jezero",
+   "mission": "crater_ops",
+   "match": 88.7,
+   "similarity": {
+    "slope": 0.8865,
+    "roughness": 0.7128,
+    "relief": 0.9561
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_jezero",
+   "mission": "landing_base",
+   "match": 84.8,
+   "similarity": {
+    "slope": 0.8865,
+    "roughness": 0.7128,
+    "relief": 0.9561
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_jezero",
+   "mission": "lava_tube",
+   "match": 86.9,
+   "similarity": {
+    "slope": 0.8865,
+    "roughness": 0.7128,
+    "relief": 0.9561
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_jezero",
+   "mission": "rover",
+   "match": 57.3,
+   "similarity": {
+    "slope": 0.6596,
+    "roughness": 0.525,
+    "relief": 0.4949
+   },
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_jezero",
+   "mission": "crater_ops",
+   "match": 55.0,
+   "similarity": {
+    "slope": 0.6596,
+    "roughness": 0.525,
+    "relief": 0.4949
+   },
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_jezero",
+   "mission": "landing_base",
+   "match": 58.6,
+   "similarity": {
+    "slope": 0.6596,
+    "roughness": 0.525,
+    "relief": 0.4949
+   },
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_jezero",
+   "mission": "lava_tube",
+   "match": 53.7,
+   "similarity": {
+    "slope": 0.6596,
+    "roughness": 0.525,
+    "relief": 0.4949
+   },
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_jezero",
+   "mission": "rover",
+   "match": 22.4,
+   "similarity": {
+    "slope": 0.2911,
+    "roughness": 0.1787,
+    "relief": 0.1779
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_jezero",
+   "mission": "crater_ops",
+   "match": 21.2,
+   "similarity": {
+    "slope": 0.2911,
+    "roughness": 0.1787,
+    "relief": 0.1779
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_jezero",
+   "mission": "landing_base",
+   "match": 23.5,
+   "similarity": {
+    "slope": 0.2911,
+    "roughness": 0.1787,
+    "relief": 0.1779
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_jezero",
+   "mission": "lava_tube",
+   "match": 20.1,
+   "similarity": {
+    "slope": 0.2911,
+    "roughness": 0.1787,
+    "relief": 0.1779
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_jezero",
+   "mission": "rover",
+   "match": 39.1,
+   "similarity": {
+    "slope": 0.4796,
+    "roughness": 0.327,
+    "relief": 0.3435
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_jezero",
+   "mission": "crater_ops",
+   "match": 38.1,
+   "similarity": {
+    "slope": 0.4796,
+    "roughness": 0.327,
+    "relief": 0.3435
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_jezero",
+   "mission": "landing_base",
+   "match": 40.7,
+   "similarity": {
+    "slope": 0.4796,
+    "roughness": 0.327,
+    "relief": 0.3435
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_jezero",
+   "mission": "lava_tube",
+   "match": 36.6,
+   "similarity": {
+    "slope": 0.4796,
+    "roughness": 0.327,
+    "relief": 0.3435
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "mars_jezero",
+   "mission": "rover",
+   "match": 73.0,
+   "similarity": {
+    "slope": 0.8187,
+    "roughness": 0.66,
+    "relief": 0.6938
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "mars_jezero",
+   "mission": "crater_ops",
+   "match": 72.5,
+   "similarity": {
+    "slope": 0.8187,
+    "roughness": 0.66,
+    "relief": 0.6938
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "mars_jezero",
+   "mission": "landing_base",
+   "match": 74.6,
+   "similarity": {
+    "slope": 0.8187,
+    "roughness": 0.66,
+    "relief": 0.6938
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "mars_jezero",
+   "mission": "lava_tube",
+   "match": 70.9,
+   "similarity": {
+    "slope": 0.8187,
+    "roughness": 0.66,
+    "relief": 0.6938
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "mars_jezero",
+   "mission": "rover",
+   "match": 28.6,
+   "similarity": {
+    "slope": 0.3597,
+    "roughness": 0.2358,
+    "relief": 0.2373
+   },
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "mars_jezero",
+   "mission": "crater_ops",
+   "match": 27.4,
+   "similarity": {
+    "slope": 0.3597,
+    "roughness": 0.2358,
+    "relief": 0.2373
+   },
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "mars_jezero",
+   "mission": "landing_base",
+   "match": 29.8,
+   "similarity": {
+    "slope": 0.3597,
+    "roughness": 0.2358,
+    "relief": 0.2373
+   },
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "harrat_kishb",
+   "target_id": "mars_jezero",
+   "mission": "lava_tube",
+   "match": 26.1,
+   "similarity": {
+    "slope": 0.3597,
+    "roughness": 0.2358,
+    "relief": 0.2373
+   },
+   "note": null,
+   "rank": 8
+  },
+  {
+   "site_id": "umm_jirsan",
    "target_id": "mars_gale",
    "mission": "rover",
    "match": 42.3,
    "similarity": {
-    "slope": 0.6373,
-    "roughness": 0.2935,
-    "relief": 0.2538
+    "slope": 0.462,
+    "roughness": 0.4221,
+    "relief": 0.3462
    },
    "note": null,
-   "rank": 9
+   "rank": 5
   },
   {
-   "site_id": "uwayrid",
+   "site_id": "umm_jirsan",
    "target_id": "mars_gale",
    "mission": "crater_ops",
-   "match": 37.7,
+   "match": 39.6,
    "similarity": {
-    "slope": 0.6373,
-    "roughness": 0.2935,
-    "relief": 0.2538
+    "slope": 0.462,
+    "roughness": 0.4221,
+    "relief": 0.3462
    },
    "note": null,
-   "rank": 9
+   "rank": 5
   },
   {
-   "site_id": "uwayrid",
+   "site_id": "umm_jirsan",
    "target_id": "mars_gale",
    "mission": "landing_base",
-   "match": 45.7,
+   "match": 42.7,
    "similarity": {
-    "slope": 0.6373,
-    "roughness": 0.2935,
-    "relief": 0.2538
+    "slope": 0.462,
+    "roughness": 0.4221,
+    "relief": 0.3462
    },
    "note": null,
-   "rank": 8
+   "rank": 5
   },
   {
-   "site_id": "uwayrid",
+   "site_id": "umm_jirsan",
    "target_id": "mars_gale",
    "mission": "lava_tube",
-   "match": 34.2,
+   "match": 39.2,
    "similarity": {
-    "slope": 0.6373,
-    "roughness": 0.2935,
-    "relief": 0.2538
+    "slope": 0.462,
+    "roughness": 0.4221,
+    "relief": 0.3462
    },
    "note": null,
-   "rank": 9
+   "rank": 5
   },
   {
-   "site_id": "wabar",
+   "site_id": "khaybar_field",
    "target_id": "mars_gale",
    "mission": "rover",
-   "match": 65.4,
+   "match": 44.5,
    "similarity": {
-    "slope": 0.5444,
-    "roughness": 0.7137,
-    "relief": 0.7518
+    "slope": 0.4863,
+    "roughness": 0.4433,
+    "relief": 0.3635
    },
    "note": null,
    "rank": 4
   },
   {
-   "site_id": "wabar",
+   "site_id": "khaybar_field",
    "target_id": "mars_gale",
    "mission": "crater_ops",
-   "match": 68.2,
+   "match": 41.6,
    "similarity": {
-    "slope": 0.5444,
-    "roughness": 0.7137,
-    "relief": 0.7518
+    "slope": 0.4863,
+    "roughness": 0.4433,
+    "relief": 0.3635
    },
    "note": null,
-   "rank": 5
+   "rank": 4
   },
   {
-   "site_id": "wabar",
+   "site_id": "khaybar_field",
    "target_id": "mars_gale",
    "mission": "landing_base",
-   "match": 63.7,
+   "match": 44.9,
    "similarity": {
-    "slope": 0.5444,
-    "roughness": 0.7137,
-    "relief": 0.7518
+    "slope": 0.4863,
+    "roughness": 0.4433,
+    "relief": 0.3635
    },
    "note": null,
-   "rank": 6
+   "rank": 4
   },
   {
-   "site_id": "wabar",
+   "site_id": "khaybar_field",
    "target_id": "mars_gale",
    "mission": "lava_tube",
-   "match": 69.9,
+   "match": 41.2,
    "similarity": {
-    "slope": 0.5444,
-    "roughness": 0.7137,
-    "relief": 0.7518
+    "slope": 0.4863,
+    "roughness": 0.4433,
+    "relief": 0.3635
    },
    "note": null,
-   "rank": 5
+   "rank": 4
   },
   {
-   "site_id": "hibashi",
+   "site_id": "al_wahbah",
    "target_id": "mars_gale",
    "mission": "rover",
-   "match": 64.5,
+   "match": 39.8,
    "similarity": {
-    "slope": 0.7184,
-    "roughness": 0.4372,
-    "relief": 0.9154
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "mars_gale",
-   "mission": "crater_ops",
-   "match": 76.1,
-   "similarity": {
-    "slope": 0.7184,
-    "roughness": 0.4372,
-    "relief": 0.9154
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "mars_gale",
-   "mission": "landing_base",
-   "match": 67.3,
-   "similarity": {
-    "slope": 0.7184,
-    "roughness": 0.4372,
-    "relief": 0.9154
-   },
-   "note": null,
-   "rank": 5
-  },
-  {
-   "site_id": "hibashi",
-   "target_id": "mars_gale",
-   "mission": "lava_tube",
-   "match": 73.3,
-   "similarity": {
-    "slope": 0.7184,
-    "roughness": 0.4372,
-    "relief": 0.9154
-   },
-   "note": null,
-   "rank": 2
-  },
-  {
-   "site_id": "harrat_lunayyir",
-   "target_id": "mars_gale",
-   "mission": "rover",
-   "match": 56.7,
-   "similarity": {
-    "slope": 0.9274,
-    "roughness": 0.3866,
-    "relief": 0.2046
+    "slope": 0.4356,
+    "roughness": 0.3998,
+    "relief": 0.3183
    },
    "note": null,
    "rank": 7
   },
   {
-   "site_id": "harrat_lunayyir",
+   "site_id": "al_wahbah",
    "target_id": "mars_gale",
    "mission": "crater_ops",
+   "match": 37.0,
+   "similarity": {
+    "slope": 0.4356,
+    "roughness": 0.3998,
+    "relief": 0.3183
+   },
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "mars_gale",
+   "mission": "landing_base",
+   "match": 40.1,
+   "similarity": {
+    "slope": 0.4356,
+    "roughness": 0.3998,
+    "relief": 0.3183
+   },
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "al_wahbah",
+   "target_id": "mars_gale",
+   "mission": "lava_tube",
+   "match": 36.6,
+   "similarity": {
+    "slope": 0.4356,
+    "roughness": 0.3998,
+    "relief": 0.3183
+   },
+   "note": null,
+   "rank": 7
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_gale",
+   "mission": "rover",
+   "match": 52.6,
+   "similarity": {
+    "slope": 0.5411,
+    "roughness": 0.5589,
+    "relief": 0.4314
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_gale",
+   "mission": "crater_ops",
+   "match": 49.0,
+   "similarity": {
+    "slope": 0.5411,
+    "roughness": 0.5589,
+    "relief": 0.4314
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_gale",
+   "mission": "landing_base",
+   "match": 52.4,
+   "similarity": {
+    "slope": 0.5411,
+    "roughness": 0.5589,
+    "relief": 0.4314
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "harrat_rahat",
+   "target_id": "mars_gale",
+   "mission": "lava_tube",
+   "match": 49.2,
+   "similarity": {
+    "slope": 0.5411,
+    "roughness": 0.5589,
+    "relief": 0.4314
+   },
+   "note": null,
+   "rank": 1
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_gale",
+   "mission": "rover",
    "match": 45.8,
    "similarity": {
-    "slope": 0.9274,
-    "roughness": 0.3866,
-    "relief": 0.2046
+    "slope": 0.4933,
+    "roughness": 0.4662,
+    "relief": 0.3694
    },
    "note": null,
-   "rank": 8
+   "rank": 3
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_gale",
+   "mission": "crater_ops",
+   "match": 42.6,
+   "similarity": {
+    "slope": 0.4933,
+    "roughness": 0.4662,
+    "relief": 0.3694
+   },
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_gale",
+   "mission": "landing_base",
+   "match": 46.0,
+   "similarity": {
+    "slope": 0.4933,
+    "roughness": 0.4662,
+    "relief": 0.3694
+   },
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "uwayrid",
+   "target_id": "mars_gale",
+   "mission": "lava_tube",
+   "match": 42.3,
+   "similarity": {
+    "slope": 0.4933,
+    "roughness": 0.4662,
+    "relief": 0.3694
+   },
+   "note": null,
+   "rank": 3
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_gale",
+   "mission": "rover",
+   "match": 37.0,
+   "similarity": {
+    "slope": 0.4088,
+    "roughness": 0.37,
+    "relief": 0.2912
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_gale",
+   "mission": "crater_ops",
+   "match": 34.2,
+   "similarity": {
+    "slope": 0.4088,
+    "roughness": 0.37,
+    "relief": 0.2912
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_gale",
+   "mission": "landing_base",
+   "match": 37.4,
+   "similarity": {
+    "slope": 0.4088,
+    "roughness": 0.37,
+    "relief": 0.2912
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "wabar",
+   "target_id": "mars_gale",
+   "mission": "lava_tube",
+   "match": 33.8,
+   "similarity": {
+    "slope": 0.4088,
+    "roughness": 0.37,
+    "relief": 0.2912
+   },
+   "note": null,
+   "rank": 9
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_gale",
+   "mission": "rover",
+   "match": 41.8,
+   "similarity": {
+    "slope": 0.4571,
+    "roughness": 0.4182,
+    "relief": 0.3393
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_gale",
+   "mission": "crater_ops",
+   "match": 39.0,
+   "similarity": {
+    "slope": 0.4571,
+    "roughness": 0.4182,
+    "relief": 0.3393
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_gale",
+   "mission": "landing_base",
+   "match": 42.2,
+   "similarity": {
+    "slope": 0.4571,
+    "roughness": 0.4182,
+    "relief": 0.3393
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "hibashi",
+   "target_id": "mars_gale",
+   "mission": "lava_tube",
+   "match": 38.7,
+   "similarity": {
+    "slope": 0.4571,
+    "roughness": 0.4182,
+    "relief": 0.3393
+   },
+   "note": null,
+   "rank": 6
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "mars_gale",
+   "mission": "rover",
+   "match": 49.6,
+   "similarity": {
+    "slope": 0.527,
+    "roughness": 0.5092,
+    "relief": 0.4074
+   },
+   "note": null,
+   "rank": 2
+  },
+  {
+   "site_id": "harrat_lunayyir",
+   "target_id": "mars_gale",
+   "mission": "crater_ops",
+   "match": 46.4,
+   "similarity": {
+    "slope": 0.527,
+    "roughness": 0.5092,
+    "relief": 0.4074
+   },
+   "note": null,
+   "rank": 2
   },
   {
    "site_id": "harrat_lunayyir",
    "target_id": "mars_gale",
    "mission": "landing_base",
-   "match": 62.1,
+   "match": 49.8,
    "similarity": {
-    "slope": 0.9274,
-    "roughness": 0.3866,
-    "relief": 0.2046
+    "slope": 0.527,
+    "roughness": 0.5092,
+    "relief": 0.4074
    },
    "note": null,
-   "rank": 7
+   "rank": 2
   },
   {
    "site_id": "harrat_lunayyir",
    "target_id": "mars_gale",
    "mission": "lava_tube",
-   "match": 40.4,
+   "match": 46.2,
    "similarity": {
-    "slope": 0.9274,
-    "roughness": 0.3866,
-    "relief": 0.2046
+    "slope": 0.527,
+    "roughness": 0.5092,
+    "relief": 0.4074
    },
    "note": null,
-   "rank": 8
+   "rank": 2
   },
   {
    "site_id": "harrat_kishb",
    "target_id": "mars_gale",
    "mission": "rover",
-   "match": 69.1,
+   "match": 39.0,
    "similarity": {
-    "slope": 0.7861,
-    "roughness": 0.6717,
-    "relief": 0.5393
+    "slope": 0.4286,
+    "roughness": 0.3914,
+    "relief": 0.3114
    },
    "note": null,
-   "rank": 3
+   "rank": 8
   },
   {
    "site_id": "harrat_kishb",
    "target_id": "mars_gale",
    "mission": "crater_ops",
-   "match": 64.0,
+   "match": 36.3,
    "similarity": {
-    "slope": 0.7861,
-    "roughness": 0.6717,
-    "relief": 0.5393
+    "slope": 0.4286,
+    "roughness": 0.3914,
+    "relief": 0.3114
    },
    "note": null,
-   "rank": 6
+   "rank": 8
   },
   {
    "site_id": "harrat_kishb",
    "target_id": "mars_gale",
    "mission": "landing_base",
-   "match": 70.2,
+   "match": 39.4,
    "similarity": {
-    "slope": 0.7861,
-    "roughness": 0.6717,
-    "relief": 0.5393
+    "slope": 0.4286,
+    "roughness": 0.3914,
+    "relief": 0.3114
    },
    "note": null,
-   "rank": 3
+   "rank": 8
   },
   {
    "site_id": "harrat_kishb",
    "target_id": "mars_gale",
    "mission": "lava_tube",
-   "match": 62.8,
+   "match": 35.9,
    "similarity": {
-    "slope": 0.7861,
-    "roughness": 0.6717,
-    "relief": 0.5393
+    "slope": 0.4286,
+    "roughness": 0.3914,
+    "relief": 0.3114
    },
    "note": null,
-   "rank": 6
+   "rank": 8
   }
  ]
 }

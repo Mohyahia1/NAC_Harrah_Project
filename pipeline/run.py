@@ -150,9 +150,11 @@ def traits(z: np.ndarray, pixel_m: float) -> dict:
                 sq += (np.roll(np.roll(z, dy, 0), dx, 1) - z) ** 2
     rough = np.sqrt(sq)
 
-    zz = np.where(np.isnan(z), np.nanmean(z), z)
-    relief = ndimage.maximum_filter(zz, RELIEF_WIN) - ndimage.minimum_filter(zz, RELIEF_WIN)
-    relief[np.isnan(z)] = np.nan
+    # NaN-aware window: missing pixels never count as high or low ground
+    zmax = ndimage.maximum_filter(np.where(np.isnan(z), -np.inf, z), RELIEF_WIN)
+    zmin = ndimage.minimum_filter(np.where(np.isnan(z), np.inf, z), RELIEF_WIN)
+    relief = zmax - zmin
+    relief[np.isnan(z) | ~np.isfinite(relief)] = np.nan
 
     edge = max(1, RELIEF_WIN // 2)
     inner = (slice(edge, -edge), slice(edge, -edge))
